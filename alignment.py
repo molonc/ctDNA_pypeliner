@@ -4,7 +4,6 @@ import argparse
 import pypeliner
 import pypeliner.workflow
 import pypeliner.managed as mgd
-from pypeliner.commandline import execute
 
 def align():
 	argparser = argparse.ArgumentParser()
@@ -30,7 +29,7 @@ def align():
 			args["fastq_one"],
 			args["fastq_two"],
 			'>',
-			mgd.TempOutputFile(config["results_dir"]+'{}.sam'.format(sample_id)),
+			mgd.TempOutputFile(config["results_dir"] + '{}.sam'.format(sample_id)),
 
 			)
 		)
@@ -41,9 +40,9 @@ def align():
 			'samtools',
 			'view',
 			'-bS',
-			mgd.TempInputFile(config["results_dir"]+'{}.sam'.format(sample_id)),
+			mgd.TempInputFile(config["results_dir"] + '{}.sam'.format(sample_id)),
 			'-o',
-			mgd.TempOutputFile(config["results_dir"]+'{}.bam'.format(sample_id)),
+			mgd.TempOutputFile(config["results_dir"] + '{}.bam'.format(sample_id)),
 
 			)
 		)
@@ -53,9 +52,9 @@ def align():
 		args=(
 			'samtools',
 			'sort',
-			mgd.TempInputFile(config["results_dir"]+'{}.bam'.format(sample_id)),
+			mgd.TempInputFile(config["results_dir"] + '{}.bam'.format(sample_id)),
 			'-o',
-			mgd.OutputFile(config["results_dir"]+'{}.sorted.bam'.format(sample_id)),
+			mgd.OutputFile(config["results_dir"] + '{}.sorted.bam'.format(sample_id)),
 
 			)
 		)
@@ -65,7 +64,7 @@ def align():
 		args=(
 			'samtools',
 			'index',
-			mgd.InputFile(config["results_dir"]+'{}.sorted.bam'.format(sample_id)),
+			mgd.InputFile(config["results_dir"] + '{}.sorted.bam'.format(sample_id)),
 
 			)
 		)
