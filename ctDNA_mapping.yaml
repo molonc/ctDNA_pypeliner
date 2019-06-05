@@ -1,0 +1,291 @@
+PBC0001321:
+  normal:
+    TNBC078-Saliva-DNA-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/TNBC078-Saliva-DNA-CRCQV42Run025-15_S15_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/TNBC078-Saliva-DNA-CRCQV42Run025-15_S15_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BBC15-495-2mL-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: ''
+      type: plasma baseline
+    RS15-18402-1F-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/RS15-18402-1F-CRCQV42Run025-9_S9_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/RS15-18402-1F-CRCQV42Run025-9_S9_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: ''
+      type: TNBC FFPE
+PBC0001335:
+  normal:
+    TNBC047-Saliva-DNA-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/TNBC047-Saliva-DNA-CRCQV42Run025-16_S16_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/TNBC047-Saliva-DNA-CRCQV42Run025-16_S16_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: Normal
+      type: saliva
+  tumour:
+    PS16-2407-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/PS16-2407-CRCQV42Run025-10_S10_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/PS16-2407-CRCQV42Run025-10_S10_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: ''
+      type: TNBC FFPE
+PBC0001466:
+  normal:
+    TNBC056-Saliva-DNA-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/TNBC056-Saliva-DNA-CRCQV42Run025-4_S4_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/TNBC056-Saliva-DNA-CRCQV42Run025-4_S4_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: Normal
+      type: saliva
+    TNBC056BC-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Normal
+      type: buffy coat
+  tumour:
+    BS16-3094A1-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: Treatment received Recurrence Bx
+      type: TNBC FFPE
+    TNBC056p-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 93 month
+    TNBC1466-5-S1-P-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 108 month
+    VBA0382-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Pre-Surgery/Post-Chemo
+      type: earliest baseline plasma
+PBC0001589:
+  normal:
+    TNBC1589-Saliva-DNA-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BS16-4005-A2-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/BS16-4005-A2-CRCQV42Run025-5_S5_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/BS16-4005-A2-CRCQV42Run025-5_S5_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: ''
+      type: TNBC FFPE
+    TNBC1589-S1-P-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0003014:
+  normal:
+    TNBC3014-Saliva-DNA-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/TNBC3014-Saliva-DNA-CRCQV42Run025-12_S12_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/TNBC3014-Saliva-DNA-CRCQV42Run025-12_S12_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: Normal
+      type: saliva
+  tumour:
+    PS18-3737-A10-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/PS18-3737-A10-CRCQV42Run025-6_S6_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/PS18-3737-A10-CRCQV42Run025-6_S6_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: ''
+      type: TNBC FFPE
+    TNBC3014-S1-4mL-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: ''
+      type: plasma baseline
+PBC0003334:
+  normal:
+    TNBC3334-Saliva-DNA-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/TNBC3334-Saliva-DNA-CRCQV42Run025-13_S13_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/TNBC3334-Saliva-DNA-CRCQV42Run025-13_S13_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: Normal
+      type: saliva
+  tumour:
+    PS18-901-A1-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/PS18-901-A1-CRCQV42Run025-7_S7_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/PS18-901-A1-CRCQV42Run025-7_S7_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: ''
+      type: TNBC FFPE
+    TTR2963-S1-4mL-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: ''
+      type: plasma baseline
+PBC0003364:
+  normal:
+    TNBC3364-Saliva-DNA-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BS18-1534-A1-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/BS18-1534-A1-CRCQV42Run025-19_S19_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/BS18-1534-A1-CRCQV42Run025-19_S19_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: ''
+      type: TNBC FFPE
+PBC0003385:
+  normal:
+    TNBC3385-Saliva-DNA-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/TNBC3385-Saliva-DNA-CRCQV42Run025-14_S14_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/TNBC3385-Saliva-DNA-CRCQV42Run025-14_S14_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: Normal
+      type: saliva
+  tumour:
+    PS18-6920-A15-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/PS18-6920-A15-CRCQV42Run025-8_S8_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/PS18-6920-A15-CRCQV42Run025-8_S8_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: ''
+      type: TNBC FFPE
+    TTR3313-S1-4mL-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: ''
+      type: plasma baseline
+PBC0003595:
+  normal:
+    TNBC3595-Saliva-DNA-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/TNBC3595-Saliva-DNA-CRCQV42Run025-17_S17_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/TNBC3595-Saliva-DNA-CRCQV42Run025-17_S17_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: Normal
+      type: saliva
+  tumour:
+    PS18-5662-A17-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/PS18-5662-A17-CRCQV42Run025-11_S11_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/PS18-5662-A17-CRCQV42Run025-11_S11_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: ''
+      type: TNBC FFPE
+    TTR3196-S1-4mL-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: ''
+      type: plasma baseline
+PBC0003769:
+  normal:
+    TNBC3769-Saliva-DNA-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Normal
+      type: saliva
+  tumour:
+    RS18-5816-A1-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    RS18-5816-A1-WGA-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/RS18-5816-A1-WGA-CRCQV42Run025-21_S21_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/RS18-5816-A1-WGA-CRCQV42Run025-21_S21_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: ''
+      type: TNBC FFPE WGA
+    TNBC3769-S1-P-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Post-Surgery/Pre-Chemo
+      type: plasma baseline
+    TNBC3769-S1-P-WGA-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/TNBC3769-S1-P-WGA-CRCQV42Run025-22_S22_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/TNBC3769-S1-P-WGA-CRCQV42Run025-22_S22_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: ''
+      type: WGA plasma baseline
+PBC0003906:
+  normal:
+    TNBC3906-Saliva-DNA-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Normal
+      type: saliva
+  tumour:
+    15SS-27166-2Q-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    15SS-27166-2Q-WGA-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/15SS-27166-2Q-WGA-CRCQV42Run025-24_S24_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/15SS-27166-2Q-WGA-CRCQV42Run025-24_S24_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: ''
+      type: TNBC FFPE WGA
+    TNBC3906-S1-P-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma baseline
+    TNBC3906-S1-P-WGA-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/TNBC3906-S1-P-WGA-CRCQV42Run025-23_S23_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/TNBC3906-S1-P-WGA-CRCQV42Run025-23_S23_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: ''
+      type: WGA plasma baseline
+PBC0003911:
+  normal:
+    TNBC3911-Saliva-DNA-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BS18-3137-A1-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/BS18-3137-A1-CRCQV42Run025-18_S18_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/BS18-3137-A1-CRCQV42Run025-18_S18_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: ''
+      type: TNBC FFPE
+    TNBC3911-S1-4mL-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: ''
+      type: plasma baseline
+QMRS-WGA:
+  normal: {}
+  tumour:
+    QMRS-WGA-CRCQV42Run025:
+      fastq1: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/QMRS-WGA-CRCQV42Run025-20_S20_L001_R1_001.fastq.gz
+      fastq2: /Users/pye/beast_share/lustre/archive/MiSeq/MiSeq_Analysis_Files/190514_M02348_0006_000000000-C8WC4/Data/Intensities/BaseCalls/QMRS-WGA-CRCQV42Run025-20_S20_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: N/A
+      type: Quality Control
