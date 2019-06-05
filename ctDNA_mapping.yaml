@@ -1,3 +1,660 @@
+G15T:
+  normal: {}
+  tumour:
+    G15T-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: N/A
+      type: AGCT
+G16T:
+  normal: {}
+  tumour:
+    G16T-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: N/A
+      type: AGCT
+NF KAPPA Test:
+  normal: {}
+  tumour:
+    KAPA-QC-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: N/A
+      type: Quality Control
+NF QIAGEN Test:
+  normal: {}
+  tumour:
+    QIAGEN-QC-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: N/A
+      type: Quality Control
+PBC0001051:
+  normal:
+    TNBC1051s-CRCQV34Run002:
+      fastq1: ''
+      fastq2: ''
+      run: Run002
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BS17-4299A34-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    TNBC0001051-6-S1-P-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 18 month
+    TNBC1051p-CRCQV34Run002:
+      fastq1: ''
+      fastq2: ''
+      run: Run002
+      sample_status: Pre-Surgery/Post-Chemo
+      type: plasma baseline
+PBC0001069:
+  normal:
+    TNBC1069-Saliva-DNA-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Normal
+      type: saliva
+  tumour:
+    16AS-22413-1A-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC1069-S1-P-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Pre-Surgery/Post-Chemo
+      type: plasma baseline
+PBC0001100:
+  normal:
+    TNBC1100s-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: Normal
+      type: saliva
+  tumour:
+    TNBC1100p-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma baseline
+PBC0001124:
+  normal:
+    TNBC1124s-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: Normal
+      type: saliva
+  tumour:
+    TNBC1124p-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: Post-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0001133:
+  normal:
+    TNBC1133-Saliva-DNA-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Normal
+      type: saliva
+  tumour: {}
+PBC0001177:
+  normal:
+    TNBC1177s-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Normal
+      type: saliva
+  tumour:
+    16RS-44434-1A-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: Treatment received Metastasis Sx
+      type: TNBC FFPE
+    SS-10777-1A-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC1177P-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma baseline
+    TNBC1177p-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma baseline repeat
+PBC0001181:
+  normal:
+    TNBC1181s-CRCQV34Run002:
+      fastq1: ''
+      fastq2: ''
+      run: Run002
+      sample_status: Normal
+      type: saliva
+  tumour:
+    17-850A1-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    PBC1181p-CRCQV34Run002:
+      fastq1: ''
+      fastq2: ''
+      run: Run002
+      sample_status: Post-Surgery/Pre-Chemo
+      type: plasma baseline
+    TNBC083-S1-P1-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Post-Surgery/Pre-Chemo
+      type: plasma baseline repeat
+    TNBC1181-4-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: N/A
+      type: VOID
+    TNBC1181-4-S1-P1-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: Post-Surgery/Pre-Chemo
+      type: plasma 12 month repeat
+PBC0001185:
+  normal:
+    TNBC1185s-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Normal
+      type: saliva
+  tumour:
+    SP12-2275A1-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    TNBC1185-2-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 6 month
+    TNBC1185p-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma baseline
+PBC0001194:
+  normal:
+    TNBC1194-Saliva-DNA-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Normal
+      type: saliva
+  tumour:
+    TNBC1194-S1-P-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma baseline
+    VS12-34513-A36-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+PBC0001224:
+  normal:
+    TNBC067s-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BS17-712A1-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC067p-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+    TNBC1224-5-S1-P-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 15 month
+    TNBC1224-S1-P1-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline repeat
+PBC0001255:
+  normal:
+    TNBC1255s-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Normal
+      type: saliva
+  tumour:
+    01361-1A-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC0001255-5-S1-P-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 18 month
+    TNBC1255p-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0001277:
+  normal:
+    TNBC055-Saliva-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BBC15-492-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Post-Surgery/Pre-Chemo
+      type: earliest baseline plasma
+    PS15-10890-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    TNBC055-S1-P-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 16 month
+PBC0001278:
+  normal:
+    TNBC1278-Saliva-DNA-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Normal
+      type: saliva
+  tumour:
+    TNBC071-S1-P-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+    VS17-18056-A18-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Treatment received Primary Sx
+      type: TNBC FFPE
+PBC0001290:
+  normal: {}
+  tumour:
+    BS14-8206-A2-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: ''
+      type: TNBC FFPE
+PBC0001293:
+  normal:
+    TNBC021-Saliva-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: Normal
+      type: saliva
+  tumour:
+    PS10-4667-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    TNBC021-S1-P-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma baseline
+PBC0001295:
+  normal:
+    TNBC029-Saliva-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: Normal
+      type: saliva
+  tumour:
+    16RS-15578-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    TNBC029-S1-P-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma baseline
+PBC0001299:
+  normal:
+    TNBC006-Saliva-DNA-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Normal
+      type: saliva
+  tumour:
+    16-01089-1A-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC006-4mL-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: ''
+      type: plasma baseline repeat
+    TNBC006-S1-P-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0001301:
+  normal:
+    TNBC034-Saliva-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: Normal
+      type: saliva
+  tumour:
+    PS15-26257-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    TNBC034-S1-P-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma baseline
+PBC0001304:
+  normal:
+    TNBC001-Saliva-DNA-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BS15-8063-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    TNBC001-S1-P-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: Post-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0001306:
+  normal:
+    TNBC002-Saliva-DNA-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Normal
+      type: saliva
+  tumour:
+    15RS-42147-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    16RS-33757-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Treatment received Recurrence Sx
+      type: TNBC FFPE
+    TNBC002-S1-P-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Post-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0001307:
+  normal:
+    TNBC1307-Saliva-DNA-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BS16-815A2-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC004-S1-P-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0001308:
+  normal:
+    TNBC008-Saliva-DNA-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Normal
+      type: saliva
+  tumour:
+    PS14-2584-1-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC008-S1-P-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 24 month
+    VBA0773-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: earliest baseline plasma
+PBC0001309:
+  normal:
+    TNBC012-Saliva-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: Normal
+      type: saliva
+  tumour:
+    PS16-2926-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    TNBC012-S1-P-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: Post-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0001310:
+  normal:
+    TNBC011-Saliva-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Normal
+      type: saliva
+  tumour:
+    LS16-3359-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC011-S1-P-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Post-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0001312:
+  normal:
+    TNBC010-Saliva-DNA-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Normal
+      type: saliva
+  tumour:
+    PS15-18250-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    TNBC010-S1-P-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma baseline
+PBC0001315:
+  normal:
+    TNBC020-Saliva-DNA-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Normal
+      type: saliva
+  tumour:
+    PS15-23075-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    TNBC020-S1-P-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma baseline
+PBC0001320:
+  normal:
+    TNBC1320-Saliva-DNA-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Normal
+      type: saliva
+  tumour:
+    PS15-21316-A2-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    PS16-16160-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    TNBC1320-S1-P-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma baseline
 PBC0001321:
   normal:
     TNBC078-Saliva-DNA-CRCQV42Run025:
@@ -19,6 +676,141 @@ PBC0001321:
       run: Run025
       sample_status: ''
       type: TNBC FFPE
+PBC0001322:
+  normal:
+    TNBC086-Saliva-DNA-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Normal
+      type: saliva
+  tumour:
+    TNBC0001322-7-S1-P-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 21 month
+    TNBC086p-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+    TNBC1322-2-S1-P-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Pre-Surgery/Post-Chemo
+      type: plasma 6 month
+    TNBC1322-3-S1-P-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 9 month
+    TNBC1322-4p-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 18 month
+    VS17-27309-A34-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Treatment received Primary Sx
+      type: TNBC FFPE
+PBC0001323:
+  normal:
+    TNBC027-Saliva-DNA-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Normal
+      type: saliva
+  tumour:
+    RS16-6460-A1-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC027-S1-P-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0001327:
+  normal:
+    TNBC1327s-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: Normal
+      type: saliva
+  tumour:
+    TNBC1327p-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: Post-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0001328:
+  normal:
+    TNBC1328s-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Normal
+      type: saliva
+  tumour:
+    16RS-37310-1A-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC1328p-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0001333:
+  normal:
+    TNBC066s-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BS16-7673A1-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC066p-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+    TNBC1333-6-S1-P1-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 18 month repeat
+    TNBC1333-6p-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 18 month
 PBC0001335:
   normal:
     TNBC047-Saliva-DNA-CRCQV42Run025:
@@ -34,6 +826,117 @@ PBC0001335:
       run: Run025
       sample_status: ''
       type: TNBC FFPE
+PBC0001351:
+  normal:
+    TNBC1351-Saliva-DNA-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Normal
+      type: saliva
+  tumour:
+    PS15-905-A1-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC1351-S1-P-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 19 month
+    VBA0841-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Pre-Surgery/Post-Chemo
+      type: earliest baseline plasma
+PBC0001352:
+  normal:
+    TNBC1352s-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: Normal
+      type: saliva
+  tumour:
+    TNBC1352p-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: Post-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0001396:
+  normal:
+    TNBC1396s-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: Normal
+      type: saliva
+  tumour:
+    TNBC1396p-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma baseline
+PBC0001411:
+  normal:
+    TNBC1411s-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Normal
+      type: saliva
+  tumour:
+    SR17-1840-A1-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC1411p-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Pre-Surgery/Post-Chemo
+      type: plasma baseline
+    TNBC1411p-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: Pre-Surgery/Post-Chemo
+      type: plasma baseline repeat
+PBC0001432:
+  normal:
+    TNBC1432s-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Normal
+      type: saliva
+  tumour:
+    17-5157-A1-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC0001432-6-S1-P-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Post-Surgery/Pre-Chemo
+      type: plasma 18 month
+    TNBC1432p-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Post-Surgery/Pre-Chemo
+      type: plasma baseline
 PBC0001466:
   normal:
     TNBC056-Saliva-DNA-CRCQV42Run025:
@@ -73,6 +976,123 @@ PBC0001466:
       run: Run023
       sample_status: Pre-Surgery/Post-Chemo
       type: earliest baseline plasma
+PBC0001467:
+  normal:
+    TNBC1467s-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: Normal
+      type: saliva
+  tumour:
+    TNBC1467p-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma baseline
+PBC0001470:
+  normal:
+    TNBC035-Saliva-DNA-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BOB104-S1-P-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: earliest baseline plasma
+    PS16-11271-A1-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC035-S1-P-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Pre-Surgery/Post-Chemo
+      type: plasma 1 month
+PBC0001472:
+  normal:
+    TNBC017-Saliva-DNA-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Normal
+      type: saliva
+  tumour:
+    TNBC017-S1-P-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma baseline
+    VS13-34852-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+PBC0001475:
+  normal:
+    TNBC059-Saliva-DNA-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Normal
+      type: saliva
+    TNBC059BC-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Normal
+      type: buffy coat
+  tumour:
+    16-15534-A1-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC059-1-S1-P-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Pre-Surgery/Post-Chemo
+      type: plasma 12 month
+    TNBC059p-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Pre-Surgery/Post-Chemo
+      type: plasma baseline
+PBC0001516:
+  normal:
+    TNBC1516-Saliva-DNA-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Normal
+      type: saliva
+  tumour:
+    SS11-19202-1D-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    TNBC1516-S1-P-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
 PBC0001589:
   normal:
     TNBC1589-Saliva-DNA-CRCQV42Run024:
@@ -93,6 +1113,864 @@ PBC0001589:
       fastq2: ''
       run: Run024
       sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0001627:
+  normal:
+    TNBC1627s-CRCQV34Run002:
+      fastq1: ''
+      fastq2: ''
+      run: Run002
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BS17-1477A1-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC1627-2-S1-P-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 6 month
+    TNBC1627-4p-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 12 month
+    TNBC1627p-CRCQV34Run002:
+      fastq1: ''
+      fastq2: ''
+      run: Run002
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0001653:
+  normal:
+    TNBC1653-Saliva-DNA-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Normal
+      type: saliva
+  tumour:
+    17SS-11705-1A-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC1653-S1-P-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0001672:
+  normal:
+    TNBC032-Saliva-DNA-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Normal
+      type: saliva
+  tumour:
+    16SS-4490-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    TNBC032-S1-P-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma baseline
+PBC0001673:
+  normal:
+    TNBC048s-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Normal
+      type: saliva
+  tumour:
+    16-14409-A1-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC0001673-8-S1-P-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 24 month
+    TNBC048p-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0001674:
+  normal:
+    TNBC057-Saliva-DNA-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Normal
+      type: saliva
+  tumour:
+    PS16-14275-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    TNBC057-S1-P-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Post-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0001676:
+  normal:
+    TNBC1676-Saliva-DNA-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: Normal
+      type: saliva
+  tumour:
+    12RS-2039-2M-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    TNBC1676-S1-P-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma baseline
+PBC0001723:
+  normal:
+    TNBC1723-Saliva-DNA-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: Normal
+      type: saliva
+  tumour:
+    TNBC1723-S1-P-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: Post-Surgery/Pre-Chemo
+      type: plasma 3 month
+    TTR0001367-S1-P-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: earliest baseline plasma
+    VS17-12524-D26-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+PBC0001757:
+  normal:
+    TNBC1757s-CRCQV34Run002:
+      fastq1: ''
+      fastq2: ''
+      run: Run002
+      sample_status: Normal
+      type: saliva
+  tumour:
+    13SS-16267-2D-CRCQV42Run021:
+      fastq1: ''
+      fastq2: ''
+      run: Run021
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    TNBC1757p-CRCQV34Run002:
+      fastq1: ''
+      fastq2: ''
+      run: Run002
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma baseline
+PBC0001845:
+  normal:
+    TNBC1845s-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Normal
+      type: saliva
+  tumour:
+    17SS-16631-1A-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC1845-2-S1-P-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 6 month
+    TNBC1845-4-S1-P1-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 12 month repeat
+    TNBC1845-4p-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: N/A
+      type: VOID
+    TNBC1845p-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0001859:
+  normal:
+    TNBC1859-Saliva-DNA-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Normal
+      type: saliva
+  tumour:
+    3405-A1-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC1859-S1-P-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0002062:
+  normal:
+    TNBC2062s-CRCQV34Run002:
+      fastq1: ''
+      fastq2: ''
+      run: Run002
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BS17-4081A1-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC2062-2-S1-P-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 6 month
+    TNBC2062-4-S1-P1-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 12 month repeat
+    TNBC2062-4p-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: N/A
+      type: VOID
+    TNBC2062p-CRCQV34Run002:
+      fastq1: ''
+      fastq2: ''
+      run: Run002
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0002088:
+  normal:
+    TNBC2088s-CRCQV34Run002:
+      fastq1: ''
+      fastq2: ''
+      run: Run002
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BS17-4225A1-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    BS17-4225B2-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC2088-1-S1-P-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Pre-Surgery/Post-Chemo
+      type: plasma 3 month
+    TNBC2088-2-S1-P-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Pre-Surgery/Post-Chemo
+      type: plasma 6 month
+    TNBC2088p-CRCQV34Run002:
+      fastq1: ''
+      fastq2: ''
+      run: Run002
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0002108:
+  normal:
+    TNBC2108s-CRCQV34Run002:
+      fastq1: ''
+      fastq2: ''
+      run: Run002
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BS17-4001A1-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC2108-4p-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 12 month
+    TNBC2108p-CRCQV34Run002:
+      fastq1: ''
+      fastq2: ''
+      run: Run002
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0002255:
+  normal:
+    TNBC2255s-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Normal
+      type: saliva
+  tumour:
+    SR17-7200-A1-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC2255-3-S1-P-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 12 month
+    TNBC2255p-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Pre-Surgery/Post-Chemo
+      type: plasma baseline
+PBC0002279:
+  normal: {}
+  tumour:
+    BS16-4763-A1-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: ''
+      type: TNBC FFPE
+PBC0002294:
+  normal:
+    TNBC2294s-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Normal
+      type: saliva
+  tumour:
+    SR17-15897-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC2294-3-S1-P-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 12 month
+    TNBC2294p-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0002383:
+  normal:
+    TNBC2383-Saliva-DNA-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Normal
+      type: saliva
+    TNBC2383BC-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Normal
+      type: buffy coat
+  tumour:
+    BS17-5362A1-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC0002383-4-S1-P-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 12 month
+    TNBC2383-S1-P1-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline repeat
+    TNBC2383p-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0002406:
+  normal:
+    TNBC2406-Saliva-DNA-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: Normal
+      type: saliva
+  tumour:
+    NS17-17731-A1-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC2406-S1-P-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0002429:
+  normal:
+    TNBC2429s-CRCQV34Run002:
+      fastq1: ''
+      fastq2: ''
+      run: Run002
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BS17-5647A1-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC2429-3-S1-P-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 9 month
+    TNBC2429p-CRCQV34Run002:
+      fastq1: ''
+      fastq2: ''
+      run: Run002
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0002459:
+  normal:
+    TNBC2459s-CRCQV34Run002:
+      fastq1: ''
+      fastq2: ''
+      run: Run002
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BS17-5576A1-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC2459-3p-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 9 month
+    TNBC2459p-CRCQV34Run002:
+      fastq1: ''
+      fastq2: ''
+      run: Run002
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0002595:
+  normal:
+    TNBC2595s-CRCQV34Run002:
+      fastq1: ''
+      fastq2: ''
+      run: Run002
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BS17-6304A1-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC2595-2p-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 6 month
+    TNBC2595p-CRCQV34Run002:
+      fastq1: ''
+      fastq2: ''
+      run: Run002
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0002674:
+  normal:
+    TNBC2674s-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Normal
+      type: saliva
+  tumour:
+    PS17-24074B1-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC2674-1-S1-P-CRCQV42Run020:
+      fastq1: ''
+      fastq2: ''
+      run: Run020
+      sample_status: Pre-Surgery/Post-Chemo
+      type: plasma 3 month
+    TNBC2674-2p-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 6 month
+    TNBC2674p-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0002680:
+  normal:
+    TNBC2680s-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Normal
+      type: saliva
+  tumour:
+    PS17-23976-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC2680-2-S1-P1-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 6 month repeat
+    TNBC2680-2p-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: N/A
+      type: VOID
+    TNBC2680p-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0002744:
+  normal:
+    TNBC2744-Saliva-DNA-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: Normal
+      type: saliva
+  tumour:
+    SK17-23341-A1-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC2744-S1-P-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0002762:
+  normal:
+    TNBC2762-Saliva-DNA-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Normal
+      type: saliva
+    TNBC2762BC-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Normal
+      type: buffy coat
+  tumour:
+    TNBC0002762-3-S1-P-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Post-Surgery/Pre-Chemo
+      type: plasma 9 month
+    TNBC2762p-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+    VS17-43716B6-CRCQV34Run011:
+      fastq1: ''
+      fastq2: ''
+      run: Run011
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+PBC0002789:
+  normal:
+    TNBC2789-BC-DNA-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Normal
+      type: buffy coat
+    TNBC2789-Saliva-DNA-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Normal
+      type: saliva
+  tumour:
+    R16-12816-A1-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    RS-17-8043-A3-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    TNBC2789-S1-P-CRCQV42Run018:
+      fastq1: ''
+      fastq2: ''
+      run: Run018
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma baseline
+PBC0002816:
+  normal:
+    TNBC2816BC-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Normal
+      type: buffy coat
+  tumour:
+    BS17-7196A2-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC0002816-2-S1-P-CRCQV42Run017:
+      fastq1: ''
+      fastq2: ''
+      run: Run017
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma 6 month
+    TNBC2816p-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0002824:
+  normal:
+    TNBC2824-Saliva-DNA-CRCQV42Run023:
+      fastq1: ''
+      fastq2: ''
+      run: Run023
+      sample_status: Normal
+      type: saliva
+    TNBC2824BC-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Normal
+      type: buffy coat
+  tumour:
+    BS17-7319A1-CRCQV34Run005:
+      fastq1: ''
+      fastq2: ''
+      run: Run005
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC2824-2p-CRCQV34Run015:
+      fastq1: ''
+      fastq2: ''
+      run: Run015
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma 6 month
+    TNBC2824p-CRCQV34Run007:
+      fastq1: ''
+      fastq2: ''
+      run: Run007
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0002826:
+  normal:
+    TNBC2826-Saliva-DNA-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: Normal
+      type: saliva
+  tumour:
+    17SS-35275-1A-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC2826-S1-P-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0002853:
+  normal:
+    TNBC2853-Saliva-DNA-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Normal
+      type: saliva
+  tumour:
+    SK17-24670-A1-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC2853-S1-P-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0002862:
+  normal:
+    TNBC2862-Saliva-DNA-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Normal
+      type: saliva
+  tumour:
+    NS17-23204-B1-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC2862-S1-P-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Post-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0002872:
+  normal:
+    TNBC2872-Saliva-DNA-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BS17-7640-A2-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: ''
+      type: TNBC FFPE
+    TNBC2872-S1-4mL-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: ''
       type: plasma baseline
 PBC0003014:
   normal:
@@ -115,6 +1993,21 @@ PBC0003014:
       run: Run026
       sample_status: ''
       type: plasma baseline
+PBC0003097:
+  normal:
+    TNBC3097-Saliva-DNA-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: Normal
+      type: saliva
+  tumour:
+    H13-2359-A1-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: ''
+      type: TNBC FFPE
 PBC0003334:
   normal:
     TNBC3334-Saliva-DNA-CRCQV42Run025:
@@ -172,6 +2065,21 @@ PBC0003385:
       run: Run026
       sample_status: ''
       type: plasma baseline
+PBC0003587:
+  normal:
+    TNBC3587-Saliva-DNA-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BS18-2010-A1-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: ''
+      type: TNBC FFPE
 PBC0003595:
   normal:
     TNBC3595-Saliva-DNA-CRCQV42Run025:
@@ -193,6 +2101,36 @@ PBC0003595:
       run: Run026
       sample_status: ''
       type: plasma baseline
+PBC0003641:
+  normal:
+    TNBC3641-Saliva-DNA-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Normal
+      type: saliva
+  tumour:
+    18SS-8579-1A-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Treatment naive Primary Bx
+      type: TNBC FFPE
+    TNBC3641-S1-P-CRCQV42Run024:
+      fastq1: ''
+      fastq2: ''
+      run: Run024
+      sample_status: Pre-Surgery/Pre-Chemo
+      type: plasma baseline
+PBC0003643:
+  normal: {}
+  tumour:
+    BS18-3827-A1-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: ''
+      type: TNBC FFPE
 PBC0003769:
   normal:
     TNBC3769-Saliva-DNA-CRCQV42Run024:
@@ -280,6 +2218,39 @@ PBC0003911:
       run: Run026
       sample_status: ''
       type: plasma baseline
+PBC0005064:
+  normal:
+    TNBC5064-Saliva-DNA-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: Normal
+      type: saliva
+  tumour:
+    BS19-519-B1-CRCQV42Run026:
+      fastq1: ''
+      fastq2: ''
+      run: Run026
+      sample_status: ''
+      type: TNBC FFPE
+QC-KAPPA:
+  normal: {}
+  tumour:
+    QC-KAPPA-CRCQV42Run022:
+      fastq1: ''
+      fastq2: ''
+      run: Run022
+      sample_status: N/A
+      type: Quality Control
+QMRS Test:
+  normal: {}
+  tumour:
+    QMRS-QC-CRCQV42Run019:
+      fastq1: ''
+      fastq2: ''
+      run: Run019
+      sample_status: N/A
+      type: Quality Control
 QMRS-WGA:
   normal: {}
   tumour:
@@ -289,3 +2260,66 @@ QMRS-WGA:
       run: Run025
       sample_status: N/A
       type: Quality Control
+VS14-00459:
+  normal: {}
+  tumour:
+    VS14-00459-A1-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: N/A
+      type: Norm Endometrium
+VS14-02225:
+  normal: {}
+  tumour:
+    VS14-02225-A1-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: N/A
+      type: Norm Endometrium
+VS14-20594:
+  normal: {}
+  tumour:
+    VS14-20594-A1-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: N/A
+      type: Norm Endometrium
+VS14-23606:
+  normal: {}
+  tumour:
+    VS14-23606-A1-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: N/A
+      type: Norm Endometrium
+VS14-24055:
+  normal: {}
+  tumour:
+    VS14-24055-A1-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: N/A
+      type: Norm Endometrium
+VS14-40579:
+  normal: {}
+  tumour:
+    VS14-40579-A1-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: N/A
+      type: Norm Endometrium
+VS14-43711:
+  normal: {}
+  tumour:
+    VS14-43711-A1-CRCQV42Run016:
+      fastq1: ''
+      fastq2: ''
+      run: Run016
+      sample_status: N/A
+      type: Norm Endometrium
