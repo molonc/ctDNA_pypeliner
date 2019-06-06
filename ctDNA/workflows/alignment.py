@@ -5,31 +5,27 @@ import pypeliner
 import pypeliner.workflow
 import pypeliner.managed as mgd
 
-# def align_samples(config, fastq1_inputs, fastq2_inputs):
-# 	print fastq1_inputs
-# 	print fastq2_inputs
-# 	samples = fastq1_inputs.keys()
-# 	workflow = pypeliner.workflow.Workflow()
+def align_samples(config, fastq1_inputs, fastq2_inputs):
+	samples = fastq1_inputs.keys()
+	workflow = pypeliner.workflow.Workflow()
 
-# 	workflow.setobj(obj=mgd.OutputChunks('sample_id'), value=samples)
+	workflow.setobj(obj=mgd.OutputChunks('sample_id'), value=samples)
 
-# 	workflow.subworkflow(
-# 		name='align_samples',
-# 		func=align_sample,
-# 		axes=('sample_id',),
-# 		args=(
-# 			config, 
-# 			mgd.InputFile('{sample_id}', 'sample_id', fnames=fastq1_inputs),
-# 			mgd.InputFile('{sample_id}', 'sample_id', fnames=fastq2_inputs),
-# 			mgd.InputInstance('sample_id')
-# 			),
-# 		)
+	workflow.subworkflow(
+		name='align_samples',
+		func=align_sample,
+		axes=('sample_id',),
+		args=(
+			config, 
+			mgd.InputFile('fastq_1', 'sample_id', fnames=fastq1_inputs),
+			mgd.InputFile('fastq_2', 'sample_id', fnames=fastq2_inputs),
+			mgd.InputInstance('sample_id')
+			),
+		)
 
-# 	return workflow
+	return workflow
 
-def align_sample(config, fastq_1, fastq_2):
-	sample_id = args['fastq_1'].split("/")[-1].split("_")[0]
-
+def align_sample(config, fastq_1, fastq_2, sample_id):
 	workflow = pypeliner.workflow.Workflow()
 
 	workflow.commandline(
@@ -100,6 +96,7 @@ if __name__ == '__main__':
 	config = yaml.safe_load(open(args['config'], 'r'))
 	fastq_1 = args['fastq_1']
 	fastq_2 = args['fastq_2']
+	sample_id = fastq_1.split("/")[-1].split("_")[0]
 
 	workflow.subworkflow(
 		name="align_sample",
@@ -107,7 +104,8 @@ if __name__ == '__main__':
 		args=(
 			config,
 			mgd.InputFile(fastq_1),
-			mgd.InputFile(fastq_2)
+			mgd.InputFile(fastq_2),
+			sample_id
 			)
 		)
 	pyp.run(workflow)
