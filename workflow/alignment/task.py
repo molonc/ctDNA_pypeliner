@@ -1,42 +1,34 @@
 import os
 import pypeliner
 
-def markdups(input, output, metrics, tempdir, mem="2G"):
-    cmd = ['picard', '-Xmx' + mem, '-Xms' + mem,
-           '-XX:ParallelGCThreads=1',
-           'MarkDuplicates',
-           'INPUT=' + input,
-           'OUTPUT=' + output,
-           'METRICS_FILE=' + metrics,
-           'REMOVE_DUPLICATES=False',
-           'ASSUME_SORTED=True',
-           'VALIDATION_STRINGENCY=LENIENT',
-           'TMP_DIR=' + tempdir,
-           'MAX_RECORDS_IN_RAM=150000'
-           ]
+# def markdups(input, output, metrics, tempdir, mem="2G"):
+#     cmd = ['picard', '-Xmx' + mem, '-Xms' + mem,
+#            '-XX:ParallelGCThreads=1',
+#            'MarkDuplicates',
+#            'INPUT=' + input,
+#            'OUTPUT=' + output,
+#            'METRICS_FILE=' + metrics,
+#            'REMOVE_DUPLICATES=False',
+#            'ASSUME_SORTED=True',
+#            'VALIDATION_STRINGENCY=LENIENT',
+#            'TMP_DIR=' + tempdir,
+#            'MAX_RECORDS_IN_RAM=150000'
+#            ]
+
+#     pypeliner.commandline.execute(*cmd)
+
+
+def sort(infile, outfile, mem="2G"):
+    cmd = [
+        'samtools',
+        'sort',
+        '-m', mem,
+        '-o', outfile,
+    ]
+
+    cmd.append(infile)
 
     pypeliner.commandline.execute(*cmd)
-
-
-def picard_merge_bams(inputs, output, mem="2G", **kwargs):
-    if isinstance(inputs, dict):
-        inputs = inputs.values()
-
-    cmd = ['picard', '-Xmx' + mem, '-Xms' + mem,
-           '-XX:ParallelGCThreads=1',
-           'MergeSamFiles',
-           'OUTPUT=' + output,
-           'SORT_ORDER=coordinate',
-           'ASSUME_SORTED=true',
-           'VALIDATION_STRINGENCY=LENIENT',
-           'MAX_RECORDS_IN_RAM=150000'
-           ]
-
-    for bamfile in inputs:
-        cmd.append('I=' + os.path.abspath(bamfile))
-
-    pypeliner.commandline.execute(*cmd, **kwargs)
-
 
 def bam_index(infile, outfile, **kwargs):
     pypeliner.commandline.execute(
@@ -45,12 +37,6 @@ def bam_index(infile, outfile, **kwargs):
         outfile,
         **kwargs)
 
-
-def merge_bams(inputs, output, output_index, containers):
-    if not containers:
-        containers = {}
-    picard_merge_bams(inputs, output, docker_image=containers.get('picard'))
-    bam_index(output, output_index, docker_image=containers.get('samtools'))
 
 
 def align_bwa_mem(read_1, read_2, ref_genome, aligned_bam, threads, sample_id=None, lane_id=None, read_group_info=None):
