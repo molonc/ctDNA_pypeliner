@@ -5,20 +5,12 @@ import pypeliner
 import pypeliner.workflow
 import pypeliner.managed as mgd
 
-def align():
-	argparser = argparse.ArgumentParser()
-	pypeliner.app.add_arguments(argparser)
-
-	argparser.add_argument('fastq_one', help='fastq file of read 1')
-	argparser.add_argument('fastq_two', help='fastq file of read 2')
-	argparser.add_argument('config', help='Configuration filename')
-
-	args = vars(argparser.parse_args())
-	config = yaml.safe_load(open(args['config'], 'r'))
-	sample_id = args['fastq_one'].split("/")[-1].split("_")[0]
-
+def align(args):
 	pyp = pypeliner.app.Pypeline(modules=(), config=args)
 	workflow = pypeliner.workflow.Workflow()
+
+	config = yaml.safe_load(open(args['config'], 'r'))
+	sample_id = args['fastq_one'].split("/")[-1].split("_")[0]
 
 	workflow.commandline(
 		name='fastq_to_sam',
@@ -73,4 +65,12 @@ def align():
 
 
 if __name__ == '__main__':
-	align()
+	argparser = argparse.ArgumentParser()
+	pypeliner.app.add_arguments(argparser)
+
+	argparser.add_argument('fastq_one', help='fastq file of read 1')
+	argparser.add_argument('fastq_two', help='fastq file of read 2')
+	argparser.add_argument('config', help='Configuration filename')
+
+	args = vars(argparser.parse_args())
+	align(args)
