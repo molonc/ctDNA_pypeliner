@@ -50,8 +50,8 @@ PBC0001051:
       sample_status: Treatment naive Primary Sx
       type: TNBC FFPE
     TNBC0001051-6-S1-P-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC0001051-6-S1-P-CRCQV42Run017-20_S20_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC0001051-6-S1-P-CRCQV42Run017-20_S20_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Post-Surgery/Post-Chemo
       type: plasma 18 month
@@ -263,8 +263,8 @@ PBC0001224:
       sample_status: Pre-Surgery/Pre-Chemo
       type: plasma baseline
     TNBC1224-5-S1-P-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1224-5-S1-P-CRCQV42Run017-8_S8_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1224-5-S1-P-CRCQV42Run017-8_S8_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Post-Surgery/Post-Chemo
       type: plasma 15 month
@@ -290,8 +290,8 @@ PBC0001255:
       sample_status: Treatment naive Primary Bx
       type: TNBC FFPE
     TNBC0001255-5-S1-P-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC0001255-5-S1-P-CRCQV42Run017-9_S9_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC0001255-5-S1-P-CRCQV42Run017-9_S9_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Post-Surgery/Post-Chemo
       type: plasma 18 month
@@ -679,8 +679,8 @@ PBC0001321:
 PBC0001322:
   normal:
     TNBC086-Saliva-DNA-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC086-Saliva-DNA-CRCQV42Run017-23_S23_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC086-Saliva-DNA-CRCQV42Run017-23_S23_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Normal
       type: saliva
@@ -704,8 +704,8 @@ PBC0001322:
       sample_status: Pre-Surgery/Post-Chemo
       type: plasma 6 month
     TNBC1322-3-S1-P-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1322-3-S1-P-CRCQV42Run017-5_S5_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1322-3-S1-P-CRCQV42Run017-5_S5_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Post-Surgery/Post-Chemo
       type: plasma 9 month
@@ -806,8 +806,8 @@ PBC0001333:
       sample_status: Post-Surgery/Post-Chemo
       type: plasma 18 month
     TNBC1333-6-S1-P1-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1333-6-S1-P1-CRCQV42Run017-7_S7_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1333-6-S1-P1-CRCQV42Run017-7_S7_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Post-Surgery/Post-Chemo
       type: plasma 18 month repeat
@@ -926,8 +926,8 @@ PBC0001432:
       sample_status: Treatment naive Primary Bx
       type: TNBC FFPE
     TNBC0001432-6-S1-P-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC0001432-6-S1-P-CRCQV42Run017-19_S19_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC0001432-6-S1-P-CRCQV42Run017-19_S19_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Post-Surgery/Pre-Chemo
       type: plasma 18 month
@@ -965,8 +965,8 @@ PBC0001466:
       sample_status: Post-Surgery/Post-Chemo
       type: plasma 93 month
     TNBC1466-5-S1-P-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1466-5-S1-P-CRCQV42Run017-14_S14_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1466-5-S1-P-CRCQV42Run017-14_S14_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Post-Surgery/Post-Chemo
       type: plasma 108 month
@@ -1061,8 +1061,8 @@ PBC0001475:
       sample_status: Treatment naive Primary Bx
       type: TNBC FFPE
     TNBC059-1-S1-P-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC059-1-S1-P-CRCQV42Run017-6_S6_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC059-1-S1-P-CRCQV42Run017-6_S6_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Pre-Surgery/Post-Chemo
       type: plasma 12 month
@@ -1130,8 +1130,8 @@ PBC0001627:
       sample_status: Treatment naive Primary Bx
       type: TNBC FFPE
     TNBC1627-2-S1-P-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1627-2-S1-P-CRCQV42Run017-22_S22_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1627-2-S1-P-CRCQV42Run017-22_S22_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Post-Surgery/Post-Chemo
       type: plasma 6 month
@@ -1205,8 +1205,8 @@ PBC0001673:
       sample_status: Treatment naive Primary Bx
       type: TNBC FFPE
     TNBC0001673-8-S1-P-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC0001673-8-S1-P-CRCQV42Run017-15_S15_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC0001673-8-S1-P-CRCQV42Run017-15_S15_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Post-Surgery/Post-Chemo
       type: plasma 24 month
@@ -1322,8 +1322,8 @@ PBC0001845:
       sample_status: Treatment naive Primary Bx
       type: TNBC FFPE
     TNBC1845-2-S1-P-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1845-2-S1-P-CRCQV42Run017-11_S11_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1845-2-S1-P-CRCQV42Run017-11_S11_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Post-Surgery/Post-Chemo
       type: plasma 6 month
@@ -1382,8 +1382,8 @@ PBC0002062:
       sample_status: Treatment naive Primary Bx
       type: TNBC FFPE
     TNBC2062-2-S1-P-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2062-2-S1-P-CRCQV42Run017-17_S17_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2062-2-S1-P-CRCQV42Run017-17_S17_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Post-Surgery/Post-Chemo
       type: plasma 6 month
@@ -1433,8 +1433,8 @@ PBC0002088:
       sample_status: Pre-Surgery/Post-Chemo
       type: plasma 3 month
     TNBC2088-2-S1-P-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2088-2-S1-P-CRCQV42Run017-4_S4_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2088-2-S1-P-CRCQV42Run017-4_S4_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Pre-Surgery/Post-Chemo
       type: plasma 6 month
@@ -1487,8 +1487,8 @@ PBC0002255:
       sample_status: Treatment naive Primary Bx
       type: TNBC FFPE
     TNBC2255-3-S1-P-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2255-3-S1-P-CRCQV42Run017-10_S10_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2255-3-S1-P-CRCQV42Run017-10_S10_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Post-Surgery/Post-Chemo
       type: plasma 12 month
@@ -1516,15 +1516,15 @@ PBC0002294:
       sample_status: Normal
       type: saliva
   tumour:
-    SR17-15897-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+    SKL17-15897-CRCQV42Run017:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/SKL17-15897-CRCQV42Run017-24_S24_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/SKL17-15897-CRCQV42Run017-24_S24_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Treatment naive Primary Bx
       type: TNBC FFPE
     TNBC2294-3-S1-P-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2294-3-S1-P-CRCQV42Run017-18_S18_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2294-3-S1-P-CRCQV42Run017-18_S18_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Post-Surgery/Post-Chemo
       type: plasma 12 month
@@ -1556,8 +1556,8 @@ PBC0002383:
       sample_status: Treatment naive Primary Bx
       type: TNBC FFPE
     TNBC0002383-4-S1-P-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC0002383-4-S1-P-CRCQV42Run017-13_S13_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC0002383-4-S1-P-CRCQV42Run017-13_S13_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Post-Surgery/Post-Chemo
       type: plasma 12 month
@@ -1610,8 +1610,8 @@ PBC0002429:
       sample_status: Treatment naive Primary Bx
       type: TNBC FFPE
     TNBC2429-3-S1-P-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2429-3-S1-P-CRCQV42Run017-12_S12_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2429-3-S1-P-CRCQV42Run017-12_S12_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Post-Surgery/Post-Chemo
       type: plasma 9 month
@@ -1778,8 +1778,8 @@ PBC0002762:
       type: buffy coat
   tumour:
     TNBC0002762-3-S1-P-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC0002762-3-S1-P-CRCQV42Run017-21_S21_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC0002762-3-S1-P-CRCQV42Run017-21_S21_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Post-Surgery/Pre-Chemo
       type: plasma 9 month
@@ -1844,8 +1844,8 @@ PBC0002816:
       sample_status: Treatment naive Primary Bx
       type: TNBC FFPE
     TNBC0002816-2-S1-P-CRCQV42Run017:
-      fastq1: ''
-      fastq2: ''
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC0002816-2-S1-P-CRCQV42Run017-16_S16_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC0002816-2-S1-P-CRCQV42Run017-16_S16_L001_R2_001.fastq.gz
       run: Run017
       sample_status: Pre-Surgery/Pre-Chemo
       type: plasma 6 month

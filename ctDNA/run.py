@@ -6,26 +6,41 @@ import pypeliner.workflow
 import pypeliner.managed as mgd
 import helpers
 import workflows.alignment as alignment
+import workflows.analysis_workflow as analysis
 
-def alignment_workflow(args):
+def ctDNA_workflow(args):
 	pyp = pypeliner.app.Pypeline(modules=(), config=args)
 	workflow = pypeliner.workflow.Workflow()
 
 	config = helpers.load_yaml(args['config'])
 	inputs = helpers.load_yaml(args['input_yaml'])
 
-	fastqs_r1 = helpers.get_values_from_input(inputs, 'fastq1')
-	fastqs_r2 = helpers.get_values_from_input(inputs, 'fastq2')
-	
+	normal_samples = list(str(sample) for sample in inputs["normal"])
+	tumour_samples = list(str(sample) for sample in inputs["tumour"])
+
+	fastqs_r1 = helpers.get_fastq_files(inputs, 'fastq1')
+	fastqs_r2 = helpers.get_fastq_files(inputs, 'fastq2')
+
 	workflow.subworkflow(
 		name="align_samples",
 		func=alignment.align_samples,
 		args=(
 			config,
+			fastqs_r1,
 			fastqs_r2,
-			fastqs_r1
 			)
 		)
+
+	workflow.subworkflow(
+		name="run_anlyses",
+		func=analysis.run_multi,
+		args=(
+			config, 
+			tumour_samples,
+			normal_samples,
+			)
+		)
+
 	pyp.run(workflow)
 
 if __name__ == '__main__':
@@ -36,4 +51,4 @@ if __name__ == '__main__':
 	argparser.add_argument('config', help='Configuration filename')
 
 	args = vars(argparser.parse_args())
-	alignment_workflow(args)
+	ctDNA_workflow(args)

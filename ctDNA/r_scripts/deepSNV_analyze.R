@@ -19,4 +19,4 @@ regions <- data.frame(chr=bed[,"V1"], start=bed[,"V2"], stop=bed[,"V3"])
 analysis <- deepSNV(test=opt$tumour, control=opt$normal, q=opt$quality, regions=regions)
 summary <- summary(analysis)
 
-write.table(summary, opt$out, sep="\t", row.names=FALSE)
+write.table(summary, opt$out, sep="\t", row.names=FALSE, quote=FALSE)

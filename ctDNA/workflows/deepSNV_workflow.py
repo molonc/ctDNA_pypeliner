@@ -5,7 +5,7 @@ import pypeliner
 import pypeliner.workflow
 import pypeliner.managed as mgd
 
-def run_deepSNV(config, tumour_bam, normal_bam, sample_id):
+def run_deepSNV(config, tumour_sample, tumour_bam, normal_sample, normal_bam):
 	workflow = pypeliner.workflow.Workflow()
 
 	workflow.commandline(
@@ -22,7 +22,7 @@ def run_deepSNV(config, tumour_bam, normal_bam, sample_id):
 			'--quality',
 			10,
 			'--out',
-			mgd.OutputFile(config["results_dir"] + '{}_deepSNV_out.tsv'.format(sample_id)),
+			mgd.OutputFile(config["results_dir"] + '{}-{}_deepSNV_out.tsv'.format(normal_sample, tumour_sample)),
 
 			)
 		)
@@ -45,16 +45,17 @@ if __name__ == '__main__':
 	config = yaml.safe_load(open(args['config'], 'r'))
 	tumour_bam = args['tumour']
 	normal_bam = args['normal']
-	sample_id = args['tumour'].split("/")[-1].split(".")[0]
-
+	tumour_sample = args['tumour'].split("/")[-1].split(".")[0]
+	normal_sample = args['normal'].split("/")[-1].split(".")[0]
 	workflow.subworkflow(
 		name="analyze_with_deepSNV",
 		func=run_deepSNV,
 		args=(
 			config,
+			tumour_sample,
 			tumour_bam,
 			normal_bam,
-			sample_id
+			normal_sample,
 			)
 		)
 

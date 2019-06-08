@@ -8,16 +8,12 @@ def get_value_from_file(yamlfile, key):
 	data = load_yaml(yamlfile)
 	return data[key]
 
-def get_fastq_files(input_yaml):
-	data = load_yaml(input_yaml)
+def get_fastq_files(data, key):
 
 	items = {}
-	for cell_id, cell_data in data.iteritems():
-		items[cell_id] = {}
-		for lane, laneinfo in cell_data["fastqs"].iteritems():
-			items[cell_id][lane] = {}
-			items[cell_id][lane]['fastq_1'] = format_file_yaml(laneinfo['fastq_1'])
-			items[cell_id][lane]['fastq_2'] = format_file_yaml(laneinfo['fastq_2'])
+	for cell_type, cell_data in data.iteritems():
+		for sample, sample_info in cell_data.iteritems():
+			items[sample] = sample_info[key]
 	return items
 
 def load_yaml(path):

@@ -9,7 +9,7 @@ def align_samples(config, fastq1_inputs, fastq2_inputs):
 	samples = fastq1_inputs.keys()
 	workflow = pypeliner.workflow.Workflow()
 
-	workflow.setobj(obj=mgd.OutputChunks('sample_id'), value=samples)
+	workflow.setobj(obj=mgd.OutputChunks('sample_id',), value=samples)
 
 	workflow.subworkflow(
 		name='align_samples',
@@ -19,7 +19,7 @@ def align_samples(config, fastq1_inputs, fastq2_inputs):
 			config, 
 			mgd.InputFile('fastq_1', 'sample_id', fnames=fastq1_inputs),
 			mgd.InputFile('fastq_2', 'sample_id', fnames=fastq2_inputs),
-			mgd.InputInstance('sample_id')
+			mgd.InputInstance('sample_id'),
 			),
 		)
 
