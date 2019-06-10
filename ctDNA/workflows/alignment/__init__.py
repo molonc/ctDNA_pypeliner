@@ -32,7 +32,7 @@ def align_sample(config, fastq_1, fastq_2, sample_id):
 			config["reference_genome"],
 			mgd.InputFile(fastq_1),
 			mgd.InputFile(fastq_2),
-			mgd.TempOutputFile(config["results_dir"] + '{}.sam'.format(sample_id)),
+			mgd.TempOutputFile('tmp.sam'),
 			)
 		)
 
@@ -40,8 +40,8 @@ def align_sample(config, fastq_1, fastq_2, sample_id):
 		name='sam_to_bam',
 		func=tasks.sam_to_bam,
 		args=(
-			mgd.TempInputFile(config["results_dir"] + '{}.sam'.format(sample_id)),
-			mgd.TempOutputFile(config["results_dir"] + '{}.bam'.format(sample_id)),
+			mgd.TempInputFile('tmp.sam'),
+			mgd.TempOutputFile('tmp.bam'),
 			)
 		)
 
@@ -49,7 +49,7 @@ def align_sample(config, fastq_1, fastq_2, sample_id):
 		name='sort_bam',
 		func=tasks.sort_bam,
 		args=(
-			mgd.TempInputFile(config["results_dir"] + '{}.bam'.format(sample_id)),
+			mgd.TempInputFile('tmp.bam'),
 			mgd.OutputFile(config["results_dir"] + '{}.sorted.bam'.format(sample_id))
 
 			)

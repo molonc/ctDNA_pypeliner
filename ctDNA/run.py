@@ -1,8 +1,8 @@
 import argparse
 import pypeliner
 import helpers
-from workflows import alignment
-from workflows import analysis
+import workflows.alignment
+import workflows.analysis
 
 def ctDNA_workflow(args):
 	pyp = pypeliner.app.Pypeline(config=args)
@@ -19,7 +19,7 @@ def ctDNA_workflow(args):
 
 	workflow.subworkflow(
 		name="align_samples",
-		func=alignment.align_samples,
+		func=workflows.alignment.align_samples,
 		args=(
 			config,
 			fastqs_r1,
@@ -29,7 +29,7 @@ def ctDNA_workflow(args):
 
 	workflow.subworkflow(
 		name="run_anlyses",
-		func=analysis.run_multi,
+		func=workflows.analysis.run_multi,
 		args=(
 			config, 
 			tumour_samples,
