@@ -1,8 +1,4 @@
-import os
-import yaml
-import argparse
 import pypeliner
-import pypeliner.workflow
 import pypeliner.managed as mgd
 import deepSNV_workflow as deepSNV
 

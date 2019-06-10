@@ -1,15 +1,11 @@
-import os
-import yaml
 import argparse
 import pypeliner
-import pypeliner.workflow
-import pypeliner.managed as mgd
 import helpers
-import workflows.alignment as alignment
-import workflows.analysis_workflow as analysis
+from workflows import alignment
+from workflows import analysis
 
 def ctDNA_workflow(args):
-	pyp = pypeliner.app.Pypeline(modules=(), config=args)
+	pyp = pypeliner.app.Pypeline(config=args)
 	workflow = pypeliner.workflow.Workflow()
 
 	config = helpers.load_yaml(args['config'])
