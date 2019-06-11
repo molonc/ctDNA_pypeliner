@@ -2,7 +2,7 @@
 
 A pipeline to analyze low frequency mutations present in Circulating tumor DNA (ctDNA). Takes matched tumour normal fastq files and runs through analysis tools then creates a union from the results of each tool.
 
-##Tools used
+## Tools used
 
 * Bioconductor deepSNV: https://bioconductor.org/packages/release/bioc/html/deepSNV.html
 * LoLoPicker: https://github.com/jcarrotzhang/LoLoPicker
@@ -10,7 +10,7 @@ A pipeline to analyze low frequency mutations present in Circulating tumor DNA (
 * Mut-Seq: https://gitlab.com/vejnar/mutseq
 * Strelka2: https://github.com/Illumina/strelka
 
-##Setup and Installation
+## Setup and Installation
 
 Set up conda with the required packages.
 
@@ -24,7 +24,7 @@ conda config --add channels 'conda-forge'
 
 ```
 
-###From Source
+### From Source
 
 Then create an environment with the required packages:
 
@@ -42,7 +42,7 @@ Add the ctDNA pipeline into the current site packages:
 ```
 python setup.py develop
 ```
-##Usage
+## Usage
 
 To run pipeline
 
@@ -50,7 +50,7 @@ To run pipeline
 ctdna_pypeliner /path/to/input.yaml /path/to/config.yaml --submit local
 ``` 
 
-###Input 
+### Input 
 Pipeline accepts yaml as input. The yaml file contains input paths and metadata for each cell/patient. The format for each patient and their samples is as follows:
 ```
 PATIENT_ID:
@@ -82,7 +82,7 @@ PATIENT_ID:
       type: plasma baseline
 ```
 
-##Config
+## Config
 Pipeline requires a config yaml with the following fields:
 ```
 reference_genome: '/path/to/reference_genome/hg19.fa'
