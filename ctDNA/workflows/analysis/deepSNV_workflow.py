@@ -1,7 +1,7 @@
 import pypeliner
 import pypeliner.managed as mgd
 
-def run_deepSNV(config, tumour_sample, tumour_bam, normal_sample, normal_bam):
+def run_deepSNV(config, normal_sample, normal_bam, tumour_sample, tumour_bam, output_file):
 	workflow = pypeliner.workflow.Workflow()
 
 	workflow.commandline(
@@ -10,16 +10,15 @@ def run_deepSNV(config, tumour_sample, tumour_bam, normal_sample, normal_bam):
 			'Rscript',
 			config["r_script_dir"] + 'deepSNV_analyze.R',
 			'--tumour',
-			mgd.InputFile(tumour_bam),
+			tumour_bam,
 			'--normal',
-			mgd.InputFile(normal_bam),
+			normal_bam,
 			'--bed',
 			config["bed_file"],
 			'--quality',
 			10,
 			'--out',
-			mgd.OutputFile(config["results_dir"] + '{}-{}_deepSNV_out.tsv'.format(normal_sample, tumour_sample)),
-
+			output_file,
 			)
 		)
 
