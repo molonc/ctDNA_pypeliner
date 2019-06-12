@@ -1,0 +1,5 @@
+reference_genome: '/Users/pye/projects/ctdna/hg19.fa'
+results_dir: '/Users/pye/BIOF-34/results/'
+bam_directory: '/Users/pye/BIOF-34/bams/'
+bed_file: '/Users/pye/BIOF-34/ctDNA_pypeliner/beds/CG001v4.0.bed'
+r_script_dir: '/Users/pye/BIOF-34/ctDNA_pypeliner/ctDNA/r_scripts/'
