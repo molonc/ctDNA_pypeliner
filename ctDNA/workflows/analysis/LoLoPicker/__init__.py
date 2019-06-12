@@ -5,15 +5,15 @@ import tasks
 def run_LoLoPicker(config, args, normal_sample, normal_bam, tumour_sample, tumour_bam, output_file):
 	workflow = pypeliner.workflow.Workflow()
 
-	workflow.commandline(
+	workflow.transform(
 		name='LoLoPicker_somatic',
 		func=tasks.LoLoPicker_somatic,
 		args=(
-			config, 
-			args,
+			config,
 			mgd.InputFile(tumour_bam),
 			mgd.InputFile(normal_bam),
-			mgd.OutputFile(args['results_dir'] + "raw_somatic_variants.txt")
+			mgd.TempSpace('LoLoPicker_somatic_temp'),
+			mgd.TempOutputFile("raw_somatic_variants.txt")
 			)
 		)
 
@@ -26,35 +26,26 @@ def run_LoLoPicker(config, args, normal_sample, normal_bam, tumour_sample, tumou
 			)
 		)
 
-	workflow.commandline(
+	workflow.transform(
 		name='LoLoPicker_control',
 		func=tasks.LoLoPicker_control,
 		args=(
 			config,
-			args,
 			mgd.TempInputFile('samplelist.txt'),
-			mgd.InputFile(args['results_dir'] + "raw_somatic_variants.txt"),
-			mgd.OutputFile(args['results_dir'] + "control_stats.txt")
+			mgd.TempSpace('LoLoPicker_control_temp'),
+			mgd.TempInputFile("raw_somatic_variants.txt"),
+			mgd.TempOutputFile("control_stats.txt")
 			)
 		)
 
-	workflow.commandline(
+	workflow.transform(
 		name='LoLoPicker_stats',
 		func=tasks.LoLoPicker_stats,
 		args=(
-			args['results_dir'],
-			mgd.InputFile(args['results_dir'] + "control_stats.txt"),
-			mgd.OutputFile(args['results_dir'] + "stats_calls.txt"),
-			mgd.OutputFile(args['results_dir'] + "reject_calls.txt"),
-			)
-		)
-
-	workflow.commandline(
-		name='move_results',
-		args=(
-			'mv',
-			mgd.InputFile(args['results_dir'] + 'stats_calls.txt'),
-			output_file,
+			mgd.TempSpace('LoLoPicker_stats_temp'),
+			mgd.TempInputFile("raw_somatic_variants.txt"),
+			mgd.TempInputFile("control_stats.txt"),
+			mgd.OutputFile(output_file),
 			)
 		)
 

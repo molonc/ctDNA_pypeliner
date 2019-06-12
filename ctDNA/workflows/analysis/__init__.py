@@ -1,8 +1,7 @@
 import pypeliner
 import pypeliner.managed as mgd
-import tasks
-import deepSNV_workflow as deepSNV
-import LoLoPicker_workflow as LoLoPicker
+import deepSNV
+import LoLoPicker
 from collections import defaultdict
 
 def partition_on_tumour(config, tumour_samples, normal_samples):
@@ -12,9 +11,9 @@ def partition_on_tumour(config, tumour_samples, normal_samples):
 	tumour_bams = {str(sample): config["bam_directory"] + str(sample) + ".sorted.bam" for sample in tumour_samples}
 
 	args = {
-		'normal_samples': normal_samples, 
-		'normal_bams': normal_bams, 
-		'tumour_samples': tumour_samples, 
+		'normal_samples': normal_samples,
+		'normal_bams': normal_bams,
+		'tumour_samples': tumour_samples,
 		'tumour_bams': tumour_bams,
 		'results_dir': config['results_dir']
 		}
@@ -68,16 +67,6 @@ def analyze_tumour(config, args, tumour_sample, tumour_bam):
 			)
 		)
 
-	# workflow.transform(
-	# 	name='generate_mpileup',
-	# 	func=tasks.generate_mpileup,
-	# 	args=(
-	# 		config,
-	# 		mgd.InputFile(tumour_bam),
-	# 		mgd.OutputFile(tumour_args['results_dir'] + '{}.mpileup'.format(tumour_sample))
-	# 		)
-	# 	)
-
 	return workflow
 
 def analyze_tumour_normal(config, args, normal_sample, normal_bam, tumour_sample, tumour_bam):
@@ -103,7 +92,7 @@ def analyze_tumour_normal(config, args, normal_sample, normal_bam, tumour_sample
 			mgd.InputFile(normal_bam),
 			tumour_sample,
 			mgd.InputFile(tumour_bam),
-			mgd.OutputFile(tumour_normal_args['results_dir'] + 'deepSNV_out.tsv'.format(normal_sample, tumour_sample))
+			mgd.OutputFile(tumour_normal_args['results_dir'] + 'deepSNV_out.tsv')
 			)
 		)
 
@@ -111,13 +100,13 @@ def analyze_tumour_normal(config, args, normal_sample, normal_bam, tumour_sample
 		name='run_LoLoPicker',
 		func=LoLoPicker.run_LoLoPicker,
 		args=(
-			config, 
+			config,
 			tumour_normal_args,
-			normal_sample, 
+			normal_sample,
 			mgd.InputFile(normal_bam),
-			tumour_sample, 
+			tumour_sample,
 			mgd.InputFile(tumour_bam),
-			mgd.OutputFile(tumour_normal_args['results_dir'] + 'LoLoPicker_out.tsv'.format(normal_sample, tumour_sample)),			
+			mgd.OutputFile(tumour_normal_args['results_dir'] + 'LoLoPicker_out.tsv'),
 			)
 		)
 

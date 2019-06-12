@@ -1,7 +1,10 @@
 import os
+from shutil import copyfile
 from pypeliner.commandline import execute
 
-def LoLoPicker_somatic(config, args, tumour_bam, normal_bam, somatic_file):
+def LoLoPicker_somatic(config, tumour_bam, normal_bam, temp_dir, somatic_file):
+	os.makedirs(temp_dir)
+
 	execute(
 		'LoLoPicker_somatic.py',
 		'-t',
@@ -13,10 +16,15 @@ def LoLoPicker_somatic(config, args, tumour_bam, normal_bam, somatic_file):
 		'-b',
 		config['bed_file'],
 		'-o',
-		args['results_dir'],
+		temp_dir,
 		)
 
-def LoLoPicker_control(config, args, sample_list, somatic_file, control_file):
+	copyfile(os.path.join(temp_dir, 'raw_somatic_variants.txt'), somatic_file)
+
+def LoLoPicker_control(config, sample_list, temp_dir, somatic_file, control_file):
+	os.makedirs(temp_dir)
+	copyfile(somatic_file, os.path.join(temp_dir, 'raw_somatic_variants.txt'))
+
 	execute(
 		'LoLoPicker_control.py',
 		'-l',
@@ -24,18 +32,26 @@ def LoLoPicker_control(config, args, sample_list, somatic_file, control_file):
 		'-r',
 		config['reference_genome'],
 		'-o',
-		args['results_dir'],
+		temp_dir,
 		)
 
-def LoLoPicker_stats(args, control_file, stats_file, reject_file):
+	copyfile(os.path.join(temp_dir, 'control_stats.txt'), control_file)
+
+def LoLoPicker_stats(temp_dir, somatic_file, control_file, output_file):
+	os.makedirs(temp_dir)
+	copyfile(somatic_file, os.path.join(temp_dir, 'raw_somatic_variants.txt'))
+	copyfile(control_file, os.path.join(temp_dir, 'control_stats.txt'))
+
 	execute(
 			'LoLoPicker_stats.py',
 			'-o',
-			args['results_dir'],
+			temp_dir,
 			'--method',
 			'FDR',
 			)
-	
+
+	copyfile(os.path.join(temp_dir, 'stats_calls.txt'), output_file)
+
 def make_sample_list(normal_bams, sample_list_outfile):
 	with open(sample_list_outfile, 'w+') as outfile:
 		for sample, bam in normal_bams.items():
