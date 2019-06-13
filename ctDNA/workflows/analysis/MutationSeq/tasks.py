@@ -26,8 +26,5 @@ def run_museq(config, normal_bam, tumour_bam, interval, output_file, log_file):
 		log_file
 		)
 
-def merge_vcfs(inputs, outfile, temp_dir):
-	os.makedirs(temp_dir)
-	merged_file = os.path.join(temp_dir, 'merged.vcf')
-	vcfutils.concatenate_vcf(inputs, merged_file)
-	vcfutils.sort_vcf(merged_file, outfile)
+def merge_vcfs(inputs, outfile):
+	vcfutils.concatenate_vcf(inputs, outfile)

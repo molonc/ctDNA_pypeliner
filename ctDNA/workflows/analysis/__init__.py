@@ -3,6 +3,7 @@ import pypeliner.managed as mgd
 import deepSNV
 import LoLoPicker
 import VarScan
+import MutationSeq
 from collections import defaultdict
 
 def partition_on_tumour(config, args):
@@ -104,5 +105,16 @@ def analyze_tumour_normal(config, args, results_dir, normal_sample, normal_bam, 
 			mgd.OutputFile(matched_results_dir + 'VarScan_snp.vcf'),
 			mgd.OutputFile(matched_results_dir + 'VarScan_indel.vcf'),
 			))
+
+	workflow.subworkflow(
+		name='run_MutationSeq',
+		func=MutationSeq.run_MutationSeq,
+		args=(
+			config,
+			mgd.InputFile(normal_bam),
+			mgd.InputFile(tumour_bam),
+			mgd.OutputFile(matched_results_dir + 'museq_out.vcf'),
+			)
+		)
 
 	return workflow

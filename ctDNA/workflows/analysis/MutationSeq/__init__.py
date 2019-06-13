@@ -10,7 +10,7 @@ def run_MutationSeq(config, normal_bam, tumour_bam, output_file):
 		func=tasks.generate_intervals,
 		ret=mgd.OutputChunks('interval'),
 		args=(
-			config['bed_file']
+			mgd.InputFile(config['bed_file']),
 			)
 		)
 
@@ -34,7 +34,8 @@ def run_MutationSeq(config, normal_bam, tumour_bam, output_file):
 		args=(
 			mgd.TempInputFile('museq.vcf', 'interval'),
 			mgd.OutputFile(output_file),
-			mgd.TempSpace('merge_space')
 			)
 		)
+
+	return workflow
 

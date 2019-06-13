@@ -62,7 +62,7 @@ def align_sample(config, fastq_1, fastq_2, sample_id):
 		func=tasks.index_bam,
 		args=(
 			mgd.InputFile(config["bam_directory"] + '{}.sorted.bam'.format(sample_id)),
-			mgd.OutputFile(config["bam_directory"] + '{}.sorted.bai'.format(sample_id)),
+			mgd.OutputFile(config["bam_directory"] + '{}.sorted.bam.bai'.format(sample_id)),
 			)
 		)
 
