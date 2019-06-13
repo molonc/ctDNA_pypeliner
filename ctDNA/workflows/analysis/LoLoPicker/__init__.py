@@ -2,7 +2,7 @@ import pypeliner
 import pypeliner.managed as mgd
 import tasks
 
-def run_LoLoPicker(config, args, normal_sample, normal_bam, tumour_sample, tumour_bam, output_file):
+def run_LoLoPicker(config, args, normal_bam, tumour_bam, output_file):
 	workflow = pypeliner.workflow.Workflow()
 
 	workflow.transform(
@@ -21,7 +21,7 @@ def run_LoLoPicker(config, args, normal_sample, normal_bam, tumour_sample, tumou
 		name='make_sample_list',
 		func=tasks.make_sample_list,
 		args=(
-			args['normal_bams'],
+			args,
 			mgd.TempOutputFile('samplelist.txt'),
 			)
 		)

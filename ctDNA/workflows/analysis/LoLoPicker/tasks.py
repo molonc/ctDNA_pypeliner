@@ -52,7 +52,9 @@ def LoLoPicker_stats(temp_dir, somatic_file, control_file, output_file):
 
 	copyfile(os.path.join(temp_dir, 'stats_calls.txt'), output_file)
 
-def make_sample_list(normal_bams, sample_list_outfile):
+def make_sample_list(args, sample_list_outfile):
+	normal_bams = args['normal_bams']
+
 	with open(sample_list_outfile, 'w+') as outfile:
 		for sample, bam in normal_bams.items():
 			outfile.write(bam + '\t')

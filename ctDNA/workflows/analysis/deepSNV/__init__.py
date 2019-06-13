@@ -1,7 +1,7 @@
 import pypeliner
 import pypeliner.managed as mgd
 
-def run_deepSNV(config, normal_sample, normal_bam, tumour_sample, tumour_bam, output_file):
+def run_deepSNV(config, normal_bam, tumour_bam, output_file):
 	workflow = pypeliner.workflow.Workflow()
 
 	workflow.commandline(

@@ -11,6 +11,5 @@ setup(
 	author_email='patriciaye99@gmail.com',
 	url='https://github.com/shahcompbio/ctDNA_pypeliner',
 	entry_points={'console_scripts': ['ctdna_pypeliner = ctDNA.run:main']},
-    package_data={'':['scripts/*.py', 'scripts/*.R', 'scripts/*.npz', 'scripts/*.pl', "config/*.yaml", "data/*"]},
-	install_requires=['lolopicker']
+    package_data={'':['scripts/*.py', 'scripts/*.R', 'scripts/*.npz', 'scripts/*.pl', "config/*.yaml", "data/*"]}
 	)

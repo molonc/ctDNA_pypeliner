@@ -1,10 +1,4 @@
 normal:
-    TNBC2789-BC-DNA-CRCQV42Run018:
-      fastq1: /Users/pye/shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2789-BC-DNA-CRCQV42Run018-24_S24_L001_R1_001.fastq.gz
-      fastq2: /Users/pye/shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2789-BC-DNA-CRCQV42Run018-24_S24_L001_R2_001.fastq.gz
-      run: Run018
-      sample_status: Normal
-      type: buffy coat
     TNBC2789-Saliva-DNA-CRCQV42Run023:
       fastq1: /Users/pye/shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2789-Saliva-DNA-CRCQV42Run023-18_S18_L001_R1_001.fastq.gz
       fastq2: /Users/pye/shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2789-Saliva-DNA-CRCQV42Run023-18_S18_L001_R2_001.fastq.gz
@@ -12,18 +6,6 @@ normal:
       sample_status: Normal
       type: saliva
 tumour:
-    R16-12816-A1-CRCQV42Run018:
-      fastq1: /Users/pye/shahlab/archive/miyuen_tmp/ctDNA_data/R16-12816-A1-CRCQV42Run018-21_S21_L001_R1_001.fastq.gz
-      fastq2: /Users/pye/shahlab/archive/miyuen_tmp/ctDNA_data/R16-12816-A1-CRCQV42Run018-21_S21_L001_R2_001.fastq.gz
-      run: Run018
-      sample_status: Treatment naive Primary Bx
-      type: TNBC FFPE
-    RS-17-8043-A3-CRCQV42Run018:
-      fastq1: /Users/pye/shahlab/archive/miyuen_tmp/ctDNA_data/RS-17-8043-A3-CRCQV42Run018-22_S22_L001_R1_001.fastq.gz
-      fastq2: /Users/pye/shahlab/archive/miyuen_tmp/ctDNA_data/RS-17-8043-A3-CRCQV42Run018-22_S22_L001_R2_001.fastq.gz
-      run: Run018
-      sample_status: Treatment naive Primary Sx
-      type: TNBC FFPE
     TNBC2789-S1-P-CRCQV42Run018:
       fastq1: /Users/pye/shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2789-S1-P-CRCQV42Run018-23_S23_L001_R1_001.fastq.gz
       fastq2: /Users/pye/shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2789-S1-P-CRCQV42Run018-23_S23_L001_R2_001.fastq.gz

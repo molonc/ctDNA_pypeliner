@@ -1,6 +1,6 @@
 from pypeliner.commandline import execute
 
-def generate_mpileup(config, tumour_bam, output_file):
+def generate_mpileup(config, bam_file, output_file):
 	execute(
 		'samtools',
 		'mpileup',
@@ -17,48 +17,27 @@ def generate_mpileup(config, tumour_bam, output_file):
 		config['reference_genome'],
 		'-l',
 		config['bed_file'],
-		tumour_bam,
+		bam_file,
 		'-o',
 		output_file,
 		)
 
-def run_varscan_snp(input_mpileup, output_file):
+def run_varscan_somatic(normal_mpileup, tumour_mpileup, snp_output_file, indel_outputfile):
 	execute(
 		'VarScan',
-		'mpileup2snp',
-		input_mpileup,
+		'somatic',
+		normal_mpileup,
+		tumour_mpileup,
 		'--min-coverage',
 		'4',
-		'--min-reads2',
-		'2',
-		'--min-avg-qual',
-		'20',
 		'--min-var-freq',
 		'0.001',
 		'--min-freq-for-hom',
 		'90',
 		'--output-vcf',
 		'1',
-		'>',
-		output_file)
-
-def run_varscan_indel(input_mpileup, output_file):
-	execute(
-		'VarScan',
-		'mpileup2indel',
-		input_mpileup,
-		'--min-coverage',
-		'4',
-		'--min-reads2',
-		'2',
-		'--min-avg-qual',
-		'20',
-		'--min-var-freq',
-		'0.001',
-		'--min-freq-for-hom',
-		'90',
-		'--output-vcf',
-		'1',
-		'>',
-		output_file)
-
+		'--output-snp',
+		snp_output_file,
+		'--output-indel',
+		indel_outputfile,
+		)
