@@ -1,0 +1,5 @@
+reference_genome: '/shahlab/pipelines/reference/gsc_hg19a.fa'
+results_dir: '/home/pye/projects/biof34/results/'
+bam_directory: '/home/pye/projects/biof34/bams/'
+bed_file: '/home/pye/ctDNA_pypeliner/beds/CG001v4.0.bed'
+r_script_dir: '/home/pye/ctDNA_pypeliner/ctDNA/r_scripts/'

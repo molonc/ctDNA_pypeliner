@@ -1,11 +1,9 @@
 from setuptools import setup, find_packages
-import versioneer
 
 setup(
 	name='ctdna_pypeliner',
 	packages=find_packages(),
-    version=versioneer.get_version(),
-    cmdclass=versioneer.get_cmdclass(),
+    version='0.0.1',
 	description='ctDNA pipeline using multiple sequence analysis tools',
 	author='Patricia Ye',
 	author_email='patriciaye99@gmail.com',

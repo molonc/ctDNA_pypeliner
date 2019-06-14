@@ -6,8 +6,6 @@ from workflows import analysis
 from utils import helpers
 
 def create_input_args(input_file, config):
-	import helpers
-
 	inputs_raw = helpers.load_yaml(input_file)
 
 	normal_samples = list(str(sample) for sample in inputs_raw["normal"])

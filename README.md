@@ -23,7 +23,6 @@ conda config --add channels https://conda.anaconda.org/shahcompbio
 conda config --add channels 'bioconda'
 conda config --add channels 'r'
 conda config --add channels 'conda-forge'
-
 ```
 
 ### From Source
