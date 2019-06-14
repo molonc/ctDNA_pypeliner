@@ -5,74 +5,82 @@ from workflows import alignment
 from workflows import analysis
 from utils import helpers
 
-def create_input_args(input_file, config):
-	inputs_raw = helpers.load_yaml(input_file)
+def patient_workflow(config, patient_input):
+    workflow = pypeliner.workflow.Workflow()
 
-	normal_samples = list(str(sample) for sample in inputs_raw["normal"])
-	tumour_samples = list(str(sample) for sample in inputs_raw["tumour"])
+    workflow.transform(
+        name="create_input_args",
+        func=helpers.create_input_args,
+        ret=mgd.TempOutputObj('inputs'),
+        args=(
+            patient_input,
+            config,
+            )
+        )
 
-	normal_bams = {str(sample): config["bam_directory"] + str(sample) + ".sorted.bam" for sample in normal_samples}
-	tumour_bams = {str(sample): config["bam_directory"] + str(sample) + ".sorted.bam" for sample in tumour_samples}
+    workflow.subworkflow(
+        name="align_samples",
+        func=alignment.align_samples,
+        args=(
+            config,
+            mgd.TempInputObj('inputs'),
+            )
+        )
 
-	fastqs_r1 = helpers.get_fastq_files(inputs_raw, 'fastq1')
-	fastqs_r2 = helpers.get_fastq_files(inputs_raw, 'fastq2')
+    workflow.subworkflow(
+        name="run_analyses",
+        func=analysis.partition_on_tumour,
+        args=(
+            config,
+            mgd.TempInputObj('inputs'),
+            )
+        )
 
-	return {
-		'fastqs_r1': fastqs_r1,
-		'fastqs_r2': fastqs_r2,
-		'normal_samples': normal_samples,
-		'normal_bams': normal_bams,
-		'tumour_samples': tumour_samples,
-		'tumour_bams': tumour_bams,
-		}
-
+    return workflow
 
 def ctDNA_workflow(args):
-	pyp = pypeliner.app.Pypeline(config=args)
-	workflow = pypeliner.workflow.Workflow()
+    pyp = pypeliner.app.Pypeline(config=args)
+    workflow = pypeliner.workflow.Workflow()
 
-	config = helpers.load_yaml(args['config'])
+    config = helpers.load_yaml(args['config'])
+    inputs = helpers.load_yaml(args['input_yaml'])
+    patients = inputs.keys()
 
-	workflow.transform(
-		name="create_input_args",
-		func=create_input_args,
-		ret=mgd.TempOutputObj('inputs'),
-		args=(
-			mgd.InputFile(args['input_yaml']),
-			config,
-			)
-		)
+    workflow.setobj(obj=mgd.OutputChunks('patient_id',), value=patients)
 
-	workflow.subworkflow(
-		name="align_samples",
-		func=alignment.align_samples,
-		args=(
-			config,
-			mgd.TempInputObj('inputs'),
-			)
-		)
+    workflow.transform(
+        name='get_input_by_patient',
+        func=helpers.get_input_by_patient,
+        ret=mgd.TempOutputObj('patient_input', 'patient_id'),
+        axes=('patient_id',),
+        args=(
+            inputs,
+            mgd.InputInstance('patient_id'),
+            )
+        )
 
-	workflow.subworkflow(
-		name="run_analyses",
-		func=analysis.partition_on_tumour,
-		args=(
-			config,
-			mgd.TempInputObj('inputs'),
-			)
-		)
+    workflow.subworkflow(
+        name='patient_workflow',
+        func=patient_workflow,
+        axes=('patient_id',),
+        args=(
+            config,
+            mgd.TempInputObj('patient_input', 'patient_id')
+            )
+        )
 
-	pyp.run(workflow)
+    pyp.run(workflow)
 
 def main():
-	argparser = argparse.ArgumentParser()
-	pypeliner.app.add_arguments(argparser)
+    argparser = argparse.ArgumentParser()
+    pypeliner.app.add_arguments(argparser)
 
-	argparser.add_argument('input_yaml', help='input filename')
-	argparser.add_argument('config', help='Configuration filename')
+    argparser.add_argument('input_yaml', help='input filename')
+    argparser.add_argument('config', help='Configuration filename')
 
-	args = vars(argparser.parse_args())
-	ctDNA_workflow(args)
+    args = vars(argparser.parse_args())
+    ctDNA_workflow(args)
 
 
 if __name__ == '__main__':
-	main()
+    main()

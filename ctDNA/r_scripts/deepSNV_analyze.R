@@ -3,11 +3,11 @@ require("deepSNV")
 require("optparse")
 
 option_list <- list(make_option(c("-n", "--normal"), type="character", default=NULL, help="normal_bam", metavar="character"),
-					make_option(c("-t", "--tumour"), type="character", default=NULL, help="tumour_bam", metavar="character"),
-					make_option(c("-b", "--bed"), type="character", default="~/BIOF-34/ctDNA_pypeliner/beds/CG001v4.0.bed", help="bed_file", metavar="character"),
-					make_option(c("-q", "--quality"), type="integer", default=25, help="phred_quality", metavar="character"),
-					make_option(c("-o", "--out"), type="character", default="deepSNV_out.tsv", help="output_file", metavar="character")
-					)
+                    make_option(c("-t", "--tumour"), type="character", default=NULL, help="tumour_bam", metavar="character"),
+                    make_option(c("-b", "--bed"), type="character", default="~/BIOF-34/ctDNA_pypeliner/beds/CG001v4.0.bed", help="bed_file", metavar="character"),
+                    make_option(c("-q", "--quality"), type="integer", default=25, help="phred_quality", metavar="character"),
+                    make_option(c("-o", "--out"), type="character", default="deepSNV_out.tsv", help="output_file", metavar="character")
+                    )
 
 opt_parser <- OptionParser(option_list=option_list)
 
