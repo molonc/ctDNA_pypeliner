@@ -6,8 +6,8 @@ A pipeline to analyze low frequency mutations present in Circulating tumor DNA (
 
 * Bioconductor deepSNV: https://bioconductor.org/packages/release/bioc/html/deepSNV.html
 * LoLoPicker: https://github.com/jcarrotzhang/LoLoPicker
-* ctDNA_pipeline: https://github.com/OpenGene/ctdna-pipeline
-* Mut-Seq: https://gitlab.com/vejnar/mutseq
+* VarScan: http://varscan.sourceforge.net/
+* Mutationseq: https://github.com/shahcompbio/mutationseq
 * Strelka2: https://github.com/Illumina/strelka
 
 ## Setup and Installation
@@ -17,11 +17,12 @@ Set up conda with the required packages.
 First ensure you have the correct channels:
 
 ```
+conda config --add channels https://conda.anaconda.org/dranew
+conda config --add channels https://conda.anaconda.org/aroth85
 conda config --add channels https://conda.anaconda.org/shahcompbio
 conda config --add channels 'bioconda'
 conda config --add channels 'r'
 conda config --add channels 'conda-forge'
-
 ```
 
 ### From Source
@@ -48,9 +49,9 @@ To run pipeline
 
 ```
 ctdna_pypeliner /path/to/input.yaml /path/to/config.yaml --submit local
-``` 
+```
 
-### Input 
+### Input
 Pipeline accepts yaml as input. The yaml file contains input paths and metadata for each cell/patient. The format for each patient and their samples is as follows:
 ```
 PATIENT_ID:
