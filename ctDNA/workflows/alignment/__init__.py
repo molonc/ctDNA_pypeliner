@@ -31,7 +31,7 @@ def align_sample(config, fastq_1, fastq_2, sample_id):
         name='fastq_to_sam',
         func=tasks.fastq_to_sam,
         args=(
-            config["reference_genome"],
+            mgd.InputFile(config["reference_genome"]),
             mgd.InputFile(fastq_1),
             mgd.InputFile(fastq_2),
             mgd.TempOutputFile('tmp.sam'),

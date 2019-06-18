@@ -4,7 +4,8 @@ import deepSNV
 import LoLoPicker
 import VarScan
 import MutationSeq
-from collections import defaultdict
+import Strelka
+import tasks
 
 def partition_on_tumour(config, args):
     workflow = pypeliner.workflow.Workflow()
@@ -20,13 +21,13 @@ def partition_on_tumour(config, args):
             args,
             mgd.InputInstance('tumour_id'),
             mgd.InputFile('tumour_bam', 'tumour_id', fnames=args['tumour_bams']),
-            # mgd.OutputFile('results'),
+            mgd.OutputFile(config['results_dir'] + '{tumour_id}.tsv', 'tumour_id'),
             )
         )
 
     return workflow
 
-def analyze_tumour(config, args, tumour_sample, tumour_bam):
+def analyze_tumour(config, args, tumour_sample, tumour_bam, output_file):
     workflow = pypeliner.workflow.Workflow()
 
     tumour_results_dir = config['results_dir'] + tumour_sample + '/'
@@ -54,20 +55,20 @@ def analyze_tumour(config, args, tumour_sample, tumour_bam):
             mgd.InputFile('normal_bam', 'normal_id', fnames=args['normal_bams']),
             tumour_sample,
             mgd.InputFile(tumour_bam),
-            # mgd.TempOutputFile('results', 'normal_id'),
+            mgd.OutputFile(tumour_results_dir + '{normal_id}.tsv', 'normal_id'),
             )
         )
 
-    # workflow.transform(
-    #   name='merge',
-    #   func=mergestuff,
-    #   args=(
-    #       mgd.TempInputFile('results', 'normal_id'),
-    #       mgd.OutputFile('results'),
-    # ))
+    workflow.transform(
+      name='merge',
+      func=tasks.mergestuff,
+      args=(
+          mgd.InputFile(tumour_results_dir + '{normal_id}.tsv', 'normal_id'),
+          mgd.OutputFile(output_file),
+    ))
     return workflow
 
-def analyze_tumour_normal(config, args, results_dir, normal_sample, normal_bam, tumour_sample, tumour_bam):
+def analyze_tumour_normal(config, args, results_dir, normal_sample, normal_bam, tumour_sample, tumour_bam, output_file):
     workflow = pypeliner.workflow.Workflow()
 
     matched_results_dir = results_dir + '{}_{}/'.format(normal_sample, tumour_sample)
@@ -111,8 +112,7 @@ def analyze_tumour_normal(config, args, results_dir, normal_sample, normal_bam, 
             config,
             mgd.InputFile(normal_bam),
             mgd.InputFile(tumour_bam),
-            mgd.OutputFile(matched_results_dir + 'VarScan_snp.vcf'),
-            mgd.OutputFile(matched_results_dir + 'VarScan_indel.vcf'),
+            mgd.OutputFile(matched_results_dir + 'VarScan_out.vcf'),
             ))
 
     workflow.subworkflow(
@@ -125,5 +125,37 @@ def analyze_tumour_normal(config, args, results_dir, normal_sample, normal_bam, 
             mgd.OutputFile(matched_results_dir + 'museq_out.vcf'),
             )
         )
+
+    workflow.subworkflow(
+        name='run_Strelka',
+        func=Strelka.run_Strelka,
+        args=(
+            config,
+            mgd.InputFile(normal_bam),
+            mgd.InputFile(tumour_bam),
+            mgd.OutputFile(matched_results_dir + 'strelka_out.vcf'),
+            )
+        )
+
+    workflow.transform(
+        name='create_result_dict',
+        func=tasks.create_result_dict,
+        ret=mgd.TempOutputObj('result_dict'),
+        args=(
+            mgd.InputFile(matched_results_dir + 'deepSNV_out.tsv'),
+            mgd.InputFile(matched_results_dir + 'LoLoPicker_out.tsv'),
+            mgd.InputFile(matched_results_dir + 'VarScan_out.vcf'),
+            mgd.InputFile(matched_results_dir + 'museq_out.vcf'),
+            mgd.InputFile(matched_results_dir + 'strelka_out.vcf'),
+            )
+        )
+
+    workflow.transform(
+        name='union_results',
+        func=tasks.union_results,
+        args=(
+            mgd.TempInputObj('result_dict'),
+            mgd.OutputFile(output_file),
+            ))
 
     return workflow
