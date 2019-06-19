@@ -55,15 +55,15 @@ def analyze_tumour(config, args, tumour_sample, tumour_bam, output_file):
             mgd.InputFile('normal_bam', 'normal_id', fnames=args['normal_bams']),
             tumour_sample,
             mgd.InputFile(tumour_bam),
-            mgd.OutputFile(tumour_results_dir + '{normal_id}.tsv', 'normal_id'),
+            mgd.OutputFile(tumour_results_dir + '{normal_id}_' + tumour_sample + '.tsv', 'normal_id'),
             )
         )
 
     workflow.transform(
       name='merge',
-      func=tasks.mergestuff,
+      func=tasks.merge_results,
       args=(
-          mgd.InputFile(tumour_results_dir + '{normal_id}.tsv', 'normal_id'),
+          mgd.InputFile(tumour_results_dir + '{normal_id}_' + tumour_sample + '.tsv', 'normal_id'),
           mgd.OutputFile(output_file),
     ))
     return workflow
