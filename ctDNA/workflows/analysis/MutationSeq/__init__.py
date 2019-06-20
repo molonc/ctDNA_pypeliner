@@ -25,7 +25,7 @@ def run_MutationSeq(config, normal_bam, tumour_bam, output_file):
         name='merge_vcfs',
         func=tasks.merge_vcfs,
         args=(
-            mgd.TempInputFile('museq.vcf', 'interval'),
+            mgd.TempInputFile('museq.vcf', 'interval', axes_origin=[]),
             mgd.OutputFile(output_file),
             mgd.TempSpace('merge_vcf'),
             )
