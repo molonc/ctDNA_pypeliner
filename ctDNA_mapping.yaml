@@ -1,39 +1,3 @@
-G15T:
-  normal: {}
-  tumour:
-    G15T-CRCQV34Run005:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/G15T-CRCQV34Run005-23_S23_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/G15T-CRCQV34Run005-23_S23_L001_R2_001.fastq.gz
-      run: Run005
-      sample_status: N/A
-      type: AGCT
-G16T:
-  normal: {}
-  tumour:
-    G16T-CRCQV34Run005:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/G16T-CRCQV34Run005-24_S24_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/G16T-CRCQV34Run005-24_S24_L001_R2_001.fastq.gz
-      run: Run005
-      sample_status: N/A
-      type: AGCT
-NF KAPPA Test:
-  normal: {}
-  tumour:
-    KAPA-QC-CRCQV42Run019:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/KAPA-QC-CRCQV42Run019-24_S24_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/KAPA-QC-CRCQV42Run019-24_S24_L001_R2_001.fastq.gz
-      run: Run019
-      sample_status: N/A
-      type: Quality Control
-NF QIAGEN Test:
-  normal: {}
-  tumour:
-    QIAGEN-QC-CRCQV42Run019:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QIAGEN-QC-CRCQV42Run019-23_S23_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QIAGEN-QC-CRCQV42Run019-23_S23_L001_R2_001.fastq.gz
-      run: Run019
-      sample_status: N/A
-      type: Quality Control
 PBC0001051:
   normal:
     TNBC1051-CRCQV34Run002-14:
@@ -181,12 +145,6 @@ PBC0001181:
       run: Run023
       sample_status: Post-Surgery/Pre-Chemo
       type: plasma baseline repeat
-    TNBC1181-2-CRCQV34Run015:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1181-2-CRCQV34Run015-4_S4_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1181-2-CRCQV34Run015-4_S4_L001_R2_001.fastq.gz
-      run: Run015
-      sample_status: N/A
-      type: VOID
     TNBC1181-4-S1-P1-CRCQV42Run022:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1181-4-S1-P1-CRCQV42Run022-21_S21_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1181-4-S1-P1-CRCQV42Run022-21_S21_L001_R2_001.fastq.gz
@@ -1327,12 +1285,6 @@ PBC0001845:
       run: Run017
       sample_status: Post-Surgery/Post-Chemo
       type: plasma 6 month
-    TNBC1845-4-CRCQV34Run015:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1845-4-CRCQV34Run015-10_S10_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1845-4-CRCQV34Run015-10_S10_L001_R2_001.fastq.gz
-      run: Run015
-      sample_status: N/A
-      type: VOID
     TNBC1845-4-S1-P1-CRCQV42Run022:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1845-4-S1-P1-CRCQV42Run022-20_S20_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1845-4-S1-P1-CRCQV42Run022-20_S20_L001_R2_001.fastq.gz
@@ -1387,12 +1339,6 @@ PBC0002062:
       run: Run017
       sample_status: Post-Surgery/Post-Chemo
       type: plasma 6 month
-    TNBC2062-4-CRCQV34Run015:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2062-4-CRCQV34Run015-11_S11_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2062-4-CRCQV34Run015-11_S11_L001_R2_001.fastq.gz
-      run: Run015
-      sample_status: N/A
-      type: VOID
     TNBC2062-4-S1-P1-CRCQV42Run022:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2062-4-S1-P1-CRCQV42Run022-22_S22_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2062-4-S1-P1-CRCQV42Run022-22_S22_L001_R2_001.fastq.gz
@@ -1723,12 +1669,6 @@ PBC0002680:
       run: Run005
       sample_status: Treatment naive Primary Bx
       type: TNBC FFPE
-    TNBC2680-2-CRCQV34Run015:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2680-2-CRCQV34Run015-16_S16_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2680-2-CRCQV34Run015-16_S16_L001_R2_001.fastq.gz
-      run: Run015
-      sample_status: N/A
-      type: VOID
     TNBC2680-2-S1-P1-CRCQV42Run022:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2680-2-S1-P1-CRCQV42Run022-19_S19_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC2680-2-S1-P1-CRCQV42Run022-19_S19_L001_R2_001.fastq.gz
@@ -2146,24 +2086,12 @@ PBC0003769:
       run: Run024
       sample_status: Treatment naive Primary Bx
       type: TNBC FFPE
-    RS18-5816-A1-WGA-CRCQV42Run025:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/RS18-5816-A1-WGA-CRCQV42Run025-21_S21_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/RS18-5816-A1-WGA-CRCQV42Run025-21_S21_L001_R2_001.fastq.gz
-      run: Run025
-      sample_status: ''
-      type: TNBC FFPE WGA
     TNBC3769-S1-P-CRCQV42Run024:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC3769-S1-P-CRCQV42Run024-5_S5_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC3769-S1-P-CRCQV42Run024-5_S5_L001_R2_001.fastq.gz
       run: Run024
       sample_status: Post-Surgery/Pre-Chemo
       type: plasma baseline
-    TNBC3769-S1-P-WGA-CRCQV42Run025:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC3769-S1-P-WGA-CRCQV42Run025-22_S22_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC3769-S1-P-WGA-CRCQV42Run025-22_S22_L001_R2_001.fastq.gz
-      run: Run025
-      sample_status: ''
-      type: WGA plasma baseline
 PBC0003906:
   normal:
     TNBC3906-Saliva-DNA-CRCQV42Run024:
@@ -2179,24 +2107,12 @@ PBC0003906:
       run: Run024
       sample_status: Treatment naive Primary Sx
       type: TNBC FFPE
-    15SS-27166-2Q-WGA-CRCQV42Run025:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/15SS-27166-2Q-WGA-CRCQV42Run025-24_S24_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/15SS-27166-2Q-WGA-CRCQV42Run025-24_S24_L001_R2_001.fastq.gz
-      run: Run025
-      sample_status: ''
-      type: TNBC FFPE WGA
     TNBC3906-S1-P-CRCQV42Run024:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC3906-S1-P-CRCQV42Run024-10_S10_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC3906-S1-P-CRCQV42Run024-10_S10_L001_R2_001.fastq.gz
       run: Run024
       sample_status: Post-Surgery/Post-Chemo
       type: plasma baseline
-    TNBC3906-S1-P-WGA-CRCQV42Run025:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC3906-S1-P-WGA-CRCQV42Run025-23_S23_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC3906-S1-P-WGA-CRCQV42Run025-23_S23_L001_R2_001.fastq.gz
-      run: Run025
-      sample_status: ''
-      type: WGA plasma baseline
 PBC0003911:
   normal:
     TNBC3911-Saliva-DNA-CRCQV42Run026:
@@ -2233,93 +2149,3 @@ PBC0005064:
       run: Run026
       sample_status: ''
       type: TNBC FFPE
-QC-KAPPA:
-  normal: {}
-  tumour:
-    QC-KAPPA-CRCQV42Run022:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QC-KAPPA-CRCQV42Run022-24_S24_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QC-KAPPA-CRCQV42Run022-24_S24_L001_R2_001.fastq.gz
-      run: Run022
-      sample_status: N/A
-      type: Quality Control
-QMRS Test:
-  normal: {}
-  tumour:
-    QMRS-QC-CRCQV42Run019:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-QC-CRCQV42Run019-22_S22_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-QC-CRCQV42Run019-22_S22_L001_R2_001.fastq.gz
-      run: Run019
-      sample_status: N/A
-      type: Quality Control
-QMRS-WGA:
-  normal: {}
-  tumour:
-    QMRS-WGA-CRCQV42Run025:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-WGA-CRCQV42Run025-20_S20_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-WGA-CRCQV42Run025-20_S20_L001_R2_001.fastq.gz
-      run: Run025
-      sample_status: N/A
-      type: Quality Control
-VS14-00459:
-  normal: {}
-  tumour:
-    VS14-00459-A1-CRCQV42Run016:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/VS14-00459-A1-CRCQV42Run016-19_S19_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/VS14-00459-A1-CRCQV42Run016-19_S19_L001_R2_001.fastq.gz
-      run: Run016
-      sample_status: N/A
-      type: Norm Endometrium
-VS14-02225:
-  normal: {}
-  tumour:
-    VS14-02225-A1-CRCQV42Run016:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/VS14-02225-A1-CRCQV42Run016-18_S18_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/VS14-02225-A1-CRCQV42Run016-18_S18_L001_R2_001.fastq.gz
-      run: Run016
-      sample_status: N/A
-      type: Norm Endometrium
-VS14-20594:
-  normal: {}
-  tumour:
-    VS14-20594-A1-CRCQV42Run016:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/VS14-20594-A1-CRCQV42Run016-24_S24_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/VS14-20594-A1-CRCQV42Run016-24_S24_L001_R2_001.fastq.gz
-      run: Run016
-      sample_status: N/A
-      type: Norm Endometrium
-VS14-23606:
-  normal: {}
-  tumour:
-    VS14-23606-A1-CRCQV42Run016:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/VS14-23606-A1-CRCQV42Run016-23_S23_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/VS14-23606-A1-CRCQV42Run016-23_S23_L001_R2_001.fastq.gz
-      run: Run016
-      sample_status: N/A
-      type: Norm Endometrium
-VS14-24055:
-  normal: {}
-  tumour:
-    VS14-24055-A1-CRCQV42Run016:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/VS14-24055-A1-CRCQV42Run016-22_S22_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/VS14-24055-A1-CRCQV42Run016-22_S22_L001_R2_001.fastq.gz
-      run: Run016
-      sample_status: N/A
-      type: Norm Endometrium
-VS14-40579:
-  normal: {}
-  tumour:
-    VS14-40579-A1-CRCQV42Run016:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/VS14-40579-A1-CRCQV42Run016-21_S21_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/VS14-40579-A1-CRCQV42Run016-21_S21_L001_R2_001.fastq.gz
-      run: Run016
-      sample_status: N/A
-      type: Norm Endometrium
-VS14-43711:
-  normal: {}
-  tumour:
-    VS14-43711-A1-CRCQV42Run016:
-      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/VS14-43711-A1-CRCQV42Run016-20_S20_L001_R1_001.fastq.gz
-      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/VS14-43711-A1-CRCQV42Run016-20_S20_L001_R2_001.fastq.gz
-      run: Run016
-      sample_status: N/A
-      type: Norm Endometrium
