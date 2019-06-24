@@ -2,15 +2,11 @@ import csv
 import vcf
 from collections import OrderedDict
 
-def create_result_dict(deepSNV_out, LoLoPicker_out, VarScan_out, museq_out, strelka_out):
-    return {
+def create_result_dict(deepSNV_out, VarScan_out, museq_out, strelka_out, LoLoPicker_out=None):
+    result_dict = {
     'deepSNV': {
         'file': deepSNV_out,
         'process_function': DeepSNV_process
-        },
-    'LoLoPicker': {
-        'file': LoLoPicker_out,
-        'process_function': LoLoPicker_process
         },
     'VarScan': {
         'file': VarScan_out,
@@ -25,6 +21,14 @@ def create_result_dict(deepSNV_out, LoLoPicker_out, VarScan_out, museq_out, stre
         'process_function': vcf_process
         }
     }
+
+    if LoLoPicker_out:
+        result_dict['LoLoPicker'] ={
+            'file': LoLoPicker_out,
+            'process_function': LoLoPicker_process
+        }
+
+    return result_dict
 
 def merge_results(tumour_results, output_file):
     results = {}
