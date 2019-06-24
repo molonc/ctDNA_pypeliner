@@ -19,11 +19,11 @@ def LoLoPicker_somatic(config, tumour_bam, normal_bam, temp_dir, somatic_file):
         temp_dir,
         )
 
-    copyfile(os.path.join(temp_dir, 'raw_somatic_variants.txt'), somatic_file)
+    copyfile(os.path.join(temp_dir, 'raw_somatic_varants.txt'), somatic_file)
 
 def LoLoPicker_control(config, sample_list, temp_dir, somatic_file, control_file):
     os.makedirs(temp_dir)
-    copyfile(somatic_file, os.path.join(temp_dir, 'raw_somatic_variants.txt'))
+    copyfile(somatic_file, os.path.join(temp_dir, 'raw_somatic_varants.txt'))
 
     execute(
         'LoLoPicker_control.py',
@@ -39,7 +39,7 @@ def LoLoPicker_control(config, sample_list, temp_dir, somatic_file, control_file
 
 def LoLoPicker_stats(temp_dir, somatic_file, control_file, output_file):
     os.makedirs(temp_dir)
-    copyfile(somatic_file, os.path.join(temp_dir, 'raw_somatic_variants.txt'))
+    copyfile(somatic_file, os.path.join(temp_dir, 'raw_somatic_varants.txt'))
     copyfile(control_file, os.path.join(temp_dir, 'control_stats.txt'))
 
     execute(

@@ -1,52 +1,42 @@
 import os
-import csv
 import pysam
 from pypeliner.commandline import execute
 from ctDNA.utils import vcfutils
 
-def generate_intervals(ref, size=1000000):
-    chromosomes = list(map(lambda x: 'chr' + str(x), range(1, 23) + ['X']))
-    fasta = pysam.FastaFile(ref)
-    lengths = fasta.lengths
-    print lengths
-    names = fasta.references
-    print names
-
-    intervals = []
-
-    for name, length in zip(names, lengths):
-        if name not in chromosomes:
-            continue
-        for i in range(int((length / size) + 1)):
-            start = str(int(i * size))
-            end = str(int((i + 1) * size))
-            intervals.append(name + "_" + start + "_" + end)
-
-    print intervals
-    return intervals
-
 def run_museq(config, normal_bam, tumour_bam, interval, output_file, log_file):
-    interval = interval.split('_')
-    interval = interval[0] + ':' + interval[1] + '-' + interval[2]
+    reference = 'reference:' + config['reference_genome']
+    model = 'model:' + config['museq_deep_model']
 
-    execute(
-        'museq',
-        'normal:' + normal_bam,
-        'tumour:' + tumour_bam,
-        'reference:' + config['reference_genome'],
+    tumour = 'tumour:' + tumour_bam
+    normal = 'normal:' + normal_bam
+
+    cmd = [config['museq_python'], config['museq_classify']]
+
+    cmd.extend([reference, model, tumour, normal])
+    cmd.extend([
+        '--verbose',
         '--deep',
-        '--manifest',
-        config['bed_file'],
-        '--interval',
-        interval,
-        '--out',
-        output_file,
-        '--log',
-        log_file
-        )
+        '--purity', '70',
+        '--coverage', '4',
+        '--threshold', '0.5',
+        '--buffer_size', '2G',
+        '--mapq_threshold', '10',
+        '--indl_threshold', '0.05',
+        '--normal_variant', '25',
+        '--tumour_variant', '2',
+        '--baseq_threshold', '20',
+        '--config', config['museq_config'],
+        '--manifest', config['bed_file']
+        ])
+    cmd.extend([
+        '--out', output_file,
+        '--log', log_file,
+        '--interval', interval
+        ])
+    execute(*cmd)
 
-def merge_vcfs(inputs, outfile, tempdir):
-    helpers.makedirs(tempdir)
+def merge_vcfs(inputs, output_file, tempdir):
+    os.makedirs(tempdir)
     mergedfile = os.path.join(tempdir, 'merged.vcf')
     vcfutils.concatenate_vcf(inputs, mergedfile)
-    vcfutils.sort_vcf(mergedfile, outfile)
+    vcfutils.sort_vcf(mergedfile, output_file)

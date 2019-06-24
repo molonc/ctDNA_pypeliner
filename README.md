@@ -27,6 +27,13 @@ conda config --add channels 'conda-forge'
 
 ### From Source
 
+Clone ctDNA_pypeliner:
+
+```
+git clone https://github.com/shahcompbio/ctDNA_pypeliner.git
+cd ctDNA_pypeliner
+```
+
 Then create an environment with the required packages:
 
 ```
@@ -39,16 +46,24 @@ Activate the environment:
 source activate ctDNApypeliner
 ```
 
+ctDNA_pypeliner uses LoLoPicker which is not available through conda.
+To setup LoLoPicker:
+```
+git clone https://github.com/jcarrotzhang/LoLoPicker.git
+cd LoLoPicker
+python setup.py install
+```
+
 Add the ctDNA pipeline into the current site packages:
 ```
-python setup.py develop
+python setup.py install
 ```
 ## Usage
 
 To run pipeline
 
 ```
-ctdna_pypeliner /path/to/input.yaml /path/to/config.yaml --submit local
+ctdna_pypeliner --input_yaml /path/to/input.yaml --config /path/to/config.yaml --submit local --maxjobs 4
 ```
 
 ### Input

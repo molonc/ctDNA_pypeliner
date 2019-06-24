@@ -13,7 +13,7 @@ def run_LoLoPicker(config, args, normal_bam, tumour_bam, output_file):
             mgd.InputFile(tumour_bam),
             mgd.InputFile(normal_bam),
             mgd.TempSpace('LoLoPicker_somatic_temp'),
-            mgd.TempOutputFile("raw_somatic_variants.txt")
+            mgd.TempOutputFile("raw_somatic_varants.txt")
             )
         )
 
@@ -33,7 +33,7 @@ def run_LoLoPicker(config, args, normal_bam, tumour_bam, output_file):
             config,
             mgd.TempInputFile('samplelist.txt'),
             mgd.TempSpace('LoLoPicker_control_temp'),
-            mgd.TempInputFile("raw_somatic_variants.txt"),
+            mgd.TempInputFile("raw_somatic_varants.txt"),
             mgd.TempOutputFile("control_stats.txt")
             )
         )
@@ -43,7 +43,7 @@ def run_LoLoPicker(config, args, normal_bam, tumour_bam, output_file):
         func=tasks.LoLoPicker_stats,
         args=(
             mgd.TempSpace('LoLoPicker_stats_temp'),
-            mgd.TempInputFile("raw_somatic_variants.txt"),
+            mgd.TempInputFile("raw_somatic_varants.txt"),
             mgd.TempInputFile("control_stats.txt"),
             mgd.OutputFile(output_file),
             )

@@ -2,36 +2,16 @@ import pypeliner
 import pypeliner.managed as mgd
 import tasks
 
-def align_samples(config, args):
-    fastqs_r1 = args.get('fastqs_r1')
-    fastqs_r2 = args.get('fastqs_r2')
-    samples = fastqs_r1.keys()
+def align_sample(config, fastq_1, fastq_2, sample_id, out_bam):
     workflow = pypeliner.workflow.Workflow()
 
-    workflow.setobj(obj=mgd.OutputChunks('sample_id',), value=samples)
-
-    workflow.subworkflow(
-        name='align_samples',
-        func=align_sample,
-        axes=('sample_id',),
-        args=(
-            config,
-            mgd.InputFile('fastq_1', 'sample_id', fnames=fastqs_r1),
-            mgd.InputFile('fastq_2', 'sample_id', fnames=fastqs_r2),
-            mgd.InputInstance('sample_id'),
-            ),
-        )
-
-    return workflow
-
-def align_sample(config, fastq_1, fastq_2, sample_id):
-    workflow = pypeliner.workflow.Workflow()
+    out_bai = out_bam + '.bai'
 
     workflow.transform(
         name='fastq_to_sam',
         func=tasks.fastq_to_sam,
         args=(
-            config["reference_genome"],
+            mgd.InputFile(config["reference_genome"]),
             mgd.InputFile(fastq_1),
             mgd.InputFile(fastq_2),
             mgd.TempOutputFile('tmp.sam'),
@@ -52,7 +32,7 @@ def align_sample(config, fastq_1, fastq_2, sample_id):
         func=tasks.sort_bam,
         args=(
             mgd.TempInputFile('tmp.bam'),
-            mgd.OutputFile(config["bam_directory"] + '{}.sorted.bam'.format(sample_id))
+            mgd.OutputFile(out_bam)
 
             )
         )
@@ -61,8 +41,8 @@ def align_sample(config, fastq_1, fastq_2, sample_id):
         name='index_bam',
         func=tasks.index_bam,
         args=(
-            mgd.InputFile(config["bam_directory"] + '{}.sorted.bam'.format(sample_id)),
-            mgd.OutputFile(config["bam_directory"] + '{}.sorted.bam.bai'.format(sample_id)),
+            mgd.InputFile(out_bam),
+            mgd.OutputFile(out_bai),
             )
         )
 

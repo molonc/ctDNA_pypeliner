@@ -5,14 +5,7 @@ import tasks
 def run_MutationSeq(config, normal_bam, tumour_bam, output_file):
     workflow = pypeliner.workflow.Workflow()
 
-    workflow.transform(
-        name='generate_intervals',
-        func=tasks.generate_intervals,
-        ret=mgd.OutputChunks('interval'),
-        args=(
-            mgd.InputFile(config['reference_genome']),
-            )
-        )
+    workflow.setobj(obj=mgd.OutputChunks('interval',), value=list(map(str, range(1, 23) + ['X'])))
 
     workflow.transform(
         name='run_museq_paired',
@@ -32,7 +25,7 @@ def run_MutationSeq(config, normal_bam, tumour_bam, output_file):
         name='merge_vcfs',
         func=tasks.merge_vcfs,
         args=(
-            mgd.TempInputFile('museq.vcf', 'interval'),
+            mgd.TempInputFile('museq.vcf', 'interval', axes_origin=[]),
             mgd.OutputFile(output_file),
             mgd.TempSpace('merge_vcf'),
             )
