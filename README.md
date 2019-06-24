@@ -63,7 +63,7 @@ python setup.py install
 To run pipeline
 
 ```
-ctdna_pypeliner /path/to/input.yaml /path/to/config.yaml --submit local
+ctdna_pypeliner --input_yaml /path/to/input.yaml --config /path/to/config.yaml --submit local --maxjobs 4
 ```
 
 ### Input
