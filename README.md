@@ -62,8 +62,14 @@ python setup.py install
 
 To run pipeline
 
+Locally
 ```
 ctdna_pypeliner --input_yaml /path/to/input.yaml --config /path/to/config.yaml --submit local --maxjobs 4
+```
+
+On shahlab cluster
+```
+ctdna_pypeliner --input_yaml /home/pye/ctDNA_pypeliner/test_cluster.yaml --config /home/pye/ctDNA_pypeliner/config/config_cluster.yaml --tmpdir /shahlab/pye/projects/biof34/tmp/ --pipelinedir /home/pye/projects/biof34/pipeline/ --submit asyncqsub --nativespec ' -V -hard -q shahlab.q -l h_vmem={mem}G -P shahlab_high -S /bin/bash' --maxjobs 16
 ```
 
 ### Input

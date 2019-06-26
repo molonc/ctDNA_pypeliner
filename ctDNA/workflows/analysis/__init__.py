@@ -127,7 +127,7 @@ def analyze_tumour_normal(config, input_args, results_dir, normal_sample, normal
 
     if input_args.get('run_LoLoPicker', True):
         workflow.subworkflow(
-            name='run_LoLoPicker2',
+            name='run_LoLoPicker',
             func=LoLoPicker.run_LoLoPicker,
             args=(
                 config,
@@ -139,7 +139,7 @@ def analyze_tumour_normal(config, input_args, results_dir, normal_sample, normal
             )
 
         workflow.transform(
-            name='create_result_dict2',
+            name='create_result_dict',
             func=tasks.create_result_dict,
             ret=mgd.TempOutputObj('result_dict'),
             args=(
@@ -153,7 +153,7 @@ def analyze_tumour_normal(config, input_args, results_dir, normal_sample, normal
 
     else:
         workflow.transform(
-            name='create_result_dict2',
+            name='create_result_dict',
             func=tasks.create_result_dict,
             ret=mgd.TempOutputObj('result_dict'),
             args=(
