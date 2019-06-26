@@ -41,11 +41,10 @@ def run_strelka(config, normal_bam, tumour_bam, bed_file, bed_index, workspace, 
 
     execute(
         os.path.join(workspace, 'runWorkflow.py'),
-        '--mode',
+        '-m',
         'local',
-        '--jobs',
-        '8',
-        '--quiet',
+        '-j',
+        '16',
         )
 
     result_file = os.path.join(workspace, 'results/variants', 'somatic.snvs.vcf.gz')
