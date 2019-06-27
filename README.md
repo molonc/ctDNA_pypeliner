@@ -69,8 +69,7 @@ ctdna_pypeliner --input_yaml /path/to/input.yaml --config /path/to/config.yaml -
 
 On shahlab cluster
 ```
-ctdna_pypeliner --input_yaml /path/to/input.yaml --config /path/to/config.yaml --tmpdir /path/to/tmp/ --pipelinedir /path/to/pipeline/ --submit asyncqsub --nativespec ' -V -hard -q shahlab.q -l h_vmem={mem}G -P shahlab_high -S /bin/bash' --ma
-xjobs 16 --context_config /path/to/context.yaml
+ctdna_pypeliner --input_yaml /path/to/input.yaml --config /path/to/config.yaml --tmpdir /path/to/tmp/ --pipelinedir /path/to/pipeline/ --submit asyncqsub --nativespec ' -V -hard -q shahlab.q -l h_vmem={mem}G -P shahlab_high -S /bin/bash' --maxjobs 128 --context_config /path/to/context.yaml
 ```
 
 ### Input
