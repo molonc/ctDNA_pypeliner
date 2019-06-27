@@ -9,6 +9,7 @@ def align_sample(config, fastq_1, fastq_2, sample_id, out_bam):
 
     workflow.transform(
         name='fastq_to_sam',
+        ctx={'mem': 8, 'ncpus': 1, 'walltime': '08:00'},
         func=tasks.fastq_to_sam,
         args=(
             mgd.InputFile(config["reference_genome"]),

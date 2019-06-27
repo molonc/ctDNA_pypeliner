@@ -28,6 +28,7 @@ def run_VarScan(config, normal_bam, tumour_bam, snp_output_file):
 
     workflow.transform(
         name='run_varscan_somatic',
+        ctx={'mem': 8, 'ncpus': 1, 'walltime': '08:00'},
         func=tasks.run_varscan_somatic,
         args=(
             mgd.TempInputFile("normal.pileup"),

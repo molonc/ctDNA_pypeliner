@@ -64,12 +64,13 @@ To run pipeline
 
 Locally
 ```
-ctdna_pypeliner --input_yaml /path/to/input.yaml --config /path/to/config.yaml --submit local --maxjobs 4
+ctdna_pypeliner --input_yaml /path/to/input.yaml --config /path/to/config.yaml --tmpdir /path/to/tmp/ --pipelinedir /path/to/pipeline/ --submit local --maxjobs 4
 ```
 
 On shahlab cluster
 ```
-ctdna_pypeliner --input_yaml /home/pye/ctDNA_pypeliner/test_cluster.yaml --config /home/pye/ctDNA_pypeliner/config/config_cluster.yaml --tmpdir /shahlab/pye/projects/biof34/tmp/ --pipelinedir /home/pye/projects/biof34/pipeline/ --submit asyncqsub --nativespec ' -V -hard -q shahlab.q -l h_vmem={mem}G -P shahlab_high -S /bin/bash' --maxjobs 16
+ctdna_pypeliner --input_yaml /path/to/input.yaml --config /path/to/config.yaml --tmpdir /path/to/tmp/ --pipelinedir /path/to/pipeline/ --submit asyncqsub --nativespec ' -V -hard -q shahlab.q -l h_vmem={mem}G -P shahlab_high -S /bin/bash' --ma
+xjobs 16 --context_config /path/to/context.yaml
 ```
 
 ### Input
@@ -112,4 +113,8 @@ results_dir: '/path/to/results/'
 bam_directory: '/path/to/bams/'
 bed_file: '/path/to/beds/CG001v4.0.bed'
 r_script_dir: '/path/to/ctDNA_pypeliner/ctDNA/r_scripts/'
+museq_python: '/shahlab/pipelines/virtual_environments/museq_pipeline/bin/python'
+museq_classify: '/shahlab/pipelines/apps_centos6/mutationSeq_4.3.7_python2.7/classify.py'
+museq_deep_model: '/shahlab/pipelines/apps_centos6/mutationSeq_4.3.7_python2.7/model_deep_v0.2.npz'
+museq_config: '/shahlab/pipelines/apps_centos6/mutationSeq_4.3.7_python2.7/metadata.config'
 ```
