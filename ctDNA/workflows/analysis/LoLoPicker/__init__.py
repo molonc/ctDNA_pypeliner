@@ -5,15 +5,14 @@ import tasks
 def run_LoLoPicker(config, args, normal_bam, tumour_bam, output_file):
     workflow = pypeliner.workflow.Workflow()
 
-    regions = tasks.split_bed(config["bed_file"])
-
-    workflow.setobj(obj=mgd.OutputChunks('region',), value=regions)
+    workflow.setobj(obj=mgd.OutputChunks('region',), value=list(map(str, range(1, 23) + ['X'])))
 
     workflow.transform(
         name='create_axes_beds',
         axes=('region',),
         func=tasks.create_axes_beds,
         args=(
+            mgd.InputFile(config["bed_file"]),
             mgd.InputInstance('region'),
             mgd.TempOutputFile('region.bed', 'region')
             )
@@ -71,6 +70,7 @@ def run_LoLoPicker(config, args, normal_bam, tumour_bam, output_file):
         name='merge_LoLoPicker',
         func=tasks.merge_LoLoPicker,
         args=(
+            mgd.TempSpace("merge_LoLo"),
             mgd.TempInputFile("stats_calls.txt", 'region', axes_origin=[]),
             mgd.OutputFile(output_file)
             )

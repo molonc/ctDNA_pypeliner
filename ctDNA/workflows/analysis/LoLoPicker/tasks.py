@@ -1,20 +1,14 @@
 import os
 from shutil import copyfile
 from pypeliner.commandline import execute
+from ctDNA.utils import vcfutils
 
-def split_bed(bed_file):
-    regions = []
+def create_axes_beds(bed_file, region, output_bed_file):
+    with open(bed_file, "rb") as bed, open(output_bed_file, "wb") as output_bed:
+        for line in bed:
+            if line.startswith(region + "\t"):
+                output_bed.write(line)
 
-    with open(bed_file, "rb") as bed:
-        for region in bed.read().splitlines():
-            regions.append(region.replace("\t", "-"))
-
-    return regions
-
-def create_axes_beds(region, bed_file):
-    with open(bed_file, "wb") as bed:
-        bed.write(region.replace("-", "\t"))
-        bed.write("\n")
 
 def make_sample_list(args, sample_list_outfile):
     normal_bams = args['normal_bams']
@@ -79,8 +73,11 @@ def _get_header(stats_calls):
         if line.startswith("#"):
             return line
 
-def merge_LoLoPicker(stats_calls_files, output_file):
-    with open(output_file, "wb") as outfile:
+def merge_LoLoPicker(temp_dir, stats_calls_files, output_file):
+    os.makedirs(temp_dir)
+    mergedfile = os.path.join(temp_dir, "merged.tsv")
+
+    with open(mergedfile, "wb") as merged:
         header = None
 
         for stats_calls_file in stats_calls_files.itervalues():
@@ -88,10 +85,12 @@ def merge_LoLoPicker(stats_calls_files, output_file):
                 if not header:
                     header = _get_header(stats_calls)
 
-                    outfile.write(header)
+                    merged.write(header)
 
                 else:
                     _get_header(stats_calls)
 
                 for line in stats_calls:
-                    outfile.write(line)
+                    merged.write(line)
+
+    vcfutils.sort_vcf(mergedfile, output_file)
