@@ -13,7 +13,7 @@ def get_value_from_file(yamlfile, key):
 def get_fastq_files(data, key):
 
     items = {}
-    for cell_type, cell_data in data.iteritems():
+    for cell_data in data.itervalues():
         for sample, sample_info in cell_data.iteritems():
             items[sample] = sample_info[key]
     return items

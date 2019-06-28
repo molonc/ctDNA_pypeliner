@@ -18,6 +18,7 @@ def run_Strelka(config, normal_bam, tumour_bam, output_file):
 
     workflow.transform(
         name='run_strelka',
+        ctx={'mem': 10, 'ncpus': 1, 'walltime': '08:00'},
         func=tasks.run_strelka,
         args=(
             config,

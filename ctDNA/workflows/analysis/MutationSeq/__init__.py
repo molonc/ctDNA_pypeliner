@@ -9,6 +9,7 @@ def run_MutationSeq(config, normal_bam, tumour_bam, output_file):
 
     workflow.transform(
         name='run_museq_paired',
+        ctx={'mem': 8, 'ncpus': 1, 'walltime': '24:00'},
         axes=('interval',),
         func=tasks.run_museq,
         args=(

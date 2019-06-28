@@ -12,9 +12,9 @@ def main():
     # with open('test.yaml', 'r') as no_fastq_yaml_file:
         yaml_dict = yaml.safe_load(no_fastq_yaml_file)
         for fastq in fastqs:
-            for pbc, pbc_dict in yaml_dict.iteritems():
-                for sample_type, sample_type_dict in pbc_dict.iteritems():
-                    for sample_id, sample_dict in sample_type_dict.iteritems():
+            for pbc_dict in yaml_dict.itervalues():
+                for sample_type_dict in pbc_dict.itervalues():
+                    for sample_dict in sample_type_dict.itervalues():
                         if fastq.startswith(sample_id):
                             if re.search("_R1_", fastq):
                                 sample_dict["fastq1"] = join(DIR_PATH, fastq)

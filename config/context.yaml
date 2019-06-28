@@ -1,0 +1,7 @@
+context:
+    alljobs:
+        name_match: '*'
+        ctx:
+          walltime: '04:00'
+          walltime_num_retry: 5
+          walltime_retry_increment: '01:00'

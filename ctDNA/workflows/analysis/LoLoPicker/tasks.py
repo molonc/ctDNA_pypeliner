@@ -1,8 +1,24 @@
 import os
 from shutil import copyfile
 from pypeliner.commandline import execute
+from ctDNA.utils import vcfutils
 
-def LoLoPicker_somatic(config, tumour_bam, normal_bam, temp_dir, somatic_file):
+def create_axes_beds(bed_file, region, output_bed_file):
+    with open(bed_file, "rb") as bed, open(output_bed_file, "wb") as output_bed:
+        for line in bed:
+            if line.startswith(region + "\t"):
+                output_bed.write(line)
+
+
+def make_sample_list(args, sample_list_outfile):
+    normal_bams = args['normal_bams']
+
+    with open(sample_list_outfile, 'w+') as outfile:
+        for sample, bam in normal_bams.items():
+            outfile.write(bam + '\t')
+            outfile.write(sample + '\n')
+
+def LoLoPicker_somatic(config, tumour_bam, normal_bam, region_bed, temp_dir, somatic_file):
     os.makedirs(temp_dir)
 
     execute(
@@ -14,7 +30,7 @@ def LoLoPicker_somatic(config, tumour_bam, normal_bam, temp_dir, somatic_file):
         '-r',
         config['reference_genome'],
         '-b',
-        config['bed_file'],
+        region_bed,
         '-o',
         temp_dir,
         )
@@ -52,10 +68,29 @@ def LoLoPicker_stats(temp_dir, somatic_file, control_file, output_file):
 
     copyfile(os.path.join(temp_dir, 'stats_calls.txt'), output_file)
 
-def make_sample_list(args, sample_list_outfile):
-    normal_bams = args['normal_bams']
+def _get_header(stats_calls):
+    for line in stats_calls:
+        if line.startswith("#"):
+            return line
 
-    with open(sample_list_outfile, 'w+') as outfile:
-        for sample, bam in normal_bams.items():
-            outfile.write(bam + '\t')
-            outfile.write(sample + '\n')
+def merge_LoLoPicker(temp_dir, stats_calls_files, output_file):
+    os.makedirs(temp_dir)
+    mergedfile = os.path.join(temp_dir, "merged.tsv")
+
+    with open(mergedfile, "wb") as merged:
+        header = None
+
+        for stats_calls_file in stats_calls_files.itervalues():
+            with open(stats_calls_file, "rb") as stats_calls:
+                if not header:
+                    header = _get_header(stats_calls)
+
+                    merged.write(header)
+
+                else:
+                    _get_header(stats_calls)
+
+                for line in stats_calls:
+                    merged.write(line)
+
+    vcfutils.sort_vcf(mergedfile, output_file)

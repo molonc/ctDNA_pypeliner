@@ -32,7 +32,7 @@ def create_result_dict(deepSNV_out, VarScan_out, museq_out, strelka_out, LoLoPic
 
 def merge_results(tumour_results, output_file):
     results = {}
-    for tumour, result_file in tumour_results.iteritems():
+    for result_file in tumour_results.itervalues():
         with open(result_file, 'rb') as result:
             reader = csv.DictReader(result, delimiter='\t')
 
@@ -64,7 +64,7 @@ def merge_results(tumour_results, output_file):
 
         sorted_results = OrderedDict(sorted(results.iteritems(), key=lambda x: (-int(x[1]['count']), x[1]['chr'], x[1]['pos'])))
 
-        for key, result in sorted_results.iteritems():
+        for result in sorted_results.itervalues():
             writer.writerow(result)
 
 def union_results(tool_results, output_file):
@@ -97,7 +97,7 @@ def union_results(tool_results, output_file):
 
         sorted_results = OrderedDict(sorted(results.iteritems(), key=lambda x: (-x[1]['count'], x[1]['chr'], x[1]['pos'])))
 
-        for key, result in sorted_results.iteritems():
+        for result in sorted_results.itervalues():
             writer.writerow(result)
 
 def DeepSNV_process(tool, input_file, results):
