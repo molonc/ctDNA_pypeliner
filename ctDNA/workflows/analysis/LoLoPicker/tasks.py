@@ -23,6 +23,14 @@ def LoLoPicker_somatic(config, tumour_bam, normal_bam, region_bed, temp_dir, som
 
     execute(
         'LoLoPicker_somatic.py',
+        '--mappingquality',
+        10,
+        '--basequality',
+        20,
+        '--tumoralteredreads',
+        2,
+        '--normalalteredreads',
+        25,
         '-t',
         tumour_bam,
         '-n',
@@ -43,6 +51,10 @@ def LoLoPicker_control(config, sample_list, temp_dir, somatic_file, control_file
 
     execute(
         'LoLoPicker_control.py',
+        '--mappingquality',
+        10,
+        '--basequality',
+        20,
         '-l',
         sample_list,
         '-r',

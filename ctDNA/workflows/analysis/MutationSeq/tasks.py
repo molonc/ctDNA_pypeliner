@@ -18,7 +18,7 @@ def run_museq(config, normal_bam, tumour_bam, interval, output_file, log_file):
         '--deep',
         '--purity', '70',
         '--coverage', '4',
-        '--threshold', '0.5',
+        '--threshold', '0.51',
         '--buffer_size', '2G',
         '--mapq_threshold', '10',
         '--indl_threshold', '0.05',
