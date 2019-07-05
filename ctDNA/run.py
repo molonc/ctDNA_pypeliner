@@ -6,7 +6,7 @@ from workflows import alignment
 from workflows import analysis
 from utils import helpers
 
-def patient_workflow(config, no_lolo, patient_id, patient_input, output_file):
+def patient_workflow(config, patient_id, patient_input, output_file):
     workflow = pypeliner.workflow.Workflow()
 
     patient_bam_dir = config["bam_directory"] + patient_id + "/"
@@ -15,7 +15,7 @@ def patient_workflow(config, no_lolo, patient_id, patient_input, output_file):
     helpers.makedirs(patient_bam_dir)
     helpers.makedirs(patient_result_dir)
 
-    input_args = helpers.create_input_args(patient_input, patient_bam_dir, no_lolo)
+    input_args = helpers.create_input_args(patient_input, patient_bam_dir)
 
     workflow.setobj(obj=mgd.OutputChunks('sample_id',), value=input_args['all_samples'])
 
@@ -78,7 +78,6 @@ def ctDNA_workflow(args):
         axes=('patient_id',),
         args=(
             config,
-            args['no_lolo'],
             mgd.InputInstance('patient_id'),
             mgd.TempInputObj('patient_input', 'patient_id'),
             mgd.OutputFile(config['results_dir'] + '{patient_id}.log', 'patient_id'),
@@ -100,12 +99,6 @@ def main():
         '--config',
         required=True,
         help='Configuration filename'
-        )
-    argparser.add_argument(
-        '--no_lolo',
-        default=False,
-        action='store_true',
-        help='flag to turn off LoLoPicker analysis'
         )
 
     args = vars(argparser.parse_args())

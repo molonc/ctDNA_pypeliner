@@ -28,7 +28,7 @@ def load_yaml(path):
             'Unable to open file: {0}'.format(path))
     return data
 
-def create_input_args(patient_input, patient_bam_dir, no_lolo):
+def create_input_args(patient_input, patient_bam_dir):
     normal_samples = list(str(sample) for sample in patient_input["normal"])
     tumour_samples = list(str(sample) for sample in patient_input["tumour"])
 
@@ -49,8 +49,7 @@ def create_input_args(patient_input, patient_bam_dir, no_lolo):
         'tumour_samples': tumour_samples,
         'tumour_bams': tumour_bams,
         'all_samples': all_samples,
-        'all_bams': all_bams,
-        'run_LoLoPicker': not no_lolo
+        'all_bams': all_bams
         }
 
 def get_input_by_patient(inputs, patient_id):

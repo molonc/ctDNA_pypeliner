@@ -75,7 +75,7 @@ def LoLoPicker_stats(temp_dir, somatic_file, control_file, output_file):
             '-o',
             temp_dir,
             '--method',
-            'FDR',
+            'Bonferroni',
             )
 
     copyfile(os.path.join(temp_dir, 'stats_calls.txt'), output_file)

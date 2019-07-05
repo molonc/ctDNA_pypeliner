@@ -32,8 +32,6 @@ def run_varscan_somatic(normal_mpileup, tumour_mpileup, snp_output_file, indel_o
         '4',
         '--min-var-freq',
         '0.001',
-        '--min-freq-for-hom',
-        '90',
         '--output-vcf',
         '1',
         '--output-snp',

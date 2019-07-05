@@ -125,50 +125,40 @@ def analyze_tumour_normal(config, input_args, results_dir, normal_sample, normal
             )
         )
 
-    if input_args.get('run_LoLoPicker', True):
-        workflow.subworkflow(
-            name='run_LoLoPicker',
-            func=LoLoPicker.run_LoLoPicker,
-            args=(
-                config,
-                input_args,
-                mgd.InputFile(normal_bam),
-                mgd.InputFile(tumour_bam),
-                mgd.OutputFile(matched_results_dir + 'LoLoPicker_out.tsv'),
-                )
+    workflow.subworkflow(
+        name='run_LoLoPicker',
+        func=LoLoPicker.run_LoLoPicker,
+        args=(
+            config,
+            input_args,
+            mgd.InputFile(normal_bam),
+            mgd.InputFile(tumour_bam),
+            mgd.OutputFile(matched_results_dir + 'LoLoPicker_out.tsv'),
             )
+        )
 
-        workflow.transform(
-            name='create_result_dict',
-            func=tasks.create_result_dict,
-            ret=mgd.TempOutputObj('result_dict'),
-            args=(
-                mgd.InputFile(matched_results_dir + 'deepSNV_out.tsv'),
-                mgd.InputFile(matched_results_dir + 'VarScan_out.vcf'),
-                mgd.InputFile(matched_results_dir + 'museq_out.vcf'),
-                mgd.InputFile(matched_results_dir + 'strelka_out.vcf'),
-                mgd.InputFile(matched_results_dir + 'LoLoPicker_out.tsv'),
-                )
+    workflow.transform(
+        name='create_result_dict',
+        func=tasks.create_result_dict,
+        ret=mgd.TempOutputObj('result_dict'),
+        args=(
+            mgd.InputFile(matched_results_dir + 'deepSNV_out.tsv'),
+            mgd.InputFile(matched_results_dir + 'VarScan_out.vcf'),
+            mgd.InputFile(matched_results_dir + 'museq_out.vcf'),
+            mgd.InputFile(matched_results_dir + 'strelka_out.vcf'),
+            mgd.InputFile(matched_results_dir + 'LoLoPicker_out.tsv'),
             )
-
-    else:
-        workflow.transform(
-            name='create_result_dict',
-            func=tasks.create_result_dict,
-            ret=mgd.TempOutputObj('result_dict'),
-            args=(
-                mgd.InputFile(matched_results_dir + 'deepSNV_out.tsv'),
-                mgd.InputFile(matched_results_dir + 'VarScan_out.vcf'),
-                mgd.InputFile(matched_results_dir + 'museq_out.vcf'),
-                mgd.InputFile(matched_results_dir + 'strelka_out.vcf'),
-                )
-            )
+        )
 
     workflow.transform(
         name='union_results',
         func=tasks.union_results,
         args=(
+            config,
+            mgd.InputFile(normal_bam),
+            mgd.InputFile(tumour_bam),
             mgd.TempInputObj('result_dict'),
+            mgd.TempSpace('union_space'),
             mgd.OutputFile(output_file),
             ))
 
