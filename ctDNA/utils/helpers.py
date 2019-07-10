@@ -37,6 +37,7 @@ def create_input_args(patient_input, patient_bam_dir):
 
     all_samples = normal_samples + tumour_samples
     all_bams = dict(normal_bams.items() + tumour_bams.items())
+    all_bais = {str(sample): bam + ".bai" for sample, bam in all_bams.iteritems()}
 
     fastqs_r1 = get_fastq_files(patient_input, 'fastq1')
     fastqs_r2 = get_fastq_files(patient_input, 'fastq2')
@@ -49,7 +50,8 @@ def create_input_args(patient_input, patient_bam_dir):
         'tumour_samples': tumour_samples,
         'tumour_bams': tumour_bams,
         'all_samples': all_samples,
-        'all_bams': all_bams
+        'all_bams': all_bams,
+        'all_bais': all_bais,
         }
 
 def get_input_by_patient(inputs, patient_id):

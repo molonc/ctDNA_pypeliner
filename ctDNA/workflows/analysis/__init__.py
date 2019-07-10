@@ -5,10 +5,11 @@ import LoLoPicker
 import VarScan
 import MutationSeq
 import Strelka
+import union
 import tasks
 from ctDNA.utils import helpers
 
-def partition_tumour(config, input_args, results_dir, input_bams, output_file):
+def partition_tumour(config, input_args, results_dir, input_bams, input_bais, output_file):
     workflow = pypeliner.workflow.Workflow()
 
     workflow.setobj(obj=mgd.OutputChunks('tumour_id',), value=input_args['tumour_samples'])
@@ -139,7 +140,7 @@ def analyze_tumour_normal(config, input_args, results_dir, normal_sample, normal
 
     workflow.transform(
         name='create_result_dict',
-        func=tasks.create_result_dict,
+        func=union.create_result_dict,
         ret=mgd.TempOutputObj('result_dict'),
         args=(
             mgd.InputFile(matched_results_dir + 'deepSNV_out.tsv'),
@@ -152,7 +153,7 @@ def analyze_tumour_normal(config, input_args, results_dir, normal_sample, normal
 
     workflow.transform(
         name='union_results',
-        func=tasks.union_results,
+        func=union.union_results,
         args=(
             config,
             mgd.InputFile(normal_bam),

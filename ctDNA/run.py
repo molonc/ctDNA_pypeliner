@@ -29,6 +29,7 @@ def patient_workflow(config, patient_id, patient_input, output_file):
             mgd.InputFile('fastq_2', 'sample_id', fnames=input_args['fastqs_r2']),
             mgd.InputInstance('sample_id'),
             mgd.OutputFile('sample.bam', 'sample_id', fnames=input_args['all_bams']),
+            mgd.OutputFile('sample.bam.bai', 'sample_id', fnames=input_args['all_bais']),
             )
         )
 
@@ -40,6 +41,7 @@ def patient_workflow(config, patient_id, patient_input, output_file):
             input_args,
             patient_result_dir,
             mgd.InputFile('sample.bam', 'sample_id', fnames=input_args['all_bams'], axes_origin=[]),
+            mgd.InputFile('sample.bam.bai', 'sample_id', fnames=input_args['all_bais'], axes_origin=[]),
             mgd.OutputFile(output_file),
             )
         )

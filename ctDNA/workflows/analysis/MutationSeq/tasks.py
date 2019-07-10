@@ -18,13 +18,13 @@ def run_museq(config, normal_bam, tumour_bam, interval, output_file, log_file):
         '--deep',
         '--purity', '70',
         '--coverage', '4',
-        '--threshold', '0.51',
+        '--threshold', '0.50',
         '--buffer_size', '2G',
         '--mapq_threshold', '10',
         '--indl_threshold', '0.05',
         '--normal_variant', '25',
         '--tumour_variant', '2',
-        '--baseq_threshold', '20',
+        '--baseq_threshold', '10',
         '--config', config['museq_config'],
         '--manifest', config['bed_file']
         ])

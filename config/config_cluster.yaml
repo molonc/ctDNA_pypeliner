@@ -1,7 +1,7 @@
 reference_genome: '/shahlab/pipelines/reference/GRCh37-lite.fa'
 results_dir: '/shahlab/pye/projects/biof34/results/'
 bam_directory: '/shahlab/pye/projects/biof34/bams/'
-bed_file: '/home/pye/ctDNA_pypeliner/beds/GRCh37-lite.bed'
+bed_file: '/home/pye/ctDNA_pypeliner/beds/GRCh37.bed'
 r_script_dir: '/home/pye/ctDNA_pypeliner/ctDNA/r_scripts/'
 museq_python: '/shahlab/pipelines/virtual_environments/museq_pipeline/bin/python'
 museq_classify: '/shahlab/pipelines/apps_centos6/mutationSeq_4.3.7_python2.7/classify.py'

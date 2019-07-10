@@ -2,10 +2,8 @@ import pypeliner
 import pypeliner.managed as mgd
 import tasks
 
-def align_sample(config, fastq_1, fastq_2, sample_id, out_bam):
+def align_sample(config, fastq_1, fastq_2, sample_id, out_bam, out_bai):
     workflow = pypeliner.workflow.Workflow()
-
-    out_bai = out_bam + '.bai'
 
     workflow.transform(
         name='trim_fastq',
