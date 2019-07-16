@@ -77,8 +77,8 @@ def union_results(config, normal_bam, tumour_bam, tool_results, union_space, out
             if result['count'] > 1:
                 tasks.bam_readcount(config, "N", normal_bam, result, os.path.join(union_space, 'normal_count.txt'))
                 tasks.bam_readcount(config, "T", tumour_bam, result, os.path.join(union_space, 'tumour_count.txt'))
-                if (result['T_coverage'] >= 100 and
-                    result['N_coverage'] >= 100 and
+                if (result['T_coverage'] >= 1000 and
+                    result['N_coverage'] >= 1000 and
                     result['T_alf'] > 0.004 and
                     result['T_alf'] > result['N_alf']):
                     writer.writerow(result)
