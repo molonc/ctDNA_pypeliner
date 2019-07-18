@@ -39,6 +39,7 @@ def patient_workflow(config, patient_id, patient_input, output_file):
         args=(
             config,
             input_args,
+            patient_id,
             patient_result_dir,
             mgd.InputFile('sample.bam', 'sample_id', fnames=input_args['all_bams'], axes_origin=[]),
             mgd.InputFile('sample.bam.bai', 'sample_id', fnames=input_args['all_bais'], axes_origin=[]),

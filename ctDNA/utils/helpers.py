@@ -11,7 +11,6 @@ def get_value_from_file(yamlfile, key):
     return data[key]
 
 def get_fastq_files(data, key):
-
     items = {}
     for cell_data in data.itervalues():
         for sample, sample_info in cell_data.iteritems():
@@ -43,6 +42,7 @@ def create_input_args(patient_input, patient_bam_dir):
     fastqs_r2 = get_fastq_files(patient_input, 'fastq2')
 
     return {
+        'patient_bam_dir': patient_bam_dir,
         'fastqs_r1': fastqs_r1,
         'fastqs_r2': fastqs_r2,
         'normal_samples': normal_samples,
