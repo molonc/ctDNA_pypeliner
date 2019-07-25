@@ -16,7 +16,6 @@ def align_sample(config, fastq_1, fastq_2, sample_id, out_bam, out_bai):
             mgd.TempOutputFile("fastq_1_trimmed.fastq"),
             mgd.TempOutputFile("fastq_2_trimmed.fastq"),
             )
-
         )
 
     workflow.transform(
@@ -45,8 +44,7 @@ def align_sample(config, fastq_1, fastq_2, sample_id, out_bam, out_bai):
         func=tasks.sort_bam,
         args=(
             mgd.TempInputFile('tmp.bam'),
-            mgd.OutputFile(out_bam)
-
+            mgd.OutputFile(out_bam),
             )
         )
 

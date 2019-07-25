@@ -2,7 +2,7 @@ import pypeliner
 import pypeliner.managed as mgd
 import tasks
 
-def run_Strelka(config, normal_bam, tumour_bam, output_file):
+def run_Strelka(config, normal_bam, tumour_bam, snv_output_file, indel_output_file):
     workflow = pypeliner.workflow.Workflow()
 
     workflow.transform(
@@ -27,7 +27,8 @@ def run_Strelka(config, normal_bam, tumour_bam, output_file):
             mgd.TempInputFile('bed.gz'),
             mgd.TempInputFile('bed.gz.tbi'),
             mgd.TempSpace('strelka_workspace'),
-            mgd.OutputFile(output_file)
+            mgd.OutputFile(snv_output_file),
+            mgd.OutputFile(indel_output_file),
             )
         )
 

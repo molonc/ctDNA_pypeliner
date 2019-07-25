@@ -9,8 +9,8 @@ from utils import helpers
 def patient_workflow(config, patient_id, patient_input, output_file):
     workflow = pypeliner.workflow.Workflow()
 
-    patient_bam_dir = config["bam_directory"] + patient_id + "/"
-    patient_result_dir = config["results_dir"] + patient_id + "/"
+    patient_bam_dir = config["bam_directory"] + patient_id
+    patient_result_dir = config["results_dir"] + patient_id
 
     helpers.makedirs(patient_bam_dir)
     helpers.makedirs(patient_result_dir)
@@ -83,7 +83,7 @@ def ctDNA_workflow(args):
             config,
             mgd.InputInstance('patient_id'),
             mgd.TempInputObj('patient_input', 'patient_id'),
-            mgd.OutputFile(config['results_dir'] + '{patient_id}.log', 'patient_id'),
+            mgd.OutputFile(os.path.join(config['results_dir'], '{patient_id}.log'), 'patient_id'),
             )
         )
 

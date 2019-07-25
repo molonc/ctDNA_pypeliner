@@ -51,14 +51,14 @@ def union_results(config, normal_bam, tumour_bam, tool_results, union_space, out
             'N_G',
             'N_T',
             'N_N',
-            'N_alf',
+            'N_vaf',
             'T_coverage',
             'T_A',
             'T_C',
             'T_G',
             'T_T',
             'T_N',
-            'T_alf',
+            'T_vaf',
             ]
 
         writer = csv.DictWriter(
@@ -79,5 +79,45 @@ def union_results(config, normal_bam, tumour_bam, tool_results, union_space, out
                 tasks.bam_readcount(config, "T", tumour_bam, result, os.path.join(union_space, 'tumour_count.txt'))
                 if (result['T_coverage'] >= 1000 and
                     result['N_coverage'] >= 1000 and
-                    result['T_alf'] > 0.004):
+                    result['T_vaf'] > 0.004):
                     writer.writerow(result)
+
+def union_indels(config, Strelka_in, VarScan_in, output_file):
+    results = {}
+
+    tasks.Strelka_indel_process(Strelka_in, results)
+    tasks.VarScan_indel_process(VarScan_in, results)
+
+
+    with open(output_file, 'w+') as output:
+        field_names = [
+            'chr',
+            'pos',
+            'ref',
+            'alt',
+            'VarScan',
+            'Strelka',
+            'N_coverage',
+            'N_ref',
+            'N_alt',
+            'N_vaf',
+            'T_coverage',
+            'T_ref',
+            'T_alt',
+            'T_vaf'
+            ]
+
+        writer = csv.DictWriter(
+            output,
+            fieldnames=field_names,
+            restval='.',
+            extrasaction='ignore',
+            delimiter='\t',
+            )
+
+        writer.writeheader()
+
+        sorted_results = OrderedDict(sorted(results.iteritems(), key=lambda x: (x[1]['chr'], x[1]['pos'])))
+
+        for result in sorted_results.itervalues():
+            writer.writerow(result)

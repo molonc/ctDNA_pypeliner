@@ -7,6 +7,7 @@ import MutationSeq
 import Strelka
 import union
 import tasks
+import os
 from ctDNA.utils import helpers
 
 def partition_tumour(config, input_args, patient_id, results_dir, input_bams, input_bais, output_file):
@@ -21,8 +22,8 @@ def partition_tumour(config, input_args, patient_id, results_dir, input_bams, in
         args=(
             config,
             mgd.InputFile('normal.bam', 'normal_id', fnames=input_args['normal_bams'], axes_origin=[]),
-            mgd.OutputFile(input_args['patient_bam_dir'] + 'merged_normal.bam'),
-            mgd.OutputFile(input_args['patient_bam_dir'] + 'merged_normal.bam.bai')
+            mgd.OutputFile(os.path.join(input_args['patient_bam_dir'], 'merged_normal.bam')),
+            mgd.OutputFile(os.path.join(input_args['patient_bam_dir'], 'merged_normal.bam.bai'))
             )
         )
 
@@ -37,7 +38,8 @@ def partition_tumour(config, input_args, patient_id, results_dir, input_bams, in
             mgd.InputFile(input_args['patient_bam_dir'] + 'merged_normal.bam'),
             mgd.InputInstance('tumour_id'),
             mgd.InputFile('tumour.bam', 'tumour_id', fnames=input_bams),
-            mgd.OutputFile(results_dir + patient_id + '_{tumour_id}.tsv', 'tumour_id')
+            mgd.OutputFile(os.path.join(results_dir, patient_id + '_{tumour_id}.snv.tsv'), 'tumour_id'),
+            mgd.OutputFile(os.path.join(results_dir, patient_id + '_{tumour_id}.indel.tsv'), 'tumour_id')
             )
         )
 
@@ -45,17 +47,18 @@ def partition_tumour(config, input_args, patient_id, results_dir, input_bams, in
         name='log_patient_analysis',
         func=tasks.log_patient_analysis,
         args=(
-            mgd.InputFile(results_dir + patient_id + '_{tumour_id}.tsv', 'tumour_id', axes_origin=[]),
+            mgd.InputFile(os.path.join(results_dir, patient_id + '_{tumour_id}.snv.tsv'), 'tumour_id', axes_origin=[]),
+            mgd.InputFile(os.path.join(results_dir, patient_id + '_{tumour_id}.indel.tsv'), 'tumour_id', axes_origin=[]),
             mgd.OutputFile(output_file),
             )
         )
 
     return workflow
 
-def analyze_tumour_normal(config, input_args, results_dir, normal_bam, tumour_sample, tumour_bam, output_file):
+def analyze_tumour_normal(config, input_args, results_dir, normal_bam, tumour_sample, tumour_bam, output_file, indel_output_file):
     workflow = pypeliner.workflow.Workflow()
 
-    matched_results_dir = results_dir + '{}/'.format(tumour_sample)
+    matched_results_dir = os.path.join(results_dir, tumour_sample)
 
     helpers.makedirs(matched_results_dir)
 
@@ -66,7 +69,7 @@ def analyze_tumour_normal(config, input_args, results_dir, normal_bam, tumour_sa
             config,
             mgd.InputFile(normal_bam),
             mgd.InputFile(tumour_bam),
-            mgd.OutputFile(matched_results_dir + 'deepSNV_out.tsv')
+            mgd.OutputFile(os.path.join(matched_results_dir, 'deepSNV_out.tsv'))
             )
         )
 
@@ -77,7 +80,8 @@ def analyze_tumour_normal(config, input_args, results_dir, normal_bam, tumour_sa
             config,
             mgd.InputFile(normal_bam),
             mgd.InputFile(tumour_bam),
-            mgd.OutputFile(matched_results_dir + 'VarScan_out.vcf'),
+            mgd.OutputFile(os.path.join(matched_results_dir, 'VarScan_out.vcf')),
+            mgd.OutputFile(os.path.join(matched_results_dir, 'VarScan_indel_out.vcf')),
             ))
 
     workflow.subworkflow(
@@ -87,7 +91,7 @@ def analyze_tumour_normal(config, input_args, results_dir, normal_bam, tumour_sa
             config,
             mgd.InputFile(normal_bam),
             mgd.InputFile(tumour_bam),
-            mgd.OutputFile(matched_results_dir + 'museq_out.vcf'),
+            mgd.OutputFile(os.path.join(matched_results_dir, 'museq_out.vcf')),
             )
         )
 
@@ -99,6 +103,7 @@ def analyze_tumour_normal(config, input_args, results_dir, normal_bam, tumour_sa
             mgd.InputFile(normal_bam),
             mgd.InputFile(tumour_bam),
             mgd.OutputFile(matched_results_dir + 'strelka_out.vcf'),
+            mgd.OutputFile(matched_results_dir + 'strelka_indel_out.vcf')
             )
         )
 
@@ -138,5 +143,16 @@ def analyze_tumour_normal(config, input_args, results_dir, normal_bam, tumour_sa
             mgd.TempSpace('union_space'),
             mgd.OutputFile(output_file),
             ))
+
+    workflow.transform(
+        name='union_indels',
+        func=union.union_indels,
+        args=(
+            config,
+            mgd.InputFile(matched_results_dir + 'strelka_indel_out.vcf'),
+            mgd.InputFile(matched_results_dir + 'VarScan_indel_out.vcf'),
+            mgd.OutputFile(indel_output_file),
+            )
+        )
 
     return workflow

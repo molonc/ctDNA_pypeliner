@@ -31,8 +31,8 @@ def create_input_args(patient_input, patient_bam_dir):
     normal_samples = list(str(sample) for sample in patient_input["normal"])
     tumour_samples = list(str(sample) for sample in patient_input["tumour"])
 
-    normal_bams = {str(sample): patient_bam_dir + str(sample) + ".sorted.bam" for sample in normal_samples}
-    tumour_bams = {str(sample): patient_bam_dir + str(sample) + ".sorted.bam" for sample in tumour_samples}
+    normal_bams = {str(sample): os.path.join(patient_bam_dir, str(sample) + ".sorted.bam") for sample in normal_samples}
+    tumour_bams = {str(sample): os.path.join(patient_bam_dir, str(sample) + ".sorted.bam") for sample in tumour_samples}
 
     all_samples = normal_samples + tumour_samples
     all_bams = dict(normal_bams.items() + tumour_bams.items())

@@ -3,7 +3,7 @@ import pypeliner.managed as mgd
 import tasks
 
 
-def run_VarScan(config, normal_bam, tumour_bam, snp_output_file):
+def run_VarScan(config, normal_bam, tumour_bam, snp_output_file, indel_output_file):
     workflow = pypeliner.workflow.Workflow()
 
     workflow.transform(
@@ -34,7 +34,7 @@ def run_VarScan(config, normal_bam, tumour_bam, snp_output_file):
             mgd.TempInputFile("normal.pileup"),
             mgd.TempInputFile("tumour.pileup"),
             mgd.OutputFile(snp_output_file),
-            mgd.TempOutputFile('VarScan_indel.vcf'),
+            mgd.OutputFile(indel_output_file),
             )
         )
 

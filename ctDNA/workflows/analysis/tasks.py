@@ -13,8 +13,11 @@ def merge_normal(config, input_bams, output_file, output_bai):
         output_bai,
         )
 
-def log_patient_analysis(input_files, output_file):
+def log_patient_analysis(input_files, input_indel_files, output_file):
     with open(output_file, "w+") as output:
         output.write('tumour_sample\tresult_file\n')
         for tumour_id, result_file in input_files.iteritems():
             output.write(tumour_id + "\t" + result_file + "\n")
+
+        for tumour_id, indel_result_file in input_indel_files.iteritems():
+            output.write(tumour_id + "_indel" + "\t" + indel_result_file + "\n")
