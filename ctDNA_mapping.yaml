@@ -33,6 +33,12 @@ PBC0001051:
       type: plasma baseline
 PBC0001069:
   normal:
+    TNBC1069-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1069-BC-DNA-CRCQV42Run032-6_S6_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1069-BC-DNA-CRCQV42Run032-6_S6_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC1069-Saliva-DNA-CRCQV42Run023:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1069-Saliva-DNA-CRCQV42Run023-4_S4_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1069-Saliva-DNA-CRCQV42Run023-4_S4_L001_R2_001.fastq.gz
@@ -150,6 +156,12 @@ PBC0001150:
       type: TNBC FFPE
 PBC0001177:
   normal:
+    TNBC1177-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1177-BC-DNA-CRCQV42Run032-10_S10_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1177-BC-DNA-CRCQV42Run032-10_S10_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC1177s-CRCQV34Run011:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1177s-CRCQV34Run011-16_S16_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1177s-CRCQV34Run011-16_S16_L001_R2_001.fastq.gz
@@ -222,6 +234,12 @@ PBC0001181:
       type: plasma 12 month repeat
 PBC0001185:
   normal:
+    TNBC1185-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1185-BC-DNA-CRCQV42Run032-11_S11_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1185-BC-DNA-CRCQV42Run032-11_S11_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC1185s-CRCQV34Run007:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1185s-CRCQV34Run007-14_S14_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1185s-CRCQV34Run007-14_S14_L001_R2_001.fastq.gz
@@ -276,6 +294,12 @@ PBC0001194:
       type: TNBC FFPE
 PBC0001224:
   normal:
+    TNBC067-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC067-BC-DNA-CRCQV42Run032-12_S12_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC067-BC-DNA-CRCQV42Run032-12_S12_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC067s-CRCQV34Run011:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC067s-CRCQV34Run011-14_S14_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC067s-CRCQV34Run011-14_S14_L001_R2_001.fastq.gz
@@ -309,6 +333,12 @@ PBC0001224:
       type: plasma baseline repeat
 PBC0001255:
   normal:
+    TNBC1255-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1255-BC-DNA-CRCQV42Run032-13_S13_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1255-BC-DNA-CRCQV42Run032-13_S13_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC1255s-CRCQV34Run007:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1255s-CRCQV34Run007-15_S15_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1255s-CRCQV34Run007-15_S15_L001_R2_001.fastq.gz
@@ -705,6 +735,12 @@ PBC0001310:
       type: plasma baseline
 PBC0001312:
   normal:
+    TNBC010-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC010-BC-DNA-CRCQV42Run032-9_S9_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC010-BC-DNA-CRCQV42Run032-9_S9_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC010-Saliva-DNA-CRCQV42Run020:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC010-Saliva-DNA-CRCQV42Run020-14_S14_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC010-Saliva-DNA-CRCQV42Run020-14_S14_L001_R2_001.fastq.gz
@@ -786,6 +822,12 @@ PBC0001320:
       type: plasma baseline
 PBC0001321:
   normal:
+    TNBC1321-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1321-BC-DNA-CRCQV42Run032-14_S14_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1321-BC-DNA-CRCQV42Run032-14_S14_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC078-Saliva-DNA-CRCQV42Run025:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC078-Saliva-DNA-CRCQV42Run025-15_S15_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC078-Saliva-DNA-CRCQV42Run025-15_S15_L001_R2_001.fastq.gz
@@ -1032,6 +1074,12 @@ PBC0001351:
       type: earliest baseline plasma
 PBC0001352:
   normal:
+    TNBC1352-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1352-BC-DNA-CRCQV42Run032-15_S15_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1352-BC-DNA-CRCQV42Run032-15_S15_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC1352s-CRCQV42Run016:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1352s-CRCQV42Run016-15_S15_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1352s-CRCQV42Run016-15_S15_L001_R2_001.fastq.gz
@@ -1047,6 +1095,12 @@ PBC0001352:
       type: plasma baseline
 PBC0001353:
   normal:
+    TNBC1353-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1353-BC-DNA-CRCQV42Run032-16_S16_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1353-BC-DNA-CRCQV42Run032-16_S16_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC1353-Saliva-DNA-CRCQV42Run029:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1353-Saliva-DNA-CRCQV42Run029-21_S21_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1353-Saliva-DNA-CRCQV42Run029-21_S21_L001_R2_001.fastq.gz
@@ -1068,6 +1122,12 @@ PBC0001353:
       type: plasma baseline
 PBC0001396:
   normal:
+    TNBC1396-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1396-BC-DNA-CRCQV42Run032-17_S17_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1396-BC-DNA-CRCQV42Run032-17_S17_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC1396s-CRCQV42Run016:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1396s-CRCQV42Run016-16_S16_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1396s-CRCQV42Run016-16_S16_L001_R2_001.fastq.gz
@@ -1083,6 +1143,12 @@ PBC0001396:
       type: plasma baseline
 PBC0001411:
   normal:
+    TNBC1411-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1411-BC-DNA-CRCQV42Run032-18_S18_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1411-BC-DNA-CRCQV42Run032-18_S18_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC1411s-CRCQV34Run011:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1411s-CRCQV34Run011-17_S17_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1411s-CRCQV34Run011-17_S17_L001_R2_001.fastq.gz
@@ -1110,6 +1176,12 @@ PBC0001411:
       type: plasma baseline repeat
 PBC0001432:
   normal:
+    TNBC1432-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1432-BC-DNA-CRCQV42Run032-19_S19_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1432-BC-DNA-CRCQV42Run032-19_S19_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC1432s-CRCQV34Run011:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1432s-CRCQV34Run011-18_S18_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1432s-CRCQV34Run011-18_S18_L001_R2_001.fastq.gz
@@ -1290,6 +1362,12 @@ PBC0001475:
       type: plasma baseline
 PBC0001516:
   normal:
+    TNBC1516-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1516-BC-DNA-CRCQV42Run032-20_S20_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1516-BC-DNA-CRCQV42Run032-20_S20_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC1516-Saliva-DNA-CRCQV42Run021:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1516-Saliva-DNA-CRCQV42Run021-23_S23_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1516-Saliva-DNA-CRCQV42Run021-23_S23_L001_R2_001.fastq.gz
@@ -1311,6 +1389,12 @@ PBC0001516:
       type: plasma baseline
 PBC0001589:
   normal:
+    TNBC1589-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1589-BC-DNA-CRCQV42Run032-8_S8_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1589-BC-DNA-CRCQV42Run032-8_S8_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC1589-Saliva-DNA-CRCQV42Run024:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1589-Saliva-DNA-CRCQV42Run024-20_S20_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1589-Saliva-DNA-CRCQV42Run024-20_S20_L001_R2_001.fastq.gz
@@ -1332,6 +1416,12 @@ PBC0001589:
       type: plasma baseline
 PBC0001627:
   normal:
+    TNBC1627-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1627-BC-DNA-CRCQV42Run032-21_S21_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1627-BC-DNA-CRCQV42Run032-21_S21_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC1627-CRCQV34Run002-16:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1627-CRCQV34Run002-16_S16_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1627-CRCQV34Run002-16_S16_L001_R2_001.fastq.gz
@@ -1365,6 +1455,12 @@ PBC0001627:
       type: plasma baseline
 PBC0001653:
   normal:
+    TNBC1653-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1653-BC-DNA-CRCQV42Run032-22_S22_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1653-BC-DNA-CRCQV42Run032-22_S22_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC1653-Saliva-DNA-CRCQV42Run021:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1653-Saliva-DNA-CRCQV42Run021-24_S24_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1653-Saliva-DNA-CRCQV42Run021-24_S24_L001_R2_001.fastq.gz
@@ -1386,6 +1482,12 @@ PBC0001653:
       type: plasma baseline
 PBC0001672:
   normal:
+    TNBC032-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC032-BC-DNA-CRCQV42Run032-4_S4_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC032-BC-DNA-CRCQV42Run032-4_S4_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC032-Saliva-DNA-CRCQV42Run020:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC032-Saliva-DNA-CRCQV42Run020-17_S17_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC032-Saliva-DNA-CRCQV42Run020-17_S17_L001_R2_001.fastq.gz
@@ -1440,6 +1542,12 @@ PBC0001673:
       type: plasma baseline
 PBC0001674:
   normal:
+    TNBC057-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC057-BC-DNA-CRCQV42Run032-7_S7_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC057-BC-DNA-CRCQV42Run032-7_S7_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC057-Saliva-DNA-CRCQV42Run020:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC057-Saliva-DNA-CRCQV42Run020-18_S18_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC057-Saliva-DNA-CRCQV42Run020-18_S18_L001_R2_001.fastq.gz
@@ -1461,6 +1569,12 @@ PBC0001674:
       type: plasma baseline
 PBC0001676:
   normal:
+    TNBC1676-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1676-BC-DNA-CRCQV42Run032-23_S23_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1676-BC-DNA-CRCQV42Run032-23_S23_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC1676-Saliva-DNA-CRCQV42Run022:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1676-Saliva-DNA-CRCQV42Run022-14_S14_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1676-Saliva-DNA-CRCQV42Run022-14_S14_L001_R2_001.fastq.gz
@@ -1482,6 +1596,12 @@ PBC0001676:
       type: plasma baseline
 PBC0001723:
   normal:
+    TNBC1723-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1723-BC-DNA-CRCQV42Run032-24_S24_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1723-BC-DNA-CRCQV42Run032-24_S24_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC1723-Saliva-DNA-CRCQV42Run022:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1723-Saliva-DNA-CRCQV42Run022-15_S15_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC1723-Saliva-DNA-CRCQV42Run022-15_S15_L001_R2_001.fastq.gz
@@ -2271,6 +2391,12 @@ PBC0003097:
       type: plasma baseline
 PBC0003334:
   normal:
+    TTR2963-BC-DNA-CRCQV42Run032:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TTR2963-BC-DNA-CRCQV42Run032-5_S5_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TTR2963-BC-DNA-CRCQV42Run032-5_S5_L001_R2_001.fastq.gz
+      run: Run032
+      sample_status: Normal
+      type: buffy coat
     TNBC3334-Saliva-DNA-CRCQV42Run025:
       fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC3334-Saliva-DNA-CRCQV42Run025-13_S13_L001_R1_001.fastq.gz
       fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC3334-Saliva-DNA-CRCQV42Run025-13_S13_L001_R2_001.fastq.gz
