@@ -7,3 +7,7 @@ museq_python: '/shahlab/pipelines/virtual_environments/museq_pipeline/bin/python
 museq_classify: '/shahlab/pipelines/apps_centos6/mutationSeq_4.3.7_python2.7/classify.py'
 museq_deep_model: '/shahlab/pipelines/apps_centos6/mutationSeq_4.3.7_python2.7/model_deep_v0.2.npz'
 museq_config: '/shahlab/pipelines/apps_centos6/mutationSeq_4.3.7_python2.7/metadata.config'
+snv_vcf_template: '/home/pye/ctDNA_pypeliner/template_snv.vcf'
+indel_vcf_template: '/home/pye/ctDNA_pypeliner/template_indel.vcf'
+annovar: '/shahlab/pye/software/annovar/'
+annovar_humandb: '/shahlab/pye/software/annovar/humandb/'

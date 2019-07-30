@@ -1,5 +1,6 @@
 import os
 import csv
+import vcf
 import tasks
 from collections import OrderedDict
 
@@ -27,13 +28,13 @@ def create_result_dict(deepSNV_out, VarScan_out, museq_out, strelka_out, LoLoPic
         }
     }
 
-def union_results(config, normal_bam, tumour_bam, tool_results, union_space, output_file):
+def union_results(config, normal_bam, tumour_bam, tool_results, union_space, output_tsv, output_vcf):
     os.makedirs(union_space)
     results = {}
     for tool, process in tool_results.iteritems():
         process['process_function'](tool, process['file'], results)
 
-    with open(output_file, 'w+') as output:
+    with open(output_tsv, 'wb') as tsv_output, open(output_vcf, 'wb') as vcf_output:
         field_names = [
             'chr',
             'pos',
@@ -61,15 +62,19 @@ def union_results(config, normal_bam, tumour_bam, tool_results, union_space, out
             'T_vaf',
             ]
 
-        writer = csv.DictWriter(
-            output,
+        tsv_writer = csv.DictWriter(
+            tsv_output,
             fieldnames=field_names,
-            restval=".",
+            restval='.',
             extrasaction='ignore',
-            delimiter="\t",
+            delimiter='\t',
             )
 
-        writer.writeheader()
+        tsv_writer.writeheader()
+
+
+        vcf_template = vcf.Reader(filename=config['snv_vcf_template'])
+        vcf_writer = vcf.Writer(vcf_output, vcf_template)
 
         sorted_results = OrderedDict(sorted(results.iteritems(), key=lambda x: (-x[1]['count'], x[1]['chr'], x[1]['pos'])))
 
@@ -80,16 +85,16 @@ def union_results(config, normal_bam, tumour_bam, tool_results, union_space, out
                 if (result['T_coverage'] >= 1000 and
                     result['N_coverage'] >= 1000 and
                     result['T_vaf'] > 0.004):
-                    writer.writerow(result)
+                    tasks.write_snv_record(result, vcf_writer)
+                    tsv_writer.writerow(result)
 
-def union_indels(config, Strelka_in, VarScan_in, output_file):
+def union_indels(config, Strelka_in, VarScan_in,  output_tsv, output_vcf):
     results = {}
 
     tasks.Strelka_indel_process(Strelka_in, results)
     tasks.VarScan_indel_process(VarScan_in, results)
 
-
-    with open(output_file, 'w+') as output:
+    with open(output_tsv, 'wb') as tsv_output, open(output_vcf, 'wb') as vcf_output:
         field_names = [
             'chr',
             'pos',
@@ -107,17 +112,21 @@ def union_indels(config, Strelka_in, VarScan_in, output_file):
             'T_vaf'
             ]
 
-        writer = csv.DictWriter(
-            output,
+        tsv_writer = csv.DictWriter(
+            tsv_output,
             fieldnames=field_names,
             restval='.',
             extrasaction='ignore',
             delimiter='\t',
             )
 
-        writer.writeheader()
+        tsv_writer.writeheader()
+
+        vcf_template = vcf.Reader(filename=config['indel_vcf_template'])
+        vcf_writer = vcf.Writer(vcf_output, vcf_template)
 
         sorted_results = OrderedDict(sorted(results.iteritems(), key=lambda x: (x[1]['chr'], x[1]['pos'])))
 
         for result in sorted_results.itervalues():
-            writer.writerow(result)
+            tasks.write_indel_record(result, vcf_writer)
+            tsv_writer.writerow(result)

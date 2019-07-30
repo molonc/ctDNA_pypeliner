@@ -1,4 +1,7 @@
+import os
 from pypeliner.commandline import execute
+from shutil import copyfile
+from ctDNA.utils import vcfutils
 
 def merge_normal(config, input_bams, output_file, output_bai):
     normal_list = list(bam for bam in input_bams.itervalues())
@@ -13,11 +16,51 @@ def merge_normal(config, input_bams, output_file, output_bai):
         output_bai,
         )
 
-def log_patient_analysis(input_files, input_indel_files, output_file):
+def annotate_outputs(config, temp_space, input_file, output_txt,):
+    os.makedirs(temp_space)
+
+    execute(
+        os.path.join(config['annovar'], 'convert2annovar.pl'),
+        '-format',
+        'vcf4',
+        '-allsample',
+        '-withfreq',
+        input_file,
+        '>',
+        os.path.join(temp_space, 'anno_in')
+        )
+
+    execute(
+        os.path.join(config['annovar'], 'table_annovar.pl'),
+        os.path.join(temp_space, 'anno_in'),
+        config['annovar_humandb'],
+        '-buildver',
+        'hg19',
+        '-out',
+        os.path.join(temp_space, 'ANNO'),
+        '-remove',
+        '-protocol',
+        'refGene,cytoBand',
+        '-operation',
+        'g,r',
+        '-nastring',
+        '.',
+        '-polish',
+        )
+
+    copyfile(os.path.join(temp_space, 'ANNO.hg19_multianno.txt'), output_txt)
+
+def log_patient_analysis(snv_tsv_files, indel_tsv_files, snv_txt_files, indel_txt_files, output_file):
     with open(output_file, "w+") as output:
         output.write('tumour_sample\tresult_file\n')
-        for tumour_id, result_file in input_files.iteritems():
-            output.write(tumour_id + "\t" + result_file + "\n")
+        for tumour_id, snv_tsv_file in snv_tsv_files.iteritems():
+            output.write(tumour_id + "_snv_tsv\t" + snv_tsv_file + "\n")
 
-        for tumour_id, indel_result_file in input_indel_files.iteritems():
-            output.write(tumour_id + "_indel" + "\t" + indel_result_file + "\n")
+        for tumour_id, indel_tsv_file in indel_tsv_files.iteritems():
+            output.write(tumour_id + "_indel_tsv\t" + indel_tsv_file + "\n")
+
+        for tumour_id, snv_txt_file in snv_txt_files.iteritems():
+            output.write(tumour_id + "_snv_txt\t" + snv_txt_file + "\n")
+
+        for tumour_id, indel_txt_file in indel_txt_files.iteritems():
+            output.write(tumour_id + "_indel_txt\t" + indel_txt_file + "\n")

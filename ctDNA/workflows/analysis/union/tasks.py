@@ -44,7 +44,7 @@ def DeepSNV_process(tool, input_file, results):
             key = row['chr'] + ':' + row['pos']
             t_vaf = round(float(row['freq.var']), 4)
 
-            if t_vaf < 0.001 or row['var'] == '-' or float(row['p.val']) > P_VALUE_CUTOFF:
+            if t_vaf < T_VAF_CUTOFF or row['var'] == '-' or float(row['p.val']) > P_VALUE_CUTOFF:
                 continue
 
             if results.get(key, False) and not results[key].get(tool, False):
@@ -164,6 +164,72 @@ def strelka_process(tool, input_file, results):
                     tool: str(row.INFO['QSS'])
                     }
 
+def write_snv_record(result, writer):
+    alt = [vcf.model._Substitution(result['alt'])]
+    info = {
+        'COUNT': result['count'],
+        'DSNV': result.get('deepSNV', '.'),
+        'LLP': result.get('LoLoPicker', '.'),
+        'VS': result.get('VarScan', '.'),
+        'MS': result.get('MutationSeq', '.'),
+        'STR': result.get('Strelka', '.')
+        }
+
+    format = 'GT:DP:AU:CU:GU:TU:NU:VAF'
+    sample_indexes = {'TUMOR': 1, 'NORMAL': 0}
+
+    record = vcf.model._Record(
+        CHROM=result['chr'],
+        POS=int(result['pos']),
+        ID='.',
+        REF=result['ref'],
+        ALT=alt,
+        QUAL='.',
+        FILTER='PASS',
+        INFO=info,
+        FORMAT=format,
+        sample_indexes=sample_indexes
+        )
+
+    CallData = vcf.model.make_calldata_tuple('GT DP AU CU GU TU NU VAF')
+
+    if result['T_vaf'] > T_VAF_CUTOFF:
+        T_GT = '0/1'
+    else:
+        T_GT = '0/0'
+
+    if result['N_vaf'] > T_VAF_CUTOFF:
+        N_GT = '0/1'
+    else:
+        N_GT = '0/0'
+
+    tumour_calldata = CallData(
+        GT=T_GT,
+        DP=int(result['T_coverage']),
+        AU=int(result['T_A']),
+        CU=int(result['T_C']),
+        GU=int(result['T_G']),
+        TU=int(result['T_T']),
+        NU=result['T_N'],
+        VAF=result['T_vaf'],
+        )
+    normal_calldata = CallData(
+        GT=N_GT,
+        DP=int(result['N_coverage']),
+        AU=int(result['N_A']),
+        CU=int(result['N_C']),
+        GU=int(result['N_G']),
+        TU=int(result['N_T']),
+        NU=int(result['N_N']),
+        VAF=result['N_vaf'],
+        )
+    tumour_call = vcf.model._Call(record, 'TUMOR', tumour_calldata)
+    normal_call = vcf.model._Call(record, 'TUMOR', normal_calldata)
+
+    record.samples = [normal_call, tumour_call]
+
+    writer.write_record(record)
+
 def VarScan_indel_process(input_file, results):
     reader = vcf.Reader(filename=input_file)
     for row in reader:
@@ -223,7 +289,8 @@ def Strelka_indel_process(input_file, results):
         except ZeroDivisionError:
             t_vaf = 0
 
-        if t_vaf < T_VAF_CUTOFF or row.INFO['QSI'] < STRELKA_CUTOFF
+        if t_vaf < T_VAF_CUTOFF or row.INFO['QSI'] < STRELKA_CUTOFF:
+            continue
 
         if results.get(key, False) and not results[key].get('Strelka', False):
             results[key]['Strelka'] = row.INFO['QSI']
@@ -246,5 +313,57 @@ def Strelka_indel_process(input_file, results):
                     'T_vaf': t_vaf
                     }
 
+def write_indel_record(result, writer):
+    alt = [vcf.model._Substitution(result['alt'])]
+    info = {
+        'VS': result.get('VarScan', '.'),
+        'STR': result.get('Strelka', '.')
+        }
+    format = 'GT:DP:REF:ALT:VAF'
+    sample_indexes = {'TUMOR': 1, 'NORMAL': 0}
 
+    record = vcf.model._Record(
+        CHROM=result['chr'],
+        POS=int(result['pos']),
+        ID='.',
+        REF=result['ref'],
+        ALT=alt,
+        QUAL='.',
+        FILTER='PASS',
+        INFO=info,
+        FORMAT=format,
+        sample_indexes=sample_indexes
+        )
 
+    CallData = vcf.model.make_calldata_tuple('GT DP REF ALT VAF')
+
+    if result['T_vaf'] > T_VAF_CUTOFF:
+        T_GT = '0/1'
+    else:
+        T_GT = '0/0'
+
+    if result['N_vaf'] > T_VAF_CUTOFF:
+        N_GT = '0/1'
+    else:
+        N_GT = '0/0'
+
+    tumour_calldata = CallData(
+        GT=T_GT,
+        DP=int(result['T_coverage']),
+        REF=int(result['T_ref']),
+        ALT=int(result['T_alt']),
+        VAF=result['T_vaf'],
+        )
+    normal_calldata = CallData(
+        GT=N_GT,
+        DP=int(result['N_coverage']),
+        REF=int(result['N_ref']),
+        ALT=int(result['N_alt']),
+        VAF=result['N_vaf'],
+        )
+    tumour_call = vcf.model._Call(record, 'TUMOR', tumour_calldata)
+    normal_call = vcf.model._Call(record, 'TUMOR', normal_calldata)
+
+    record.samples = [normal_call, tumour_call]
+
+    writer.write_record(record)

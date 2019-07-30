@@ -1,0 +1,10 @@
+##fileformat=VCFv4.1
+##source=ctDNA_pypeliner
+##INFO=<ID=VS,Number=1,Type=Float,Description="p-value from VarScan">
+##INFO=<ID=STR,Number=1,Type=Float,Description="Quality Score from Strelka">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read Depth">
+##FORMAT=<ID=REF,Number=1,Type=Integer,Description="Read count of reference allele">
+##FORMAT=<ID=ALT,Number=1,Type=Integer,Description="Read count of alternate allele">
+##FORMAT=<ID=VAF,Number=1,Type=Float,Description="Variant allele frequency">
+#CHROM  POS ID  REF ALT QUAL    FILTER  INFO    FORMAT  NORMAL  TUMOR

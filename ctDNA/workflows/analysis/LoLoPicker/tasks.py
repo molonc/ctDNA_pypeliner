@@ -18,7 +18,7 @@ def make_sample_list(args, sample_list_outfile):
             outfile.write(bam + '\t')
             outfile.write(sample + '\n')
 
-        outfile.write(args['patient_bam_dir'] + 'merged_normal.bam\tmerged_normal\n')
+        outfile.write(os.path.join(args['patient_bam_dir'], 'merged_normal.bam') + '\tmerged_normal\n')
 
 def LoLoPicker_somatic(config, tumour_bam, normal_bam, region_bed, temp_dir, somatic_file):
     os.makedirs(temp_dir)
