@@ -1,5 +1,5 @@
 reference_genome: '/shahlab/pipelines/reference/GRCh37-lite.fa'
-results_dir: '/shahlab/pye/projects/biof34/results/'
+results_dir: '/shahlab/pye/projects/biof34/run024/results/'
 bam_directory: '/shahlab/pye/projects/biof34/bams/'
 bed_file: '/home/pye/ctDNA_pypeliner/beds/GRCh37.bed'
 r_script_dir: '/home/pye/ctDNA_pypeliner/ctDNA/r_scripts/'

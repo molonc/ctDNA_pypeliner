@@ -2,10 +2,21 @@ import pypeliner
 import pypeliner.managed as mgd
 import tasks
 
-def align_sample(config, fastq_1, fastq_2, sample_id, out_bam):
+def align_sample(config, fastq_1, fastq_2, sample_id, out_bam, out_bai):
     workflow = pypeliner.workflow.Workflow()
 
-    out_bai = out_bam + '.bai'
+    workflow.transform(
+        name='trim_fastq',
+        ctx={'mem': 8, 'ncpus': 1, 'walltime': '08:00'},
+        func=tasks.trim_fastq,
+        args=(
+            mgd.InputFile(fastq_1),
+            mgd.InputFile(fastq_2),
+            mgd.TempSpace("trim_space"),
+            mgd.TempOutputFile("fastq_1_trimmed.fastq"),
+            mgd.TempOutputFile("fastq_2_trimmed.fastq"),
+            )
+        )
 
     workflow.transform(
         name='fastq_to_sam',
@@ -13,8 +24,8 @@ def align_sample(config, fastq_1, fastq_2, sample_id, out_bam):
         func=tasks.fastq_to_sam,
         args=(
             mgd.InputFile(config["reference_genome"]),
-            mgd.InputFile(fastq_1),
-            mgd.InputFile(fastq_2),
+            mgd.TempInputFile("fastq_1_trimmed.fastq"),
+            mgd.TempInputFile("fastq_2_trimmed.fastq"),
             mgd.TempOutputFile('tmp.sam'),
             )
         )
@@ -33,8 +44,7 @@ def align_sample(config, fastq_1, fastq_2, sample_id, out_bam):
         func=tasks.sort_bam,
         args=(
             mgd.TempInputFile('tmp.bam'),
-            mgd.OutputFile(out_bam)
-
+            mgd.OutputFile(out_bam),
             )
         )
 

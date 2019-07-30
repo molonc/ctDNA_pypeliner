@@ -14,7 +14,7 @@ def main():
         for fastq in fastqs:
             for pbc_dict in yaml_dict.itervalues():
                 for sample_type_dict in pbc_dict.itervalues():
-                    for sample_dict in sample_type_dict.itervalues():
+                    for sample_id, sample_dict in sample_type_dict.iteritems():
                         if fastq.startswith(sample_id):
                             if re.search("_R1_", fastq):
                                 sample_dict["fastq1"] = join(DIR_PATH, fastq)

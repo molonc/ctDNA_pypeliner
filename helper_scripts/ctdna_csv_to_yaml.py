@@ -17,7 +17,7 @@ def main():
                 sample_id = get_sample_sample_id(row)
                 yaml_dict[pbc_id]["normal"][sample_id] = get_sample_dict(row)
 
-            else:
+            elif row["Sample status"] != "N/A" and row["Sample status"] != "WGA":
                 sample_id = get_sample_sample_id(row)
                 yaml_dict[pbc_id]["tumour"][sample_id] = get_sample_dict(row)
 

@@ -1,0 +1,315 @@
+STANDARD_RUN002:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV34Run002-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV34Run002-3_S3_L001_R2_001.fastq.gz
+      run: Run002
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV34Run002-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV34Run002-2_S2_L001_R2_001.fastq.gz
+      run: Run002
+      sample_status: Treatment naive Primary Sx
+      type: QMRS
+STANDARD_RUN005:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV34Run005-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV34Run005-3_S3_L001_R2_001.fastq.gz
+      run: Run005
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV34Run005-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV34Run005-2_S2_L001_R2_001.fastq.gz
+      run: Run005
+      sample_status: Treatment naive Primary Sx
+      type: QMRS
+STANDARD_RUN007:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV34Run007-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV34Run007-3_S3_L001_R2_001.fastq.gz
+      run: Run007
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV34Run007-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV34Run007-2_S2_L001_R2_001.fastq.gz
+      run: Run007
+      sample_status: Treatment naive Primary Sx
+      type: QMRS
+STANDARD_RUN011:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV34Run011-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV34Run011-3_S3_L001_R2_001.fastq.gz
+      run: Run011
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV34Run011-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV34Run011-2_S2_L001_R2_001.fastq.gz
+      run: Run011
+      sample_status: Treatment naive Primary Sx
+      type: QMRS
+STANDARD_RUN015:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV34Run015-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV34Run015-3_S3_L001_R2_001.fastq.gz
+      run: Run015
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV34Run015-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV34Run015-2_S2_L001_R2_001.fastq.gz
+      run: Run015
+      sample_status: Treatment naive Primary Sx
+      type: QMRS
+STANDARD_RUN027:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV40Run027-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV40Run027-3_S3_L001_R2_001.fastq.gz
+      run: Run027
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV40Run027-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV40Run027-2_S2_L001_R2_001.fastq.gz
+      run: Run027
+      sample_status: Treatment naive Primary Sx
+      type: QMRS
+STANDARD_RUN016:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run016-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run016-3_S3_L001_R2_001.fastq.gz
+      run: Run016
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run016-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run016-2_S2_L001_R2_001.fastq.gz
+      run: Run016
+      sample_status: Treatment naive Primary Sx
+      type: QMRS
+STANDARD_RUN017:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run017-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run017-3_S3_L001_R2_001.fastq.gz
+      run: Run017
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run017-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run017-2_S2_L001_R2_001.fastq.gz
+      run: Run017
+      sample_status: Treatment naive Primary Sx
+      type: QMRS
+STANDARD_RUN018:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run018-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run018-3_S3_L001_R2_001.fastq.gz
+      run: Run018
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run018-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run018-2_S2_L001_R2_001.fastq.gz
+      run: Run018
+      sample_status: Treatment naive Primary Sx
+      type: QMRS
+STANDARD_RUN019:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run019-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run019-3_S3_L001_R2_001.fastq.gz
+      run: Run019
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run019-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run019-2_S2_L001_R2_001.fastq.gz
+      run: Run019
+      sample_status: Treatment naive Primary Sx
+      type: QMRS
+STANDARD_RUN020:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run020-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run020-3_S3_L001_R2_001.fastq.gz
+      run: Run020
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run020-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run020-2_S2_L001_R2_001.fastq.gz
+      run: Run020
+      sample_status: Treatment naive Primary Sx
+      type: QMRS
+STANDARD_RUN021:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run021-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run021-3_S3_L001_R2_001.fastq.gz
+      run: Run021
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run021-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run021-2_S2_L001_R2_001.fastq.gz
+      run: Run021
+      sample_status: Treatment naive Primary Sx
+      type: QMRS
+STANDARD_RUN022:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run022-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run022-3_S3_L001_R2_001.fastq.gz
+      run: Run022
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run022-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run022-2_S2_L001_R2_001.fastq.gz
+      run: Run022
+      sample_status: Treatment naive Primary Sx
+      type: QMRS
+STANDARD_RUN023:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run023-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run023-3_S3_L001_R2_001.fastq.gz
+      run: Run023
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run023-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run023-2_S2_L001_R2_001.fastq.gz
+      run: Run023
+      sample_status: Treatment naive Primary Sx
+      type: QMRS
+STANDARD_RUN024:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run024-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run024-3_S3_L001_R2_001.fastq.gz
+      run: Run024
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run024-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run024-2_S2_L001_R2_001.fastq.gz
+      run: Run024
+      sample_status: Treatment naive Primary Sx
+      type: QMRS
+STANDARD_RUN025:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run025-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run025-3_S3_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run025-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run025-2_S2_L001_R2_001.fastq.gz
+      run: Run025
+      sample_status: Treatment naive Primary Sx
+      type: QMRS
+STANDARD_RUN026:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run026-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run026-3_S3_L001_R2_001.fastq.gz
+      run: Run026
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run026-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run026-2_S2_L001_R2_001.fastq.gz
+      run: Run026
+      sample_status: Treatment naive Primary Sx
+      type: QMRS
+STANDARD_RUN028:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run028-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run028-3_S3_L001_R2_001.fastq.gz
+      run: Run028
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run028-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run028-2_S2_L001_R2_001.fastq.gz
+      run: Run028
+      sample_status: Treatment naive Primary Sx
+      type: QMRS
+STANDARD_RUN029:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run029-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run029-3_S3_L001_R2_001.fastq.gz
+      run: Run029
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run029-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run029-2_S2_L001_R2_001.fastq.gz
+      run: Run029
+      sample_status: Treatment naive Primary Sx
+      type: QMRS
+STANDARD_RUN030:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run030-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run030-3_S3_L001_R2_001.fastq.gz
+      run: Run030
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run030-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run030-2_S2_L001_R2_001.fastq.gz
+      run: Run030
+      sample_status: Treatment naive Primary Sx
+      type: QMRS
+STANDARD_RUN031:
+  normal:
+    NF_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run031-3_S3_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/NF-CRCQV42Run031-3_S3_L001_R2_001.fastq.gz
+      run: Run031
+      sample_status: Normal
+      type: saliva
+  tumour:
+    QMRS_SAMPLE:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run031-2_S2_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/QMRS-CRCQV42Run031-2_S2_L001_R2_001.fastq.gz
+      run: Run031
+      sample_status: Treatment naive Primary Sx
+      type: QMRS

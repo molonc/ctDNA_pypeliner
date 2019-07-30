@@ -1,0 +1,17 @@
+##fileformat=VCFv4.1
+##source=ctDNA_pypeliner
+##INFO=<ID=COUNT,Number=1,Type=Integer,Description="Number of consensus calls">
+##INFO=<ID=DSNV,Number=1,Type=Float,Description="p-value from DeepSNV">
+##INFO=<ID=LLP,Number=1,Type=Float,Description="p-value from LoLoPicker">
+##INFO=<ID=VS,Number=1,Type=Float,Description="p-value from VarScan">
+##INFO=<ID=MS,Number=1,Type=Float,Description="Probability score from MutationSeq">
+##INFO=<ID=STR,Number=1,Type=Float,Description="Quality Score from Strelka">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read Depth">
+##FORMAT=<ID=AU,Number=1,Type=Integer,Description="Read count of nucleotide A">
+##FORMAT=<ID=CU,Number=1,Type=Integer,Description="Read count of nucleotide C">
+##FORMAT=<ID=GU,Number=1,Type=Integer,Description="Read count of nucleotide G">
+##FORMAT=<ID=TU,Number=1,Type=Integer,Description="Read count of nucleotide T">
+##FORMAT=<ID=NU,Number=1,Type=Integer,Description="Read count of null">
+##FORMAT=<ID=VAF,Number=1,Type=Float,Description="Variant allele frequency">
+#CHROM  POS ID  REF ALT QUAL    FILTER  INFO    FORMAT  NORMAL  TUMOR

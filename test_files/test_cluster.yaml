@@ -1,0 +1,21 @@
+PBC0003906:
+  normal:
+    TNBC3906-Saliva-DNA-CRCQV42Run024:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC3906-Saliva-DNA-CRCQV42Run024-24_S24_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC3906-Saliva-DNA-CRCQV42Run024-24_S24_L001_R2_001.fastq.gz
+      run: Run024
+      sample_status: Normal
+      type: saliva
+  tumour:
+    15SS-27166-2Q-CRCQV42Run024:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/15SS-27166-2Q-CRCQV42Run024-17_S17_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/15SS-27166-2Q-CRCQV42Run024-17_S17_L001_R2_001.fastq.gz
+      run: Run024
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
+    TNBC3906-S1-P-CRCQV42Run024:
+      fastq1: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC3906-S1-P-CRCQV42Run024-10_S10_L001_R1_001.fastq.gz
+      fastq2: /shahlab/archive/miyuen_tmp/ctDNA_data/TNBC3906-S1-P-CRCQV42Run024-10_S10_L001_R2_001.fastq.gz
+      run: Run024
+      sample_status: Post-Surgery/Post-Chemo
+      type: plasma baseline

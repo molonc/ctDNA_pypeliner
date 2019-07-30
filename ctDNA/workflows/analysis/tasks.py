@@ -1,165 +1,66 @@
-import csv
-import vcf
-from collections import OrderedDict
+import os
+from pypeliner.commandline import execute
+from shutil import copyfile
+from ctDNA.utils import vcfutils
 
-def create_result_dict(deepSNV_out, VarScan_out, museq_out, strelka_out, LoLoPicker_out=None):
-    result_dict = {
-    'deepSNV': {
-        'file': deepSNV_out,
-        'process_function': DeepSNV_process
-        },
-    'VarScan': {
-        'file': VarScan_out,
-        'process_function': vcf_process
-        },
-    'MutationSeq': {
-        'file': museq_out,
-        'process_function': vcf_process
-        },
-    'Strelka': {
-        'file': strelka_out,
-        'process_function': vcf_process
-        }
-    }
+def merge_normal(config, input_bams, output_file, output_bai):
+    normal_list = list(bam for bam in input_bams.itervalues())
+    cmd = ['samtools', 'merge', output_file]
+    cmd.extend(normal_list)
+    execute(*cmd)
 
-    if LoLoPicker_out:
-        result_dict['LoLoPicker'] ={
-            'file': LoLoPicker_out,
-            'process_function': LoLoPicker_process
-        }
+    execute(
+        'samtools',
+        'index',
+        output_file,
+        output_bai,
+        )
 
-    return result_dict
+def annotate_outputs(config, temp_space, input_file, output_txt,):
+    os.makedirs(temp_space)
 
-def merge_results(tumour_results, output_file):
-    results = {}
-    for result_file in tumour_results.itervalues():
-        with open(result_file, 'rb') as result:
-            reader = csv.DictReader(result, delimiter='\t')
+    execute(
+        os.path.join(config['annovar'], 'convert2annovar.pl'),
+        '-format',
+        'vcf4',
+        '-allsample',
+        '-withfreq',
+        input_file,
+        '>',
+        os.path.join(temp_space, 'anno_in')
+        )
 
-            for row in reader:
-                key = row['chr'] + ':' + row['pos']
-                if results.get(key, False):
-                    results[key]['count'] = int(results[key]['count']) + int(row['count'])
+    execute(
+        os.path.join(config['annovar'], 'table_annovar.pl'),
+        os.path.join(temp_space, 'anno_in'),
+        config['annovar_humandb'],
+        '-buildver',
+        'hg19',
+        '-out',
+        os.path.join(temp_space, 'ANNO'),
+        '-remove',
+        '-protocol',
+        'refGene,cytoBand',
+        '-operation',
+        'g,r',
+        '-nastring',
+        '.',
+        '-polish',
+        )
 
-                else:
-                    results[key] = row
+    copyfile(os.path.join(temp_space, 'ANNO.hg19_multianno.txt'), output_txt)
 
-    with open(output_file, 'w+') as output:
-        field_names = [
-            'chr',
-            'pos',
-            'ref',
-            'alt',
-            'count'
-            ]
-
-        writer = csv.DictWriter(
-            output,
-            fieldnames=field_names,
-            restval=".",
-            extrasaction='ignore',
-            delimiter="\t",
-            )
-        writer.writeheader()
-
-        sorted_results = OrderedDict(sorted(results.iteritems(), key=lambda x: (-int(x[1]['count']), x[1]['chr'], x[1]['pos'])))
-
-        for result in sorted_results.itervalues():
-            writer.writerow(result)
-
-def union_results(tool_results, output_file):
-    results = {}
-    for tool, process in tool_results.iteritems():
-        process['process_function'](tool, process['file'], results)
-
-    with open(output_file, 'w+') as output:
-        field_names = [
-            'chr',
-            'pos',
-            'ref',
-            'alt',
-            'count',
-            'deepSNV',
-            'LoLoPicker',
-            'VarScan',
-            'MutationSeq',
-            'Strelka'
-            ]
-
-        writer = csv.DictWriter(
-            output,
-            fieldnames=field_names,
-            restval=".",
-            extrasaction='ignore',
-            delimiter="\t",
-            )
-        writer.writeheader()
-
-        sorted_results = OrderedDict(sorted(results.iteritems(), key=lambda x: (-x[1]['count'], x[1]['chr'], x[1]['pos'])))
-
-        for result in sorted_results.itervalues():
-            writer.writerow(result)
-
-def DeepSNV_process(tool, input_file, results):
-    with open(input_file, 'rb') as inputs:
-        reader = csv.DictReader(inputs, delimiter='\t')
-        for row in reader:
-            key = row['chr'] + ':' + row['pos']
-            if results.get(key, False) and not results[key].get(tool, False):
-                results[key]['count'] += 1
-                results[key][tool] = 'True'
-
-            else:
-                results[key] = {
-                    'chr': row['chr'],
-                    'pos': row['pos'],
-                    'ref': row['ref'],
-                    'alt': row['var'],
-                    'count': 1,
-                    tool: 'True'
-                    }
-
-def LoLoPicker_process(tool, input_file, results):
-    with open(input_file, 'rb') as inputs:
-        reader = csv.DictReader(inputs, delimiter='\t')
-        for row in reader:
-            key = row['#chr'] + ':' + row['pos']
-            if results.get(key, False) and not results[key].get(tool, False):
-                results[key]['count'] += 1
-                results[key][tool] = 'True'
-
-            else:
-                results[key] = {
-                    'chr': row['#chr'],
-                    'pos': row['pos'],
-                    'ref': row['ref'],
-                    'alt': row['alt'],
-                    'count': 1,
-                    tool: 'True'
-                    }
-
-def vcf_process(tool, input_file, results):
-    reader = vcf.Reader(filename=input_file)
-    for row in reader:
-        key = row.CHROM + ':' + str(row.POS)
-        if results.get(key, False) and not results[key].get(tool, False):
-            results[key]['count'] += 1
-            results[key][tool] = 'True'
-
-        else:
-            for alt in row.ALT:
-                results[key] = {
-                    'chr': row.CHROM,
-                    'pos': str(row.POS),
-                    'ref': str(row.REF),
-                    'alt': str(alt),
-                    'count': 1,
-                    tool: 'True'
-                    }
-
-def log_patient_analysis(input_files, output_file):
+def log_patient_analysis(snv_tsv_files, indel_tsv_files, snv_txt_files, indel_txt_files, output_file):
     with open(output_file, "w+") as output:
         output.write('tumour_sample\tresult_file\n')
-        for tumour_id, result_file in input_files.iteritems():
-            output.write(tumour_id + "\t" + result_file + "\n")
+        for tumour_id, snv_tsv_file in snv_tsv_files.iteritems():
+            output.write(tumour_id + "_snv_tsv\t" + snv_tsv_file + "\n")
 
+        for tumour_id, indel_tsv_file in indel_tsv_files.iteritems():
+            output.write(tumour_id + "_indel_tsv\t" + indel_tsv_file + "\n")
+
+        for tumour_id, snv_txt_file in snv_txt_files.iteritems():
+            output.write(tumour_id + "_snv_txt\t" + snv_txt_file + "\n")
+
+        for tumour_id, indel_txt_file in indel_txt_files.iteritems():
+            output.write(tumour_id + "_indel_txt\t" + indel_txt_file + "\n")
