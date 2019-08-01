@@ -22,7 +22,7 @@ def generate_mpileup(config, bam_file, output_file):
         output_file,
         )
 
-def run_varscan_somatic(normal_mpileup, tumour_mpileup, snp_output_file, indel_outputfile):
+def run_varscan_somatic(config, normal_mpileup, tumour_mpileup, snp_output_file, indel_outputfile):
     execute(
         'varscan',
         'somatic',

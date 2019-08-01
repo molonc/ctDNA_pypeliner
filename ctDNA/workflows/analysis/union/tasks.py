@@ -227,7 +227,7 @@ def write_snv_record(result, writer):
 
     writer.write_record(record)
 
-def VarScan_indel_process(input_file, results):
+def VarScan_indel_process(config, input_file, results):
     reader = vcf.Reader(filename=input_file)
     for row in reader:
         key = row.CHROM + ':' + str(row.POS)
@@ -273,7 +273,7 @@ def VarScan_indel_process(input_file, results):
                     'T_vaf': t_vaf
                     }
 
-def Strelka_indel_process(input_file, results):
+def Strelka_indel_process(config, input_file, results):
     reader = vcf.Reader(filename=input_file)
     for row in reader:
         key = row.CHROM + ':' + str(row.POS)

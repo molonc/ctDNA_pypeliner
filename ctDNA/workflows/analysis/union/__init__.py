@@ -92,8 +92,8 @@ def union_results(config, normal_bam, tumour_bam, tool_results, union_space, out
 def union_indels(config, Strelka_in, VarScan_in,  output_tsv, output_vcf):
     results = {}
 
-    tasks.Strelka_indel_process(Strelka_in, results)
-    tasks.VarScan_indel_process(VarScan_in, results)
+    tasks.Strelka_indel_process(config, Strelka_in, results)
+    tasks.VarScan_indel_process(config, VarScan_in, results)
 
     with open(output_tsv, 'wb') as tsv_output, open(output_vcf, 'wb') as vcf_output:
         field_names = [
