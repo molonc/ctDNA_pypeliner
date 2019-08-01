@@ -3,10 +3,7 @@ import csv
 import vcf
 from pypeliner.commandline import execute
 
-T_VAF_CUTOFF = 0.001
-P_VALUE_CUTOFF = 0.0005
-MUSEQ_CUTOFF = 0.65
-STRELKA_CUTOFF = 200
+GENOTYPE_THRESHOLD = 0.001
 
 def bam_readcount(config, bam_type, bam, result, tmp_file):
     execute(
@@ -16,9 +13,9 @@ def bam_readcount(config, bam_type, bam, result, tmp_file):
         '-w',
         0,
         '--min-mapping-quality',
-        50,
+        config['map_q'],
         '--min-base-quality',
-        30,
+        config['base_q'],
         '-f',
         config['reference_genome'],
         bam,
@@ -37,14 +34,14 @@ def bam_readcount(config, bam_type, bam, result, tmp_file):
 
             result[bam_type + '_vaf'] = result[bam_type + '_' + result['alt']]/result[bam_type + '_coverage']
 
-def DeepSNV_process(tool, input_file, results):
+def DeepSNV_process(config, tool, input_file, results):
     with open(input_file, 'rb') as inputs:
         reader = csv.DictReader(inputs, delimiter='\t')
         for row in reader:
             key = row['chr'] + ':' + row['pos']
             t_vaf = round(float(row['freq.var']), 4)
 
-            if t_vaf < T_VAF_CUTOFF or row['var'] == '-' or float(row['p.val']) > P_VALUE_CUTOFF:
+            if t_vaf < config['T_vaf_threshold'] or row['var'] == '-' or float(row['p.val']) > config['p_threshold']:
                 continue
 
             if results.get(key, False) and not results[key].get(tool, False):
@@ -61,14 +58,14 @@ def DeepSNV_process(tool, input_file, results):
                     tool: row['p.val']
                     }
 
-def LoLoPicker_process(tool, input_file, results):
+def LoLoPicker_process(config, tool, input_file, results):
     with open(input_file, 'rb') as inputs:
         reader = csv.DictReader(inputs, delimiter='\t')
         for row in reader:
             key = row['#chr'] + ':' + row['pos']
             t_vaf = round(float(row['tumor_alf']), 4)
 
-            if t_vaf < T_VAF_CUTOFF or float(row['corrected_p']) > P_VALUE_CUTOFF:
+            if t_vaf < config['T_vaf_threshold'] or float(row['corrected_p']) > config['p_threshold']:
                 continue
 
             if results.get(key, False) and not results[key].get(tool, False):
@@ -85,14 +82,14 @@ def LoLoPicker_process(tool, input_file, results):
                     tool: row['corrected_p']
                     }
 
-def VarScan_process(tool, input_file, results):
+def VarScan_process(config, tool, input_file, results):
     reader = vcf.Reader(filename=input_file)
     for row in reader:
         key = row.CHROM + ':' + str(row.POS)
         freq = row.genotype('TUMOR')['FREQ']
         t_vaf = round(float(freq[:-1]) / 100, 4)
 
-        if t_vaf < T_VAF_CUTOFF or float(row.INFO['SPV']) > P_VALUE_CUTOFF:
+        if t_vaf < config['T_vaf_threshold'] or float(row.INFO['SPV']) > config['p_threshold']:
             continue
 
         if results.get(key, False) and not results[key].get(tool, False):
@@ -110,7 +107,7 @@ def VarScan_process(tool, input_file, results):
                     tool: str(row.INFO['SPV'])
                     }
 
-def museq_process(tool, input_file, results):
+def museq_process(config, tool, input_file, results):
     reader = vcf.Reader(filename=input_file)
     for row in reader:
         key = row.CHROM + ':' + str(row.POS)
@@ -119,7 +116,7 @@ def museq_process(tool, input_file, results):
         except ZeroDivisionError:
             t_vaf = 0
 
-        if t_vaf < T_VAF_CUTOFF or float(row.INFO['PR']) < MUSEQ_CUTOFF:
+        if t_vaf < config['T_vaf_threshold'] or float(row.INFO['PR']) < config['museq_threshold']:
             continue
 
         if results.get(key, False) and not results[key].get(tool, False):
@@ -137,7 +134,7 @@ def museq_process(tool, input_file, results):
                     tool: str(row.INFO['PR'])
                     }
 
-def strelka_process(tool, input_file, results):
+def strelka_process(config, tool, input_file, results):
     reader = vcf.Reader(filename=input_file)
     for row in reader:
         key = row.CHROM + ':' + str(row.POS)
@@ -146,7 +143,7 @@ def strelka_process(tool, input_file, results):
         except ZeroDivisionError:
             t_vaf = 0
 
-        if t_vaf < T_VAF_CUTOFF or int(row.INFO['QSS']) < STRELKA_CUTOFF:
+        if t_vaf < config['T_vaf_threshold'] or int(row.INFO['QSS']) < 200:
             continue
 
         if results.get(key, False) and not results[key].get(tool, False):
@@ -193,12 +190,12 @@ def write_snv_record(result, writer):
 
     CallData = vcf.model.make_calldata_tuple('GT DP AU CU GU TU NU VAF')
 
-    if result['T_vaf'] > T_VAF_CUTOFF:
+    if result['T_vaf'] > GENOTYPE_THRESHOLD:
         T_GT = '0/1'
     else:
         T_GT = '0/0'
 
-    if result['N_vaf'] > T_VAF_CUTOFF:
+    if result['N_vaf'] > GENOTYPE_THRESHOLD:
         N_GT = '0/1'
     else:
         N_GT = '0/0'
@@ -244,7 +241,7 @@ def VarScan_indel_process(input_file, results):
         except ZeroDivisionError:
             t_vaf = 0
 
-        if t_vaf < T_VAF_CUTOFF or float(row.INFO['SPV']) > P_VALUE_CUTOFF:
+        if t_vaf < config['T_vaf_threshold'] or float(row.INFO['SPV']) > config['p_threshold']:
             continue
 
         if results.get(key, False) and not results[key].get('VarScan', False):
@@ -289,7 +286,7 @@ def Strelka_indel_process(input_file, results):
         except ZeroDivisionError:
             t_vaf = 0
 
-        if t_vaf < T_VAF_CUTOFF or row.INFO['QSI'] < STRELKA_CUTOFF:
+        if t_vaf < config['T_vaf_threshold'] or row.INFO['QSI'] < 200:
             continue
 
         if results.get(key, False) and not results[key].get('Strelka', False):
@@ -337,12 +334,12 @@ def write_indel_record(result, writer):
 
     CallData = vcf.model.make_calldata_tuple('GT DP REF ALT VAF')
 
-    if result['T_vaf'] > T_VAF_CUTOFF:
+    if result['T_vaf'] > GENOTYPE_THRESHOLD:
         T_GT = '0/1'
     else:
         T_GT = '0/0'
 
-    if result['N_vaf'] > T_VAF_CUTOFF:
+    if result['N_vaf'] > GENOTYPE_THRESHOLD:
         N_GT = '0/1'
     else:
         N_GT = '0/0'

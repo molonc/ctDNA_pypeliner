@@ -5,18 +5,31 @@ import tasks
 def align_sample(config, fastq_1, fastq_2, sample_id, out_bam, out_bai):
     workflow = pypeliner.workflow.Workflow()
 
-    workflow.transform(
-        name='trim_fastq',
-        ctx={'mem': 8, 'ncpus': 1, 'walltime': '08:00'},
-        func=tasks.trim_fastq,
-        args=(
-            mgd.InputFile(fastq_1),
-            mgd.InputFile(fastq_2),
-            mgd.TempSpace("trim_space"),
-            mgd.TempOutputFile("fastq_1_trimmed.fastq"),
-            mgd.TempOutputFile("fastq_2_trimmed.fastq"),
+    if config['umi_trim']:
+        workflow.transform(
+            name='trim_fastq',
+            ctx={'mem': 8, 'ncpus': 1, 'walltime': '08:00'},
+            func=tasks.trim_fastq,
+            args=(
+                mgd.InputFile(fastq_1),
+                mgd.InputFile(fastq_2),
+                mgd.TempSpace("trim_space"),
+                mgd.TempOutputFile("fastq_1_trimmed.fastq"),
+                mgd.TempOutputFile("fastq_2_trimmed.fastq"),
+                )
             )
-        )
+    else:
+        workflow.transform(
+            name='no_trim_fastq',
+            ctx={'mem': 8, 'ncpus': 1, 'walltime': '08:00'},
+            func=tasks.no_trim_fastq,
+            args=(
+                mgd.InputFile(fastq_1),
+                mgd.InputFile(fastq_2),
+                mgd.TempOutputFile("fastq_1_trimmed.fastq"),
+                mgd.TempOutputFile("fastq_2_trimmed.fastq"),
+                )
+            )
 
     workflow.transform(
         name='fastq_to_sam',

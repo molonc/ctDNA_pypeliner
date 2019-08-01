@@ -40,8 +40,8 @@ def partition_tumour(config, input_args, patient_id, results_dir, input_bams, in
             mgd.InputFile('tumour.bam', 'tumour_id', fnames=input_bams),
             mgd.OutputFile(os.path.join(results_dir, patient_id + '_{tumour_id}.snv.tsv'), 'tumour_id'),
             mgd.OutputFile(os.path.join(results_dir, patient_id + '_{tumour_id}.indel.tsv'), 'tumour_id'),
-            mgd.OutputFile(os.path.join(results_dir, patient_id + '_{tumour_id}.snv.vcf'), 'tumour_id'),
-            mgd.OutputFile(os.path.join(results_dir, patient_id + '_{tumour_id}.indel.vcf'), 'tumour_id'),
+            mgd.TempOutputFile('snv.vcf', 'tumour_id'),
+            mgd.TempOutputFile('indel.vcf', 'tumour_id'),
             )
         )
 
@@ -52,7 +52,7 @@ def partition_tumour(config, input_args, patient_id, results_dir, input_bams, in
         args=(
             config,
             mgd.TempSpace('snv_annotation_space', 'tumour_id'),
-            mgd.InputFile(os.path.join(results_dir, patient_id + '_{tumour_id}.snv.vcf'), 'tumour_id'),
+            mgd.TempInputFile('snv.vcf', 'tumour_id'),
             mgd.OutputFile(os.path.join(results_dir, patient_id + '_{tumour_id}.snv.txt'), 'tumour_id'),
             )
         )
@@ -64,8 +64,32 @@ def partition_tumour(config, input_args, patient_id, results_dir, input_bams, in
         args=(
             config,
             mgd.TempSpace('indel_annotation_space', 'tumour_id'),
-            mgd.InputFile(os.path.join(results_dir, patient_id + '_{tumour_id}.indel.vcf'), 'tumour_id'),
+            mgd.TempInputFile('indel.vcf', 'tumour_id'),
             mgd.OutputFile(os.path.join(results_dir, patient_id + '_{tumour_id}.indel.txt'), 'tumour_id'),
+            )
+        )
+
+    workflow.transform(
+        name='vcf_annotate_indels',
+        func=tasks.vcf_annotate_outputs,
+        axes=('tumour_id',),
+        args=(
+            config,
+            mgd.TempSpace('indel_vcf_annotation_space', 'tumour_id'),
+            mgd.TempInputFile('indel.vcf', 'tumour_id'),
+            mgd.OutputFile(os.path.join(results_dir, patient_id + '_{tumour_id}.indel.vcf'), 'tumour_id'),
+            )
+        )
+
+    workflow.transform(
+        name='vcf_annotate_snvs',
+        func=tasks.vcf_annotate_outputs,
+        axes=('tumour_id',),
+        args=(
+            config,
+            mgd.TempSpace('snv_vcf_annotation_space', 'tumour_id'),
+            mgd.TempInputFile('snv.vcf', 'tumour_id'),
+            mgd.OutputFile(os.path.join(results_dir, patient_id + '_{tumour_id}.snv.vcf'), 'tumour_id'),
             )
         )
 
@@ -77,6 +101,8 @@ def partition_tumour(config, input_args, patient_id, results_dir, input_bams, in
             mgd.InputFile(os.path.join(results_dir, patient_id + '_{tumour_id}.indel.tsv'), 'tumour_id', axes_origin=[]),
             mgd.InputFile(os.path.join(results_dir, patient_id + '_{tumour_id}.snv.txt'), 'tumour_id', axes_origin=[]),
             mgd.InputFile(os.path.join(results_dir, patient_id + '_{tumour_id}.indel.txt'), 'tumour_id', axes_origin=[]),
+            mgd.InputFile(os.path.join(results_dir, patient_id + '_{tumour_id}.snv.vcf'), 'tumour_id', axes_origin=[]),
+            mgd.InputFile(os.path.join(results_dir, patient_id + '_{tumour_id}.indel.vcf'), 'tumour_id', axes_origin=[]),
             mgd.OutputFile(output_file),
             )
         )
