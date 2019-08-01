@@ -16,7 +16,7 @@ def run_deepSNV(config, normal_bam, tumour_bam, output_file):
             '--bed',
             config["bed_file"],
             '--quality',
-            15,
+            config['base_q'],
             '--out',
             output_file,
             )

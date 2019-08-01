@@ -31,6 +31,7 @@ def run_VarScan(config, normal_bam, tumour_bam, snp_output_file, indel_output_fi
         ctx={'mem': 8, 'ncpus': 1, 'walltime': '08:00'},
         func=tasks.run_varscan_somatic,
         args=(
+            config,
             mgd.TempInputFile("normal.pileup"),
             mgd.TempInputFile("tumour.pileup"),
             mgd.OutputFile(snp_output_file),

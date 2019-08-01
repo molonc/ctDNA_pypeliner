@@ -7,6 +7,9 @@ def main():
         csv_dict = csv.DictReader(csv_file)
         for row in csv_dict:
             pbc_id = row["PBC ID"]
+            if row["Sample status"] == "N/A" or row["Sample status"] == "WGA":
+                continue
+
             if pbc_id not in yaml_dict:
                 pbc_dict = {}
                 pbc_dict["tumour"] = {}
@@ -27,7 +30,8 @@ def main():
 def get_sample_sample_id(row):
     aliquot_id = row["Aliquot ID"].replace(" ", "-")
     alias = row["Alias"].split("-")[0]
-    return "-".join([aliquot_id, alias])
+    alias_no = str(int(row["Alias"].split("-")[1]))
+    return "-".join([aliquot_id, alias, alias_no])
 
 def get_sample_dict(row):
     sample_dict = {}

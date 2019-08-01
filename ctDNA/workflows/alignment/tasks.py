@@ -2,6 +2,10 @@ import os
 from shutil import copyfile
 from pypeliner.commandline import execute
 
+def no_trim_fastq(fastq_1, fastq_2, output_fastq_1, output_fastq_2):
+    copyfile(fastq_1, output_fastq_1)
+    copyfile(fastq_2, output_fastq_2)
+
 def trim_fastq(fastq_1, fastq_2, temp_dir, output_fastq_1, output_fastq_2):
     os.makedirs(temp_dir)
 

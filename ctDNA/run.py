@@ -54,6 +54,8 @@ def ctDNA_workflow(args):
     workflow = pypeliner.workflow.Workflow()
 
     config = helpers.load_yaml(args['config'])
+    for arg, value in args.iteritems():
+        config[arg] = value
 
     helpers.makedirs(config["bam_directory"])
 
@@ -102,6 +104,53 @@ def main():
         '--config',
         required=True,
         help='Configuration filename'
+        )
+    argparser.add_argument(
+        '--map_q',
+        required=False,
+        help='Minimum mapping quality',
+        default=25
+        )
+    argparser.add_argument(
+        '--base_q',
+        required=False,
+        help='Minimum base quality',
+        default=15
+        )
+    argparser.add_argument(
+        '--p_threshold',
+        required=False,
+        help='Maximum p_value (significance level)',
+        default=0.0005
+        )
+    argparser.add_argument(
+        '--museq_threshold',
+        required=False,
+        help='Minumum MutationSeq score',
+        default=0.65
+        )
+    argparser.add_argument(
+        '--N_vaf_threshold',
+        required=False,
+        help='Maximum normal variant allele frequency',
+        default=0.6
+        )
+    argparser.add_argument(
+        '--T_vaf_threshold',
+        required=False,
+        help='Minimum tumour variant allele frequency',
+        default=0.001
+        )
+    argparser.add_argument(
+        '--coverage_threshold',
+        required=False,
+        help='Minimum coverage',
+        default=1000
+        )
+    argparser.add_argument(
+        '--umi_trim',
+        default=False,
+        action='store_true'
         )
 
     args = vars(argparser.parse_args())

@@ -32,7 +32,7 @@ def union_results(config, normal_bam, tumour_bam, tool_results, union_space, out
     os.makedirs(union_space)
     results = {}
     for tool, process in tool_results.iteritems():
-        process['process_function'](tool, process['file'], results)
+        process['process_function'](config, tool, process['file'], results)
 
     with open(output_tsv, 'wb') as tsv_output, open(output_vcf, 'wb') as vcf_output:
         field_names = [
@@ -82,17 +82,18 @@ def union_results(config, normal_bam, tumour_bam, tool_results, union_space, out
             if result['count'] > 1:
                 tasks.bam_readcount(config, "N", normal_bam, result, os.path.join(union_space, 'normal_count.txt'))
                 tasks.bam_readcount(config, "T", tumour_bam, result, os.path.join(union_space, 'tumour_count.txt'))
-                if (result['T_coverage'] >= 1000 and
-                    result['N_coverage'] >= 1000 and
-                    result['T_vaf'] > 0.004):
+                if (result['T_coverage'] >= config['coverage_threshold'] and
+                    result['N_coverage'] >= config['coverage_threshold'] and
+                    result['T_vaf'] > config['T_vaf_cutoff'] and
+                    result['N_vaf'] < config['N_vaf_cutoff']):
                     tasks.write_snv_record(result, vcf_writer)
                     tsv_writer.writerow(result)
 
 def union_indels(config, Strelka_in, VarScan_in,  output_tsv, output_vcf):
     results = {}
 
-    tasks.Strelka_indel_process(Strelka_in, results)
-    tasks.VarScan_indel_process(VarScan_in, results)
+    tasks.Strelka_indel_process(config, Strelka_in, results)
+    tasks.VarScan_indel_process(config, VarScan_in, results)
 
     with open(output_tsv, 'wb') as tsv_output, open(output_vcf, 'wb') as vcf_output:
         field_names = [

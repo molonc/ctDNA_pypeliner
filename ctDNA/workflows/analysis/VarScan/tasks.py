@@ -6,11 +6,11 @@ def generate_mpileup(config, bam_file, output_file):
         'mpileup',
         '-B',
         '-Q',
-        '15',
+        config['base_q'],
         '-C',
         '50',
         '-q',
-        '25',
+        config['map_q'],
         '-d',
         '20000',
         '-f',
@@ -22,16 +22,16 @@ def generate_mpileup(config, bam_file, output_file):
         output_file,
         )
 
-def run_varscan_somatic(normal_mpileup, tumour_mpileup, snp_output_file, indel_outputfile):
+def run_varscan_somatic(config, normal_mpileup, tumour_mpileup, snp_output_file, indel_outputfile):
     execute(
         'varscan',
         'somatic',
         normal_mpileup,
         tumour_mpileup,
         '--min-coverage',
-        '4',
+        config['coverage_threshold'],
         '--min-var-freq',
-        '0.001',
+        config['T_vaf_threshold'],
         '--output-vcf',
         '1',
         '--output-snp',
