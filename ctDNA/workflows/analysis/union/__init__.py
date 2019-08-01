@@ -4,8 +4,6 @@ import vcf
 import tasks
 from collections import OrderedDict
 
-VAF_cutoff = 0.001
-
 def create_result_dict(deepSNV_out, VarScan_out, museq_out, strelka_out, LoLoPicker_out):
     return {
     'deepSNV': {
