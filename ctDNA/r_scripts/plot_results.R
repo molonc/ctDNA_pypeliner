@@ -45,17 +45,11 @@ pointAlleleFrequency <- function(data){
 }
 
 plotByPosition <- function(data){
-  ggplot(data, aes(pos, T_vaf, col = Gene.refGene))
-  + geom_point() + facet_grid(~cytoBand, switch = 'x', scales = 'free_x')
-  + theme(panel.spacing = unit(0.1, "lines"), strip.background = element_blank(), strip.placement = "outside", axis.text.x = element_blank())
-  + labs(x = 'cytoBand, pos')
+  ggplot(data, aes(pos, T_vaf, col = Gene.refGene)) + geom_point() + facet_grid(~cytoBand, switch = 'x', scales = 'free_x') + theme(panel.spacing = unit(0.1, "lines"), strip.background = element_blank(), strip.placement = "outside", axis.text.x = element_blank()) + labs(x = 'cytoBand, pos')
 }
 
 plotByScore <- function(data){
-  ggplot(plasma_snv_long, aes(value, T_vaf, col = as.factor(count)))
-  + geom_point() + facet_grid(~tool, switch = 'x', scales = 'free')
-  + theme(panel.spacing = unit(0.1, "lines"), strip.background = element_blank(), strip.placement = "outside")
-  + labs(x = 'score')
+  ggplot(plasma_snv_long, aes(value, T_vaf, col = as.factor(count))) + geom_point() + facet_grid(~tool, switch = 'x', scales = 'free') + theme(panel.spacing = unit(0.1, "lines"), strip.background = element_blank(), strip.placement = "outside") + labs(x = 'score')
 }
 
 histAlleleFrequency <- function(data){
@@ -63,7 +57,7 @@ histAlleleFrequency <- function(data){
 }
 
 refAltDist <- function(data){
-  ggplot(data = subset(data), aes(ref, fill=alt)) + geom_bar(position = "dodge")
+  ggplot(data = data, aes(ref, fill=alt)) + geom_bar(position = "dodge")
 }
 
 filterSNVs <- function(data, match, tn_cutoff, match_tn_cutoff){
@@ -92,7 +86,6 @@ annotations <- bind_rows(lapply(list.files(".", ".txt"), read_annotation))
 
 plasma_validated <- subset(read.csv("plasma.csv", header=TRUE), vaf >= 1 | validation. == 'Confirmed')
 tumour_validated <- subset(read.csv("tumour.csv", header=TRUE), vaf >= 1 & Sample.status != "WGA")
-tumour_validated <- subset(tumour_validated, annotation_type == "conservative_inframe_insertion" | annotation_type == "frameshift_variant" | annotation_type == "missense_variant" | annotation_type == "stop_gained")
 plasma_validated$validated <- TRUE
 tumour_validated$validated <- TRUE
 
@@ -113,11 +106,17 @@ tumour_results <- merge(tumour_results, tumour_validated, all.x=TRUE, by=c('chr'
 plasma_snv <- filterSNVs(plasma_results, tumour_results, 12, 20)
 tumour_snv <- filterSNVs(tumour_results, plasma_results, 20, 12)
 
+plasma_snv <- subset(plasma_snv, select = -c(T_ref, T_alt, N_ref, N_alt))
+tumour_snv <- subset(tumour_snv, select = -c(T_ref, T_alt, N_ref, N_alt))
+
 plasma_snv_long <- gather(plasma_snv, tool, value, deepSNV, LoLoPicker, VarScan, MutationSeq, Strelka, factor_key = TRUE, na.rm = TRUE)
 tumour_snv_long <- gather(tumour_snv, tool, value, deepSNV, LoLoPicker, VarScan, MutationSeq, Strelka, factor_key = TRUE, na.rm = TRUE)
 
 plasma_indel <- filterIndels(plasma_results)
 tumour_indel <- filterIndels(tumour_results)
+
+plasma_indel <- subset(plasma_indel, select = -c(count, deepSNV, LoLoPicker, MutationSeq, N_A, N_C, N_G, N_T, N_N, T_A, T_C, T_G, T_T, T_N))
+tumour_indel <- subset(tumour_indel, select = -c(count, deepSNV, LoLoPicker, MutationSeq, N_A, N_C, N_G, N_T, N_N, T_A, T_C, T_G, T_T, T_N))
 
 plasma_indel_long <- gather(plasma_indel, tool, value, VarScan, Strelka, factor_key = TRUE, na.rm = TRUE)
 tumour_indel_long <- gather(tumour_indel, tool, value, VarScan, Strelka, factor_key = TRUE, na.rm = TRUE)
@@ -125,5 +124,15 @@ tumour_indel_long <- gather(tumour_indel, tool, value, VarScan, Strelka, factor_
 plasma_LOH <- filterLOH(plasma_results)
 tumour_LOH <- filterLOH(tumour_results)
 
+plasma_LOH <- subset(plasma_LOH, select = -c(T_ref, T_alt, N_ref, N_alt))
+tumour_LOH <- subset(tumour_LOH, select = -c(T_ref, T_alt, N_ref, N_alt))
+
 plasma_LOH_long <- gather(plasma_LOH, tool, vlaue, deepSNV, LoLoPicker, VarScan, MutationSeq, Strelka, factor_key = TRUE, na.rm = TRUE)
 tumour_LOH_long <- gather(tumour_LOH, tool, vlaue, deepSNV, LoLoPicker, VarScan, MutationSeq, Strelka, factor_key = TRUE, na.rm = TRUE)
+
+write.csv(plasma_indel, "plasma_indel.csv", row.names = FALSE)
+write.csv(tumour_indel, "tumour_indel.csv", row.names = FALSE)
+write.csv(plasma_LOH, "plasma_LOH.csv", row.names = FALSE)
+write.csv(plasma_snv, "plasma_snv.csv", row.names = FALSE)
+write.csv(tumour_snv, "tumour_snv.csv", row.names = FALSE)
+write.csv(tumour_LOH, "tumour_LOH.csv", row.names = FALSE)
