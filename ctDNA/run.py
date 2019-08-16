@@ -139,7 +139,7 @@ def main():
         '--T_vaf_threshold',
         required=False,
         help='Minimum tumour variant allele frequency',
-        default=0.001
+        default=0.004
         )
     argparser.add_argument(
         '--coverage_threshold',

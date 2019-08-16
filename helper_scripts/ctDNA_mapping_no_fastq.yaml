@@ -94,6 +94,12 @@ PBC0001124:
       sample_status: Normal
       type: saliva
   tumour:
+    16AS-15801-2B-CoreDNA-CRCQV42Run034-23:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
     TNBC1124p-CRCQV42Run016-5:
       fastq1: ''
       fastq2: ''
@@ -1150,6 +1156,12 @@ PBC0001396:
       sample_status: Normal
       type: saliva
   tumour:
+    16AS-15942-1A-CoreDNA-CRCQV42Run034-24:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Treatment naive Primary Sx
+      type: TNBC FFPE
     TNBC1396p-CRCQV42Run016-9:
       fastq1: ''
       fastq2: ''
@@ -2475,6 +2487,12 @@ PBC0002862:
       type: plasma baseline
 PBC0002872:
   normal:
+    TNBC2872-BC-DNA-CRCQV42Run034-4:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Normal
+      type: buffy coat
     TNBC2872-Saliva-DNA-CRCQV42Run026-19:
       fastq1: ''
       fastq2: ''
@@ -2583,6 +2601,12 @@ PBC0003334:
       type: plasma baseline
 PBC0003364:
   normal:
+    TNBC3364-BC-DNA-CRCQV42Run034-5:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Normal
+      type: buffy coat
     TNBC3364-Salilva-DNA-CRCQV40Run027-7:
       fastq1: ''
       fastq2: ''
@@ -2637,6 +2661,12 @@ PBC0003385:
       type: plasma baseline
 PBC0003587:
   normal:
+    TNBC3587-BC-DNA-CRCQV42Run034-6:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Normal
+      type: buffy coat
     TNBC3587-Saliva-DNA-CRCQV42Run026-21:
       fastq1: ''
       fastq2: ''
@@ -2711,7 +2741,13 @@ PBC0003641:
       sample_status: Pre-Surgery/Pre-Chemo
       type: plasma baseline
 PBC0003643:
-  normal: {}
+  normal:
+    TNBC3643-BC-DNA-CRCQV42Run034-7:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Normal
+      type: buffy coat
   tumour:
     BS18-3827-A1-CRCQV42Run026-17:
       fastq1: ''
@@ -2781,6 +2817,12 @@ PBC0003906:
       type: plasma baseline
 PBC0003911:
   normal:
+    TNBC3911-BC-DNA-CRCQV42Run034-8:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Normal
+      type: buffy coat
     TNBC3911-Saliva-DNA-CRCQV42Run026-23:
       fastq1: ''
       fastq2: ''
@@ -2802,6 +2844,12 @@ PBC0003911:
       type: plasma baseline
 PBC0003941:
   normal:
+    TNBC3941-BC-DNA-CRCQV42Run034-9:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Normal
+      type: buffy coat
     TNBC3941-Saliva-DNA-CRCQV42Run028-24:
       fastq1: ''
       fastq2: ''
@@ -2823,6 +2871,12 @@ PBC0003941:
       type: plasma baseline
 PBC0004076:
   normal:
+    TNBC4076-BC-DNA-CRCQV42Run034-10:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Normal
+      type: buffy coat
     TNBC4076-Salilva-DNA-CRCQV40Run027-8:
       fastq1: ''
       fastq2: ''
@@ -2844,6 +2898,12 @@ PBC0004076:
       type: plasma baseline
 PBC0004172:
   normal:
+    TNBC4172-BC-DNA-CRCQV42Run034-11:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Normal
+      type: buffy coat
     TNBC4172-Saliva-DNA-CRCQV42Run028-22:
       fastq1: ''
       fastq2: ''
@@ -2865,6 +2925,12 @@ PBC0004172:
       type: TNBC FFPE
 PBC0004173:
   normal:
+    TNBC4173-BC-DNA-CRCQV42Run034-12:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Normal
+      type: buffy coat
     TNBC4173-Saliva-DNA-CRCQV42Run029-17:
       fastq1: ''
       fastq2: ''
@@ -2886,6 +2952,12 @@ PBC0004173:
       type: plasma baseline
 PBC0004350:
   normal:
+    TNBC4350-BC-DNA-CRCQV42Run034-13:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Normal
+      type: buffy coat
     TNBC4350-Saliva-DNA-CRCQV40Run027-9:
       fastq1: ''
       fastq2: ''
@@ -2907,6 +2979,12 @@ PBC0004350:
       type: plasma baseline
 PBC0004414:
   normal:
+    TNBC4414-BC-DNA-CRCQV42Run034-14:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Normal
+      type: buffy coat
     TNBC4414-Saliva-DNA-CRCQV40Run027-10:
       fastq1: ''
       fastq2: ''
@@ -2928,6 +3006,12 @@ PBC0004414:
       type: plasma baseline
 PBC0004565:
   normal:
+    TNBC4565-BC-DNA-CRCQV42Run034-15:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Normal
+      type: buffy coat
     TNBC4565-Saliva-DNA-CRCQV40Run027-11:
       fastq1: ''
       fastq2: ''
@@ -2955,6 +3039,12 @@ PBC0004747:
       run: Run027
       sample_status: Normal
       type: saliva
+    TNBC4747-BC-DNA-CRCQV42Run034-16:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Normal
+      type: buffy coat
   tumour:
     18RS-29126-1E-CRCQV40Run027-21:
       fastq1: ''
@@ -2970,6 +3060,12 @@ PBC0004747:
       type: plasma baseline
 PBC0004859:
   normal:
+    TNBC4859-BC-DNA-CRCQV42Run034-17:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Normal
+      type: buffy coat
     TNBC4859-Saliva-DNA-CRCQV42Run029-18:
       fastq1: ''
       fastq2: ''
@@ -2991,6 +3087,12 @@ PBC0004859:
       type: plasma baseline
 PBC0005064:
   normal:
+    TNBC5064-BC-DNA-CRCQV42Run034-18:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Normal
+      type: buffy coat
     TNBC5064-Saliva-DNA-CRCQV42Run026-24:
       fastq1: ''
       fastq2: ''
@@ -3012,6 +3114,12 @@ PBC0005064:
       type: plasma baseline
 PBC0005085:
   normal:
+    TNBC5085-BC-DNA-CRCQV42Run034-19:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Normal
+      type: buffy coat
     TNBC5085-Saliva-DNA-CRCQV42Run029-19:
       fastq1: ''
       fastq2: ''
@@ -3039,6 +3147,12 @@ PBC0005116:
       run: Run027
       sample_status: Normal
       type: saliva
+    TNBC5116-BC-DNA-CRCQV42Run034-20:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Normal
+      type: buffy coat
   tumour:
     PS18-26970-B4-CRCQV40Run027-22:
       fastq1: ''
@@ -3060,6 +3174,12 @@ PBC0005126:
       run: Run027
       sample_status: Normal
       type: saliva
+    TNBC5126-BC-DNA-CRCQV42Run034-21:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Normal
+      type: buffy coat
   tumour:
     PS18-27318-A11-CRCQV40Run027-23:
       fastq1: ''
@@ -3075,6 +3195,12 @@ PBC0005126:
       type: plasma baseline
 PBC0005142:
   normal:
+    TNBC5142-BC-DNA-CRCQV42Run034-22:
+      fastq1: ''
+      fastq2: ''
+      run: Run034
+      sample_status: Normal
+      type: buffy coat
     TNBC5142-Saliva-DNA-CRCQV42Run029-20:
       fastq1: ''
       fastq2: ''

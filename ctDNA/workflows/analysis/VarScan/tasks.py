@@ -12,7 +12,7 @@ def generate_mpileup(config, bam_file, output_file):
         '-q',
         config['map_q'],
         '-d',
-        '20000',
+        '50000',
         '-f',
         config['reference_genome'],
         '-l',

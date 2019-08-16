@@ -22,7 +22,7 @@ def run_museq(config, normal_bam, tumour_bam, interval, output_file, log_file):
         '--buffer_size', '2G',
         '--mapq_threshold', config['map_q'],
         '--indl_threshold', '0.05',
-        '--normal_variant', int(config['N_vaf_threshold']) * 100,
+        '--normal_variant', int(float(config['N_vaf_threshold']) * 100),
         '--tumour_variant', '2',
         '--baseq_threshold', config['base_q'],
         '--config', config['museq_config'],
