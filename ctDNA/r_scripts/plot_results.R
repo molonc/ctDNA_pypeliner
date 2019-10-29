@@ -7,8 +7,9 @@ read_results <- function(tsv_file) {
   if (nrow(results) > 0) {
     patient_id <- strsplit(tsv_file, "_")[[1]][1]
     file_name <- strsplit(tsv_file, "_")[[1]][2]
+    sample_name <- paste(sep="-", strsplit(file_name, "-")[[1]][1], strsplit(file_name, "-")[[1]][2])
     results$patient <- patient_id
-    results$sample <- strsplit(file_name, "\\.")[[1]][1]
+    results$sample <- strsplit(sample_name, "\\.")[[1]][1]
     results$chr <- as.character(results$chr)
     results$ref <- as.character(results$ref)
     results$alt <- as.character(results$alt)
@@ -24,8 +25,9 @@ read_annotation <- function(tsv_file) {
   if (nrow(results) > 0) {
     patient_id <- strsplit(tsv_file, "_")[[1]][1]
     file_name <- strsplit(tsv_file, "_")[[1]][2]
+    sample_name <- paste(sep="-", strsplit(file_name, "-")[[1]][1], strsplit(file_name, "-")[[1]][2])
     results$patient <- patient_id
-    results$sample <- strsplit(file_name, "\\.")[[1]][1]
+    results$sample <- strsplit(sample_name, "\\.")[[1]][1]
     results$chr <- as.character(results$Chr)
     results$Ref <- as.character(results$Ref)
     results$Alt <- as.character(results$Alt)
@@ -87,7 +89,7 @@ plot_patient_by_mutation <- function(data, type){
   print(all_mutations)
   print(snv_mutations)
   print(indel_mutations)
-  print(loh_mutations)
+  # print(loh_mutations)
   dev.off()
 }
 
@@ -132,7 +134,7 @@ annotations <- bind_rows(lapply(list.files(".", ".txt"), read_annotation))
 # validated data set
 plasma_validated <- subset(read.csv("plasma.csv", header=TRUE), validation. == 'Confirmed')
 plasma_validated$patient <- plasma_validated$PBC.ID
-plasma_validated <- subset(plasma_validated, select = c(chr, pos, patient, ref, alt, validation.))
+plasma_validated <- subset(plasma_validated, select = c(chr, pos, sample, patient, ref, alt, validation.))
 
 # read results
 results <- bind_rows(lapply(list.files(".", ".tsv"), read_results))
@@ -145,7 +147,7 @@ tumour_results <- subset(results, type == "tumour")
 plasma_tumour <- merge(plasma_results, tumour_results, by=c('chr', 'pos', 'patient', 'ref', 'alt'))
 
 # compare against validated
-plasma_results <- merge(plasma_results, plasma_validated, all.x=TRUE, by=c('chr', 'pos', 'patient', 'ref', 'alt'))
+plasma_results <- merge(plasma_results, plasma_validated, all.x=TRUE, by=c('chr', 'pos', 'sample', 'patient', 'ref', 'alt'))
 
 # classify mutation type
 plasma <- classify_mutations(plasma_results, tumour_results, 0.02, 10, 15)
@@ -194,5 +196,5 @@ write.csv(plasma_LOH, "plasma_LOH.csv", row.names = FALSE)
 write.csv(tumour_LOH, "tumour_LOH.csv", row.names = FALSE)
 write.csv(plasma_snv, "plasma_snv.csv", row.names = FALSE)
 write.csv(tumour_snv, "tumour_snv.csv", row.names = FALSE)
-write.csv(plasma_results, "plasma_unfiltered.csv", row.names = FALSE)
-write.csv(tumour_results, "tumour_unfiltered.csv", row.names = FALSE)
+write.csv(plasma, "plasma_unfiltered.csv", row.names = FALSE)
+write.csv(tumour, "tumour_unfiltered.csv", row.names = FALSE)
