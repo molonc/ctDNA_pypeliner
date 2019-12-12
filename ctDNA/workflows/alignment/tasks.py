@@ -15,13 +15,13 @@ def trim_fastq(fastq_1, fastq_2, temp_dir, output_fastq_1, output_fastq_2):
         '--output_dir',
         temp_dir,
         '--clip_R1',
-        10,
+        13,
         '--three_prime_clip_R1',
-        10,
+        13,
         '--clip_R2',
-        10,
+        13,
         '--three_prime_clip_R2',
-        10,
+        13,
         fastq_1,
         fastq_2
         )

@@ -84,8 +84,8 @@ def union_results(config, normal_bam, tumour_bam, tool_results, union_space, out
                 tasks.bam_readcount(config, "T", tumour_bam, result, os.path.join(union_space, 'tumour_count.txt'))
                 if (result['T_coverage'] >= config['coverage_threshold'] and
                     result['N_coverage'] >= config['coverage_threshold'] and
-                    result['T_vaf'] > config['T_vaf_cutoff'] and
-                    result['N_vaf'] < config['N_vaf_cutoff']):
+                    result['T_vaf'] > config['T_vaf_threshold'] and
+                    result['N_vaf'] < config['N_vaf_threshold']):
                     tasks.write_snv_record(result, vcf_writer)
                     tsv_writer.writerow(result)
 

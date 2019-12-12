@@ -8,7 +8,7 @@ A pipeline to find high depth, low frequency mutations present in Circulating tu
 * Trim Galore (for UMI snipping): https://github.com/FelixKrueger/TrimGalore
 * Burrows-Wheeler Aligner (for alignment): http://bio-bwa.sourceforge.net/
 * samtools (for alignment): https://www.htslib.org/
-* vcftools (for vcf merging and sorting): http://vcftools.sourceforge.net/
+* vcftools (for vcf merging and sorting): https://vcftools.github.io
 * Annovar (for annotation): http://annovar.openbioinformatics.org
 * bam-readcount (to fetch raw readcount): https://github.com/genome/bam-readcount
 
@@ -86,15 +86,15 @@ ctdna_pypeliner --input_yaml /path/to/input.yaml --config /path/to/config.yaml -
 
 ### Options
 ```
-  --input_yaml          Input filename
-  --config              Configuration filename
-  --map_q               Minimum mapping quality
-  --base_q              Minimum base quality
-  --p_threshold         Maximum p_value
-  --museq_threshold     Minumum MutationSeq score
-  --N_vaf_threshold     Maximum normal variant allele frequency
-  --T_vaf_threshold     Minimum tumour variant allele frequency
-  --umi_trim            Set flag to true to trim trailing and leading UMI from reads
+  --input_yaml INPUT_YAML     Input filename
+  --config CONFIG             Configuration filename
+  --map_q MAP_Q               Minimum mapping quality
+  --base_q BASE_Q             Minimum base quality
+  --p_threshold P_VALUE       Maximum p_value
+  --museq_threshold MUSEQ     Minumum MutationSeq score
+  --N_vaf_threshold N_VAF     Maximum normal variant allele frequency
+  --T_vaf_threshold T_VAF     Minimum tumour variant allele frequency
+  --umi_trim                  Set flag to true to trim trailing and leading UMI from reads
 ```
 Pypeliner workflow arguments
 ```

@@ -9,7 +9,7 @@ def bam_readcount(config, bam_type, bam, result, tmp_file):
     execute(
         'bam-readcount',
         '-d',
-        20000,
+        50000,
         '-w',
         0,
         '--min-mapping-quality',

@@ -5,7 +5,7 @@ from ctDNA.utils import vcfutils
 
 def merge_normal(config, input_bams, output_file, output_bai):
     normal_list = list(bam for bam in input_bams.itervalues())
-    cmd = ['samtools', 'merge', output_file]
+    cmd = ['samtools', 'merge', '-f', output_file]
     cmd.extend(normal_list)
     execute(*cmd)
 
